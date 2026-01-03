@@ -1,12 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "../pages/home";
 import System from "../pages/design/system";
-import Buttons from "../pages/design/content/buttons";
-import Introduction from "../pages/design/content/introduction";
-import Colors from "../pages/design/content/colors";
-import TypographyPage from "../pages/design/content/typography";
-import Usage from "../pages/design/content/usage";
-import ButtonIconPage from "../pages/design/content/buttonIcon.tsx";
+import Buttons from "../pages/design/content/components/atoms/buttons.tsx";
+import Introduction from "../pages/design/content/docs/introduction.tsx";
+import Colors from "../pages/design/content/components/atoms/colors.tsx";
+import TypographyPage from "../pages/design/content/docs/typography.tsx";
+import Usage from "../pages/design/content/docs/usage.tsx";
+import ButtonIconPage from "../pages/design/content/components/atoms/buttonIcon.tsx";
 
 
 export const router = createBrowserRouter([

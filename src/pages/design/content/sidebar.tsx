@@ -5,7 +5,6 @@ import {
   Box,
   Layout,
   MousePointer2,
-  Layers,
   FileText,
   Search,
   Github,
@@ -27,9 +26,9 @@ const navigation = [
     children: [
       { name: 'Buttons', icon: MousePointer2, path: '/system/buttons' },
         { name: 'ButtonIcon', icon: PlusCircle, path: '/system/button-icon' },
-      { name: 'Inputs', icon: Type, path: '/system/inputs' },
-      { name: 'Cards', icon: Layout, path: '/system/cards' },
-      { name: 'Modals', icon: Layers, path: '/system/modals' },
+      // { name: 'Inputs', icon: Type, path: '/system/inputs' },
+      // { name: 'Cards', icon: Layout, path: '/system/cards' },
+      // { name: 'Modals', icon: Layers, path: '/system/modals' },
     ]
   }
 ]
@@ -51,7 +50,7 @@ export default function Sidebar({ isCollapsed, onToggle }: SidebarProps) {
       <div className={`p-6 border-b border-neutral-100 relative ${isCollapsed ? 'flex flex-col items-center' : ''}`}>
         <div className="flex items-center gap-3 overflow-hidden">
           <div className="w-8 h-8 bg-neutral-900 rounded-lg flex-shrink-0 flex items-center justify-center">
-            <Layers className="w-5 h-5 text-white" />
+            <Layout className="w-5 h-5 text-white" />
           </div>
           {!isCollapsed && <span className="font-bold text-neutral-900 tracking-tight whitespace-nowrap">Harmony</span>}
         </div>

@@ -1,5 +1,5 @@
 import { Type } from 'lucide-react'
-import { Typography } from "../../../components/atoms/Typography.tsx";
+import { Typography } from "../../../../components/atoms/Typography.tsx";
 
 const TYPOGRAPHY_EXAMPLES = [
     {

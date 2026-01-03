@@ -1,4 +1,4 @@
-import { ButtonIcon } from '../../../components/atoms/ButtonIcon.tsx'
+import { ButtonIcon } from '../../../../../components/atoms/ButtonIcon.tsx'
 import { Plus, Settings, Trash2, Heart,Edit, Star, Eye, MoreHorizontal, X, ChevronRight, Check } from 'lucide-react'
 
 export default function ButtonIconPage() {
