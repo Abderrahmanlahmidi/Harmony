@@ -34,7 +34,7 @@ Name: ${name}`;
   return (
     <div className="group relative space-y-2">
       <div
-        className={`h-20 rounded-xl shadow-sm border border-black/5 transition-transform group-hover:-translate-y-1 cursor-pointer`}
+        className={`h-20 rounded-xl shadow-sm border border-black/5 dark:border-white/10 transition-transform group-hover:-translate-y-1 cursor-pointer`}
         style={{ backgroundColor: `var(${variable})` }}
         onClick={handleCopy}
       />
@@ -49,11 +49,10 @@ Name: ${name}`;
           onClick={handleCopy}
           className={`
                         p-1 rounded-md transition-all duration-200 flex-shrink-0
-                        ${
-                          copied
-                            ? "bg-green-100 text-green-600"
-                            : "opacity-0 group-hover:opacity-100 hover:bg-neutral-100 text-neutral-400 hover:text-neutral-600"
-                        }
+                        ${copied
+              ? "bg-green-100 text-green-600"
+              : "opacity-0 group-hover:opacity-100 hover:bg-neutral-100 dark:hover:bg-neutral-800 text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300"
+            }
                     `}
           title={copied ? "Copied!" : `Copy ${variable}`}
         >
@@ -62,9 +61,9 @@ Name: ${name}`;
       </div>
 
       {copied && (
-        <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 px-2 py-1 bg-neutral-900 text-white text-xs rounded-md animate-in fade-in slide-in-from-top-1 duration-200">
+        <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 px-2 py-1 bg-neutral-900 dark:bg-neutral-50 text-white dark:text-neutral-900 text-xs rounded-md animate-in fade-in slide-in-from-top-1 duration-200">
           Copied!
-          <div className="absolute bottom-[-4px] left-1/2 transform -translate-x-1/2 w-2 h-2 bg-neutral-900 rotate-45"></div>
+          <div className="absolute bottom-[-4px] left-1/2 transform -translate-x-1/2 w-2 h-2 bg-neutral-900 dark:bg-neutral-50 rotate-45"></div>
         </div>
       )}
     </div>

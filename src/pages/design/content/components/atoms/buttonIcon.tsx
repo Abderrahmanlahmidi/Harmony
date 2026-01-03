@@ -1,5 +1,5 @@
 import { ButtonIcon } from '../../../../../components/atoms/ButtonIcon.tsx'
-import { Plus, Settings, Trash2, Heart,Edit, Star, Eye, MoreHorizontal, X, ChevronRight, Check } from 'lucide-react'
+import { Plus, Settings, Trash2, Heart, Edit, Star, Eye, MoreHorizontal, X, ChevronRight, Check } from 'lucide-react'
 
 export default function ButtonIconPage() {
     return (
@@ -17,7 +17,7 @@ export default function ButtonIconPage() {
                 </div>
                 <p className="text-neutral-600">Explore the different visual styles of the ButtonIcon component.</p>
 
-                <div className="bg-white p-8 rounded-2xl border border-neutral-200 flex flex-wrap gap-4 items-center">
+                <div className="bg-white dark:bg-neutral-100 p-8 rounded-2xl border border-neutral-200 flex flex-wrap gap-4 items-center">
                     <ButtonIcon variant="primary" icon={<Plus size={20} />} label="Add" />
                     <ButtonIcon variant="secondary" icon={<Settings size={20} />} label="Settings" />
                     <ButtonIcon variant="outline" icon={<Trash2 size={20} />} label="Delete" />
@@ -31,7 +31,7 @@ export default function ButtonIconPage() {
                 </div>
                 <p className="text-neutral-600">ButtonIcon comes in three distinct sizes: Small, Medium (default), and Large.</p>
 
-                <div className="bg-white p-8 rounded-2xl border border-neutral-200 flex flex-wrap gap-4 items-end">
+                <div className="bg-white dark:bg-neutral-100 p-8 rounded-2xl border border-neutral-200 flex flex-wrap gap-4 items-end">
                     <ButtonIcon size="sm" icon={<Eye size={16} />} label="View" />
                     <ButtonIcon size="md" icon={<Settings size={20} />} label="Settings" />
                     <ButtonIcon size="lg" icon={<Plus size={24} />} label="Add" />
@@ -44,7 +44,7 @@ export default function ButtonIconPage() {
                 </div>
                 <p className="text-neutral-600">Common use cases for icon buttons with appropriate labels.</p>
 
-                <div className="bg-white p-8 rounded-2xl border border-neutral-200 flex flex-wrap gap-4 items-center">
+                <div className="bg-white dark:bg-neutral-100 p-8 rounded-2xl border border-neutral-200 flex flex-wrap gap-4 items-center">
                     <ButtonIcon icon={<Plus size={20} />} label="Add item" />
                     <ButtonIcon icon={<Check size={20} />} label="Confirm" />
                     <ButtonIcon icon={<Trash2 size={20} />} label="Delete" />
@@ -63,7 +63,7 @@ export default function ButtonIconPage() {
                 </div>
                 <p className="text-neutral-600">ButtonIcon can be displayed in loading and disabled states.</p>
 
-                <div className="bg-white p-8 rounded-2xl border border-neutral-200 flex flex-wrap gap-4 items-center">
+                <div className="bg-white dark:bg-neutral-100 p-8 rounded-2xl border border-neutral-200 flex flex-wrap gap-4 items-center">
                     <ButtonIcon isLoading icon={<Star size={20} />} label="Loading" />
                     <ButtonIcon variant="secondary" isLoading icon={<Heart size={20} />} label="Loading" />
                     <ButtonIcon disabled icon={<Trash2 size={20} />} label="Delete" />
@@ -75,8 +75,8 @@ export default function ButtonIconPage() {
                 <div className="border-b border-neutral-200 pb-2">
                     <h2 className="text-2xl font-semibold text-neutral-900">Example Usage</h2>
                 </div>
-                <pre className="bg-neutral-900 text-neutral-100 p-6 rounded-2xl overflow-x-auto text-sm font-mono">
-{`import { ButtonIcon } from '@/components/atoms/ButtonIcon'
+                <pre className="bg-neutral-900 dark:bg-black text-neutral-100 dark:text-neutral-400 p-6 rounded-2xl overflow-x-auto text-sm font-mono">
+                    {`import { ButtonIcon } from '@/components/atoms/ButtonIcon'
 import { Plus, Trash2 } from 'lucide-react'
 
 export const MyComponent = () => (
@@ -97,7 +97,7 @@ export const MyComponent = () => (
     />
   </div>
 )`}
-        </pre>
+                </pre>
             </section>
         </div>
     )

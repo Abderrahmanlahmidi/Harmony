@@ -17,7 +17,7 @@ export default function Buttons() {
         </div>
         <p className="text-neutral-600">Explore the different visual styles of the Button component.</p>
 
-        <div className="bg-white p-8 rounded-2xl border border-neutral-200 flex flex-wrap gap-4 items-center">
+        <div className="bg-white dark:bg-neutral-100 p-8 rounded-2xl border border-neutral-200 flex flex-wrap gap-4 items-center">
           <Button variant="primary">Primary</Button>
           <Button variant="secondary">Secondary</Button>
           <Button variant="outline">Outline</Button>
@@ -30,7 +30,7 @@ export default function Buttons() {
         </div>
         <p className="text-neutral-600">Buttons come in three distinct sizes: Small, Medium (default), and Large.</p>
 
-        <div className="bg-white p-8 rounded-2xl border border-neutral-200 flex flex-wrap gap-4 items-end">
+        <div className="bg-white dark:bg-neutral-100 p-8 rounded-2xl border border-neutral-200 flex flex-wrap gap-4 items-end">
           <Button size="sm">Small</Button>
           <Button size="md">Medium</Button>
           <Button size="lg">Large</Button>
@@ -44,7 +44,7 @@ export default function Buttons() {
         </div>
         <p className="text-neutral-600">Icons can be added to both the left and right sides of the button text.</p>
 
-        <div className="bg-white p-8 rounded-2xl border border-neutral-200 flex flex-wrap gap-4 items-center">
+        <div className="bg-white dark:bg-neutral-100 p-8 rounded-2xl border border-neutral-200 flex flex-wrap gap-4 items-center">
           <Button leftIcon={<Plus size={18} />}>Add Item</Button>
           <Button variant="secondary" rightIcon={<ArrowRight size={18} />}>Continue</Button>
           <Button variant="outline" leftIcon={<Mail size={18} />}>Send Email</Button>
@@ -59,7 +59,7 @@ export default function Buttons() {
         </div>
         <p className="text-neutral-600">Buttons can be displayed in loading and disabled states.</p>
 
-        <div className="bg-white p-8 rounded-2xl border border-neutral-200 flex flex-wrap gap-4 items-center">
+        <div className="bg-white dark:bg-neutral-100 p-8 rounded-2xl border border-neutral-200 flex flex-wrap gap-4 items-center">
           <Button isLoading>Loading...</Button>
           <Button variant="secondary" isLoading>Loading...</Button>
           <Button disabled>Disabled</Button>
@@ -72,7 +72,7 @@ export default function Buttons() {
         <div className="border-b border-neutral-200 pb-2">
           <h2 className="text-2xl font-semibold text-neutral-900">Example Usage</h2>
         </div>
-        <pre className="bg-neutral-900 text-neutral-100 p-6 rounded-2xl overflow-x-auto text-sm font-mono">
+        <pre className="bg-neutral-900 dark:bg-black text-neutral-100 dark:text-neutral-400 p-6 rounded-2xl overflow-x-auto text-sm font-mono">
           {`import { Button } from '@/components/atoms/buttons'
 import { Plus } from 'lucide-react'
 

@@ -1,9 +1,13 @@
-import { Github, Sparkles, Palette, Zap, ArrowRight, Layout, ShieldCheck, Cpu } from 'lucide-react';
+
+import { Github, Sparkles, Palette, Zap, ArrowRight, Layout, ShieldCheck, Cpu, Moon, Sun } from 'lucide-react';
 import { Button } from "../components/atoms/Button.tsx"
 import { useNavigate } from 'react-router-dom';
+import { useDarkMode } from '../hooks/useDarkMode';
 
 export default function Home() {
   const navigate = useNavigate();
+  const { isDarkMode, toggleTheme } = useDarkMode();
+
 
   return (
     <div className="min-h-screen bg-neutral-50 text-neutral-900 flex flex-col relative overflow-hidden">
@@ -14,11 +18,18 @@ export default function Home() {
       <nav className="relative z-10 w-full max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 bg-neutral-900 rounded-lg flex items-center justify-center">
-            <Layout className="w-5 h-5 text-white" />
+            <Layout className="w-5 h-5 text-neutral-50" />
           </div>
           <span className="text-lg font-bold tracking-tight">Harmony<span className="text-primary">.</span></span>
         </div>
         <div className="flex items-center gap-4 md:gap-6 text-sm font-medium text-neutral-500">
+          <button
+            onClick={toggleTheme}
+            className="p-2 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors cursor-pointer"
+            aria-label="Toggle theme"
+          >
+            {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
           <button
             onClick={() => navigate("/system")}
             className="hover:text-neutral-900 transition-colors cursor-pointer"
@@ -76,12 +87,12 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl border border-neutral-200 overflow-hidden aspect-video mt-8 md:mt-0">
+          <div className="bg-white dark:bg-neutral-100 rounded-xl border border-neutral-200 overflow-hidden aspect-video mt-8 md:mt-0">
             <div className="h-10 border-b border-neutral-100 flex items-center px-4 bg-neutral-50 gap-2">
               <div className="w-2.5 h-2.5 rounded-full bg-red-400" />
               <div className="w-2.5 h-2.5 rounded-full bg-amber-400" />
               <div className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
-              <div className="ml-4 flex-1 h-5 bg-white rounded border border-neutral-200 px-3 flex items-center">
+              <div className="ml-4 flex-1 h-5 bg-white dark:bg-neutral-200 rounded border border-neutral-200 px-3 flex items-center">
                 <div className="w-24 h-2 bg-neutral-100 rounded-full" />
               </div>
             </div>
@@ -91,7 +102,7 @@ export default function Home() {
                 <div className="h-24 bg-neutral-50 rounded-lg border border-neutral-100" />
               </div>
               <div className="col-span-2 space-y-4">
-                <div className="h-12 bg-neutral-900 rounded-lg flex items-center px-4 gap-3">
+                <div className="h-12 bg-neutral-900 dark:bg-neutral-50 rounded-lg flex items-center px-4 gap-3">
                   <div className="w-4 h-4 bg-white/20 rounded-full" />
                   <div className="w-32 h-2 bg-white/20 rounded-full" />
                 </div>

@@ -51,7 +51,7 @@ export default function TypographyPage() {
             </header>
 
             <section className="space-y-10">
-                <div className="bg-white p-10 rounded-3xl border border-neutral-200 space-y-8">
+                <div className="bg-white dark:bg-neutral-100 p-10 rounded-3xl border border-neutral-200 space-y-8">
                     {TYPOGRAPHY_EXAMPLES.map((example, index) => (
                         <div key={index} className={example.className}>
                             <Typography variant={example.variant} showLabel>

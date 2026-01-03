@@ -18,7 +18,7 @@ export default function Usage() {
                     <h2 className="text-2xl font-bold text-neutral-900">Project Structure</h2>
                 </div>
 
-                <div className="bg-neutral-900 rounded-xl p-6 font-mono text-sm text-neutral-300">
+                <div className="bg-neutral-900 dark:bg-black rounded-xl p-6 font-mono text-sm text-neutral-300 dark:text-neutral-400">
                     <div className="text-neutral-500 mb-4">Component Directory Schema</div>
                     <div className="space-y-1">
                         <div>src/</div>
@@ -41,7 +41,7 @@ export default function Usage() {
                 <div className="overflow-hidden rounded-xl border border-neutral-200">
                     <table className="w-full text-left border-collapse">
                         <thead>
-                            <tr className="bg-neutral-50 border-b border-neutral-200">
+                            <tr className="bg-neutral-50 dark:bg-neutral-100/50 border-b border-neutral-200">
                                 <th className="px-6 py-4 text-sm font-bold text-neutral-900 w-1/4">Step</th>
                                 <th className="px-6 py-4 text-sm font-bold text-neutral-900">Action & Description</th>
                             </tr>
@@ -49,7 +49,7 @@ export default function Usage() {
                         <tbody className="divide-y divide-neutral-100">
                             <tr>
                                 <td className="px-6 py-4 align-top">
-                                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-neutral-100 text-neutral-900">
+                                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-neutral-100 dark:bg-neutral-200 text-neutral-900">
                                         Step 01
                                     </span>
                                 </td>
@@ -60,7 +60,7 @@ export default function Usage() {
                             </tr>
                             <tr>
                                 <td className="px-6 py-4 align-top">
-                                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-neutral-100 text-neutral-900">
+                                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-neutral-100 dark:bg-neutral-200 text-neutral-900">
                                         Step 02
                                     </span>
                                 </td>
@@ -71,7 +71,7 @@ export default function Usage() {
                             </tr>
                             <tr>
                                 <td className="px-6 py-4 align-top">
-                                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-neutral-100 text-neutral-900">
+                                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-neutral-100 dark:bg-neutral-200 text-neutral-900">
                                         Step 03
                                     </span>
                                 </td>
@@ -82,14 +82,14 @@ export default function Usage() {
                             </tr>
                             <tr>
                                 <td className="px-6 py-4 align-top">
-                                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-neutral-100 text-neutral-900">
+                                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-neutral-100 dark:bg-neutral-200 text-neutral-900">
                                         Step 04
                                     </span>
                                 </td>
                                 <td className="px-6 py-4">
                                     <p className="font-bold text-neutral-900 mb-1">Dependencies</p>
                                     <p className="text-sm text-neutral-600 mb-3">Install <code>lucide-react</code> to handle all icons used within the components.</p>
-                                    <div className="bg-neutral-900 rounded-lg p-3 text-neutral-300 font-mono text-xs">
+                                    <div className="bg-neutral-900 dark:bg-black rounded-lg p-3 text-neutral-300 dark:text-neutral-400 font-mono text-xs">
                                         npm install lucide-react
                                     </div>
                                 </td>
@@ -114,11 +114,11 @@ export default function Usage() {
                     </p>
                 </div>
 
-                <div className="bg-white rounded-xl border border-neutral-200 overflow-hidden">
+                <div className="bg-white dark:bg-neutral-100 rounded-xl border border-neutral-200 overflow-hidden">
                     <div className="bg-neutral-50 px-4 py-2 border-b border-neutral-200 flex justify-between items-center">
                         <span className="text-xs font-medium text-neutral-500">MyPage.tsx</span>
                     </div>
-                    <pre className="p-6 text-sm font-mono text-neutral-800 bg-neutral-50/50">
+                    <pre className="p-6 text-sm font-mono text-neutral-800 dark:text-neutral-900 bg-neutral-50/50">
                         <code>{`import { Button } from '../components/buttons/Button';
 import { ArrowRight } from 'lucide-react';
 

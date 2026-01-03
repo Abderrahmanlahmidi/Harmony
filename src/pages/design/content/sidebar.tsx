@@ -8,12 +8,15 @@ import {
   FileText,
   Search,
   Github,
-    PlusCircle,
+  PlusCircle,
   ChevronLeft,
   ChevronRight,
   Home,
-  BookOpen
+  BookOpen,
+  Moon,
+  Sun
 } from 'lucide-react'
+import { useDarkMode } from '../../../hooks/useDarkMode'
 
 const navigation = [
   { name: 'Introduction', icon: FileText, path: '/system', end: true },
@@ -25,7 +28,7 @@ const navigation = [
     icon: Box,
     children: [
       { name: 'Buttons', icon: MousePointer2, path: '/system/buttons' },
-        { name: 'ButtonIcon', icon: PlusCircle, path: '/system/button-icon' },
+      { name: 'ButtonIcon', icon: PlusCircle, path: '/system/button-icon' },
       // { name: 'Inputs', icon: Type, path: '/system/inputs' },
       // { name: 'Cards', icon: Layout, path: '/system/cards' },
       // { name: 'Modals', icon: Layers, path: '/system/modals' },
@@ -40,17 +43,18 @@ interface SidebarProps {
 
 export default function Sidebar({ isCollapsed, onToggle }: SidebarProps) {
   const navigate = useNavigate();
+  const { isDarkMode, toggleTheme } = useDarkMode();
 
   return (
     <aside className={`
       ${isCollapsed ? 'w-20' : 'w-64'} 
-      border-r border-neutral-200 h-screen fixed left-0 top-0 bg-white flex flex-col z-20 transition-all duration-300 ease-in-out
+      border-r border-neutral-200 h-screen fixed left-0 top-0 bg-white dark:bg-neutral-50 flex flex-col z-20 transition-all duration-300 ease-in-out
     `}>
 
       <div className={`p-6 border-b border-neutral-100 relative ${isCollapsed ? 'flex flex-col items-center' : ''}`}>
         <div className="flex items-center gap-3 overflow-hidden">
           <div className="w-8 h-8 bg-neutral-900 rounded-lg flex-shrink-0 flex items-center justify-center">
-            <Layout className="w-5 h-5 text-white" />
+            <Layout className="w-5 h-5 text-neutral-50" />
           </div>
           {!isCollapsed && <span className="font-bold text-neutral-900 tracking-tight whitespace-nowrap">Harmony</span>}
         </div>
@@ -59,8 +63,8 @@ export default function Sidebar({ isCollapsed, onToggle }: SidebarProps) {
         <button
           onClick={onToggle}
           className={`
-            absolute top-7 -right-3 w-6 h-6 bg-white border border-neutral-200 rounded-full flex items-center justify-center 
-            hover:bg-neutral-50 transition-colors shadow-sm cursor-pointer z-30
+            absolute top-7 -right-3 w-6 h-6 bg-white dark:bg-neutral-50 border border-neutral-200 rounded-full flex items-center justify-center 
+            hover:bg-neutral-50 dark:hover:bg-neutral-100 transition-colors shadow-sm cursor-pointer z-30
           `}
         >
           {isCollapsed ? <ChevronRight size={14} /> : <ChevronLeft size={14} />}
@@ -72,7 +76,7 @@ export default function Sidebar({ isCollapsed, onToggle }: SidebarProps) {
             <input
               type="text"
               placeholder="Search docs..."
-              className="w-full pl-9 pr-4 py-2 bg-neutral-100 border-transparent rounded-lg text-sm focus:bg-white focus:border-neutral-200 transition-all outline-none"
+              className="w-full pl-9 pr-4 py-2 bg-neutral-100 border-transparent rounded-lg text-sm focus:bg-white dark:focus:bg-neutral-50 focus:border-neutral-200 dark:focus:border-neutral-700 transition-all outline-none"
             />
           </div>
         )}
@@ -98,7 +102,7 @@ export default function Sidebar({ isCollapsed, onToggle }: SidebarProps) {
                       flex items-center rounded-lg text-sm font-medium transition-colors
                       ${isCollapsed ? 'w-10 h-10 justify-center mb-1' : 'gap-3 px-3 py-2 w-full'}
                       ${isActive
-                        ? 'bg-neutral-900 text-white shadow-md shadow-neutral-900/10'
+                        ? 'bg-neutral-900 text-neutral-50 shadow-md shadow-neutral-900/10'
                         : 'text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900'}
                     `}
                   >
@@ -116,7 +120,7 @@ export default function Sidebar({ isCollapsed, onToggle }: SidebarProps) {
                   flex items-center rounded-lg text-sm font-medium transition-colors
                   ${isCollapsed ? 'w-10 h-10 justify-center' : 'gap-3 px-3 py-2 w-full'}
                   ${isActive
-                    ? 'bg-neutral-900 text-white '
+                    ? 'bg-neutral-900 text-neutral-50 '
                     : 'text-neutral-600 hover:bg-neutral-100'}
                 `}
               >
@@ -130,6 +134,17 @@ export default function Sidebar({ isCollapsed, onToggle }: SidebarProps) {
 
 
       <div className={`p-4 border-t border-neutral-100 space-y-2 ${isCollapsed ? 'flex flex-col items-center' : ''}`}>
+        <button
+          onClick={toggleTheme}
+          title={isCollapsed ? (isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode') : ''}
+          className={`
+            flex items-center ${isCollapsed ? 'justify-center px-0 w-10 h-10' : 'gap-3 px-3'} py-2.5 rounded-lg text-sm font-medium 
+            text-neutral-600 hover:bg-neutral-100 transition-all duration-200 w-full
+          `}
+        >
+          {isDarkMode ? <Sun className="w-4 h-4 flex-shrink-0" /> : <Moon className="w-4 h-4 flex-shrink-0" />}
+          {!isCollapsed && <span className="truncate">{isDarkMode ? 'Light Mode' : 'Dark Mode'}</span>}
+        </button>
 
         <button
           onClick={() => navigate('/')}

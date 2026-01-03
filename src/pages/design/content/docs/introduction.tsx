@@ -11,7 +11,7 @@ export default function Introduction() {
             </header>
 
             <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="p-6 bg-white rounded-2xl border border-neutral-200 space-y-4">
+                <div className="p-6 bg-white dark:bg-neutral-100 rounded-2xl border border-neutral-200">
                     <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
                         <Palette className="w-5 h-5 text-primary" />
                     </div>
@@ -21,7 +21,7 @@ export default function Introduction() {
                     </p>
                 </div>
 
-                <div className="p-6 bg-white rounded-2xl border border-neutral-200 space-y-4">
+                <div className="p-6 bg-white dark:bg-neutral-100 rounded-2xl border border-neutral-200 space-y-4">
                     <div className="w-10 h-10 bg-secondary/10 rounded-lg flex items-center justify-center">
                         <Zap className="w-5 h-5 text-secondary" />
                     </div>
@@ -31,7 +31,7 @@ export default function Introduction() {
                     </p>
                 </div>
 
-                <div className="p-6 bg-white rounded-2xl border border-neutral-200 space-y-4">
+                <div className="p-6 bg-white dark:bg-neutral-100 rounded-2xl border border-neutral-200 space-y-4">
                     <div className="w-10 h-10 bg-amber-50 rounded-lg flex items-center justify-center">
                         <Shield className="w-5 h-5 text-amber-500" />
                     </div>
@@ -41,7 +41,7 @@ export default function Introduction() {
                     </p>
                 </div>
 
-                <div className="p-6 bg-white rounded-2xl border border-neutral-200 space-y-4">
+                <div className="p-6 bg-white dark:bg-neutral-100 rounded-2xl border border-neutral-200 space-y-4">
                     <div className="w-10 h-10 bg-neutral-100 rounded-lg flex items-center justify-center">
                         <Code className="w-5 h-5 text-neutral-900" />
                     </div>
@@ -61,7 +61,7 @@ export default function Introduction() {
                 <div className="overflow-hidden rounded-xl border border-neutral-200">
                     <table className="w-full text-left border-collapse">
                         <thead>
-                            <tr className="bg-neutral-50 border-b border-neutral-200">
+                            <tr className="bg-neutral-50 dark:bg-neutral-100/50 border-b border-neutral-200">
                                 <th className="px-6 py-4 text-sm font-bold text-neutral-900 w-1/4">Principle</th>
                                 <th className="px-6 py-4 text-sm font-bold text-neutral-900">Description</th>
                             </tr>
