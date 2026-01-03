@@ -1,4 +1,4 @@
-import { Button } from '../../../components/buttons/Button'
+import { Button } from '../../../components/atoms/Button.tsx'
 import { Plus, Mail, ArrowRight, Github } from 'lucide-react'
 
 export default function Buttons() {
@@ -11,7 +11,6 @@ export default function Buttons() {
         </p>
       </header>
 
-      {/* Primary Variants */}
       <section className="space-y-6">
         <div className="border-b border-neutral-200 pb-2">
           <h2 className="text-2xl font-semibold text-neutral-900">Variants</h2>
@@ -25,7 +24,6 @@ export default function Buttons() {
         </div>
       </section>
 
-      {/* Sizes */}
       <section className="space-y-6">
         <div className="border-b border-neutral-200 pb-2">
           <h2 className="text-2xl font-semibold text-neutral-900">Sizes</h2>
@@ -39,7 +37,7 @@ export default function Buttons() {
         </div>
       </section>
 
-      {/* With Icons */}
+
       <section className="space-y-6">
         <div className="border-b border-neutral-200 pb-2">
           <h2 className="text-2xl font-semibold text-neutral-900">With Icons</h2>
@@ -54,7 +52,7 @@ export default function Buttons() {
         </div>
       </section>
 
-      {/* Loading & Disabled */}
+
       <section className="space-y-6">
         <div className="border-b border-neutral-200 pb-2">
           <h2 className="text-2xl font-semibold text-neutral-900">States</h2>
@@ -69,7 +67,7 @@ export default function Buttons() {
         </div>
       </section>
 
-      {/* Code Snippet Example (Visual only) */}
+
       <section className="space-y-6">
         <div className="border-b border-neutral-200 pb-2">
           <h2 className="text-2xl font-semibold text-neutral-900">Example Usage</h2>

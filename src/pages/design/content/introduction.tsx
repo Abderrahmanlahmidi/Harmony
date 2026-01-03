@@ -54,15 +54,45 @@ export default function Introduction() {
 
             <section className="space-y-6">
                 <h2 className="text-2xl font-semibold text-neutral-900">Guiding Principles</h2>
-                <div className="prose prose-neutral max-w-none text-neutral-600">
-                    <p>
-                        The Harmony Design System is grounded in three core principles that guide our decision-making and component architecture:
-                    </p>
-                    <ul className="list-disc pl-5 space-y-2">
-                        <li><strong>Clarity:</strong> Interfaces should be clear and easy to understand at a glance.</li>
-                        <li><strong>Efficiency:</strong> Minimize friction and let users achieve their goals faster.</li>
-                        <li><strong>Consistency:</strong> Maintain a unified look and feel across all touchpoints.</li>
-                    </ul>
+                <p className="text-neutral-600">
+                    The Harmony Design System is grounded in three core principles that guide our decision-making and component architecture:
+                </p>
+
+                <div className="overflow-hidden rounded-xl border border-neutral-200">
+                    <table className="w-full text-left border-collapse">
+                        <thead>
+                            <tr className="bg-neutral-50 border-b border-neutral-200">
+                                <th className="px-6 py-4 text-sm font-bold text-neutral-900 w-1/4">Principle</th>
+                                <th className="px-6 py-4 text-sm font-bold text-neutral-900">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody className="divide-y divide-neutral-100">
+                            <tr>
+                                <td className="px-6 py-4">
+                                    <span className="font-bold text-primary">Clarity</span>
+                                </td>
+                                <td className="px-6 py-4">
+                                    <p className="text-sm text-neutral-600">Interfaces should be clear and easy to understand at a glance, reducing cognitive load for users.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td className="px-6 py-4">
+                                    <span className="font-bold text-secondary">Efficiency</span>
+                                </td>
+                                <td className="px-6 py-4">
+                                    <p className="text-sm text-neutral-600">Minimize friction and let users achieve their goals faster through intuitive patterns and optimized interactions.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td className="px-6 py-4">
+                                    <span className="font-bold text-neutral-900">Consistency</span>
+                                </td>
+                                <td className="px-6 py-4">
+                                    <p className="text-sm text-neutral-600">Maintain a unified look and feel across all touchpoints, building trust and familiarity throughout the application.</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </section>
         </div>

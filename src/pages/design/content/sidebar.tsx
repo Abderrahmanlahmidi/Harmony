@@ -9,14 +9,16 @@ import {
   FileText,
   Search,
   Github,
+    PlusCircle,
   ChevronLeft,
   ChevronRight,
   Home,
-  ArrowLeft
+  BookOpen
 } from 'lucide-react'
 
 const navigation = [
-  { name: 'Introduction', icon: FileText, path: '/system' },
+  { name: 'Introduction', icon: FileText, path: '/system', end: true },
+  { name: 'How to use', icon: BookOpen, path: '/system/usage' },
   { name: 'Colors', icon: Palette, path: '/system/colors' },
   { name: 'Typography', icon: Type, path: '/system/typography' },
   {
@@ -24,6 +26,7 @@ const navigation = [
     icon: Box,
     children: [
       { name: 'Buttons', icon: MousePointer2, path: '/system/buttons' },
+        { name: 'ButtonIcon', icon: PlusCircle, path: '/system/button-icon' },
       { name: 'Inputs', icon: Type, path: '/system/inputs' },
       { name: 'Cards', icon: Layout, path: '/system/cards' },
       { name: 'Modals', icon: Layers, path: '/system/modals' },
@@ -44,7 +47,7 @@ export default function Sidebar({ isCollapsed, onToggle }: SidebarProps) {
       ${isCollapsed ? 'w-20' : 'w-64'} 
       border-r border-neutral-200 h-screen fixed left-0 top-0 bg-white flex flex-col z-20 transition-all duration-300 ease-in-out
     `}>
-      {/* Sidebar Header */}
+
       <div className={`p-6 border-b border-neutral-100 relative ${isCollapsed ? 'flex flex-col items-center' : ''}`}>
         <div className="flex items-center gap-3 overflow-hidden">
           <div className="w-8 h-8 bg-neutral-900 rounded-lg flex-shrink-0 flex items-center justify-center">
@@ -53,7 +56,7 @@ export default function Sidebar({ isCollapsed, onToggle }: SidebarProps) {
           {!isCollapsed && <span className="font-bold text-neutral-900 tracking-tight whitespace-nowrap">Harmony</span>}
         </div>
 
-        {/* Toggle buttons */}
+
         <button
           onClick={onToggle}
           className={`
@@ -76,7 +79,7 @@ export default function Sidebar({ isCollapsed, onToggle }: SidebarProps) {
         )}
       </div>
 
-      {/* Navigation */}
+
       <nav className={`flex-1 overflow-y-auto ${isCollapsed ? 'px-0 py-4 flex flex-col items-center' : 'p-4'} space-y-8`}>
         {navigation.map((item) => (
           <div key={item.name} className={isCollapsed ? 'w-full flex flex-col items-center' : 'w-full'}>
@@ -108,6 +111,7 @@ export default function Sidebar({ isCollapsed, onToggle }: SidebarProps) {
             ) : (
               <NavLink
                 to={item.path}
+                end={item.end}
                 title={isCollapsed ? item.name : ''}
                 className={({ isActive }) => `
                   flex items-center rounded-lg text-sm font-medium transition-colors
@@ -125,9 +129,9 @@ export default function Sidebar({ isCollapsed, onToggle }: SidebarProps) {
         ))}
       </nav>
 
-      {/* Sidebar Footer with Home and GitHub buttons */}
+
       <div className={`p-4 border-t border-neutral-100 space-y-2 ${isCollapsed ? 'flex flex-col items-center' : ''}`}>
-        {/* Home buttons */}
+
         <button
           onClick={() => navigate('/')}
           title={isCollapsed ? 'Back to Home' : ''}
@@ -140,7 +144,7 @@ export default function Sidebar({ isCollapsed, onToggle }: SidebarProps) {
           {!isCollapsed && <span className="truncate">Back to Home</span>}
         </button>
 
-        {/* GitHub buttons */}
+
         <a
           href="https://github.com"
           target="_blank"
