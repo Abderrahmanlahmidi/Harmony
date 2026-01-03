@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic');
+@import "tailwindcss";
+
+@layer theme {
+  :root {
+    --font-sans: "Poppins", sans-serif;
+
+    /* Brand Colors */
+    --color-brand-primary: #6366f1;
+    --color-brand-primary-hover: #4f46e5;
+    --color-brand-secondary: #0ea5e9;
+    --color-brand-secondary-hover: #0284c7;
+
+    /* Semantic Colors */
+    --color-semantic-success: #10b981;
+    --color-semantic-success-hover: #059669;
+    --color-semantic-success-light: #d1fae5;
+    
+    --color-semantic-danger: #ef4444;
+    --color-semantic-danger-hover: #dc2626;
+    --color-semantic-danger-light: #fee2e2;
+    
+    --color-semantic-warning: #f59e0b;
+    --color-semantic-warning-hover: #d97706;
+    --color-semantic-warning-light: #fef3c7;
+    
+    --color-semantic-info: #3b82f6;
+    --color-semantic-info-hover: #2563eb;
+    --color-semantic-info-light: #dbeafe;
+
+    /* Neutral Colors */
+    --color-neutral-50: #f8fafc;
+    --color-neutral-100: #f1f5f9;
+    --color-neutral-200: #e2e8f0;
+    --color-neutral-300: #cbd5e1;
+    --color-neutral-400: #94a3b8;
+    --color-neutral-500: #64748b;
+    --color-neutral-600: #475569;
+    --color-neutral-700: #334155;
+    --color-neutral-800: #1e293b;
+    --color-neutral-900: #0f172a;
+  }
+}
+
+@theme {
+  --font-sans: var(--font-sans);
+  
+  /* Brand Colors */
+  --color-primary: var(--color-brand-primary);
+  --color-primary-hover: var(--color-brand-primary-hover);
+  --color-secondary: var(--color-brand-secondary);
+  --color-secondary-hover: var(--color-brand-secondary-hover);
+  
+  /* Semantic Colors */
+  --color-success: var(--color-semantic-success);
+  --color-success-hover: var(--color-semantic-success-hover);
+  --color-success-light: var(--color-semantic-success-light);
+  
+  --color-danger: var(--color-semantic-danger);
+  --color-danger-hover: var(--color-semantic-danger-hover);
+  --color-danger-light: var(--color-semantic-danger-light);
+  
+  --color-warning: var(--color-semantic-warning);
+  --color-warning-hover: var(--color-semantic-warning-hover);
+  --color-warning-light: var(--color-semantic-warning-light);
+  
+  --color-info: var(--color-semantic-info);
+  --color-info-hover: var(--color-semantic-info-hover);
+  --color-info-light: var(--color-semantic-info-light);
+}
+
+@layer base {
+  body {
+    @apply bg-neutral-50 text-neutral-900 antialiased;
+    font-family: var(--font-sans);
+  }
+}
