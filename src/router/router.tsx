@@ -19,9 +19,10 @@ import RadiosPage from "../pages/design/content/components/atoms/radios.tsx";
 import CheckboxesPage from "../pages/design/content/components/atoms/checkboxes.tsx";
 import TogglesPage from "../pages/design/content/components/atoms/toggles.tsx";
 import ProgressPage from "../pages/design/content/components/atoms/progress.tsx";
+import SearchPage from "../pages/design/content/components/atoms/search.tsx";
 
 
-import ColorPalette from "../pages/design/content/docs/colorPalette.tsx";
+
 
 export const router = createBrowserRouter([
     {
@@ -48,10 +49,7 @@ export const router = createBrowserRouter([
                 path: "colors",
                 element: <Colors />
             },
-            {
-                path: "color-palette",
-                element: <ColorPalette />
-            },
+
             {
                 path: "typography",
                 element: <TypographyPage />
@@ -99,6 +97,10 @@ export const router = createBrowserRouter([
             {
                 path: "progress",
                 element: <ProgressPage />
+            },
+            {
+                path: "search",
+                element: <SearchPage />
             }
         ]
     }

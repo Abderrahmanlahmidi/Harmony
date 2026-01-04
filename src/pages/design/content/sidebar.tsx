@@ -33,7 +33,7 @@ import { useState } from 'react'
 const navigation = [
   { name: 'Introduction', icon: FileText, path: '/system', end: true },
   { name: 'How to use', icon: BookOpen, path: '/system/usage' },
-  { name: 'Colors Palette', icon: Palette, path: '/system/color-palette' },
+  { name: 'Colors', icon: Palette, path: '/system/colors' },
   { name: 'Typography', icon: Type, path: '/system/typography' },
   {
     name: 'Components',
@@ -51,6 +51,7 @@ const navigation = [
       { name: 'Checkboxes', icon: CheckCircle2, path: '/system/checkboxes' },
       { name: 'Toggles', icon: Zap, path: '/system/toggles' },
       { name: 'Progress', icon: Activity, path: '/system/progress' },
+      { name: 'Search Bar', icon: Search, path: '/system/search' },
     ]
   },
   {
