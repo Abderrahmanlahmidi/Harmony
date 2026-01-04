@@ -128,14 +128,14 @@ export default function Colors() {
           <div className="space-y-4">
             <h3 className="text-xs font-black uppercase tracking-widest text-neutral-400">Brand</h3>
             <div className="space-y-3">
-              <div className="flex items-center gap-4 dark:bg-neutral-50 bg-neutral-900 p-4 rounded-2xl border dark:border-neutral-200 border-neutral-800">
+              <div className="flex items-center gap-4 bg-neutral-100 dark:bg-neutral-100/10 p-4 rounded-2xl border border-neutral-200 dark:border-neutral-200">
                 <div className="w-12 h-12 rounded-xl bg-primary" />
                 <div>
                   <p className="text-sm font-black text-neutral-900">Primary</p>
                   <p className="text-[10px] font-mono text-neutral-400">--color-primary</p>
                 </div>
               </div>
-              <div className="flex items-center gap-4 dark:bg-neutral-50 bg-neutral-900 p-4 rounded-2xl border dark:border-neutral-200 border-neutral-800">
+              <div className="flex items-center gap-4 bg-neutral-100 dark:bg-neutral-100/10 p-4 rounded-2xl border border-neutral-200 dark:border-neutral-200">
                 <div className="w-12 h-12 rounded-xl bg-secondary" />
                 <div>
                   <p className="text-sm font-black text-neutral-900">Secondary</p>
@@ -148,7 +148,7 @@ export default function Colors() {
           <div className="space-y-4">
             <h3 className="text-xs font-black uppercase tracking-widest text-neutral-400">Semantic Success</h3>
             <div className="space-y-3">
-              <div className="flex items-center gap-4 dark:bg-neutral-50 bg-neutral-900 p-4 rounded-2xl border dark:border-neutral-200 border-neutral-800">
+              <div className="flex items-center gap-4 bg-neutral-100 dark:bg-neutral-100/10 p-4 rounded-2xl border border-neutral-200 dark:border-neutral-200">
                 <div className="w-12 h-12 rounded-xl bg-success" />
                 <div>
                   <p className="text-sm font-black text-neutral-900">Success</p>
@@ -161,8 +161,8 @@ export default function Colors() {
           <div className="space-y-4">
             <h3 className="text-xs font-black uppercase tracking-widest text-neutral-400">Semantic Danger</h3>
             <div className="space-y-3">
-              <div className="flex items-center gap-4 dark:bg-neutral-50 bg-neutral-900 p-4 rounded-2xl border dark:border-neutral-200 border-neutral-800">
-                <div className="w-12 h-12 rounded-xl bg-danger    " />
+              <div className="flex items-center gap-4 bg-neutral-100 dark:bg-neutral-100/10 p-4 rounded-2xl border border-neutral-200 dark:border-neutral-200">
+                <div className="w-12 h-12 rounded-xl bg-danger" />
                 <div>
                   <p className="text-sm font-black text-neutral-900">Danger</p>
                   <p className="text-[10px] font-mono text-neutral-400">--color-danger</p>
@@ -174,8 +174,8 @@ export default function Colors() {
           <div className="space-y-4">
             <h3 className="text-xs font-black uppercase tracking-widest text-neutral-400">Semantic Warning</h3>
             <div className="space-y-3">
-              <div className="flex items-center gap-4 dark:bg-neutral-50 bg-neutral-900 p-4 rounded-2xl border dark:border-neutral-200 border-neutral-800">
-                <div className="w-12 h-12 rounded-xl bg-warning " />
+              <div className="flex items-center gap-4 bg-neutral-100 dark:bg-neutral-100/10 p-4 rounded-2xl border border-neutral-200 dark:border-neutral-200">
+                <div className="w-12 h-12 rounded-xl bg-warning" />
                 <div>
                   <p className="text-sm font-black text-neutral-900">Warning</p>
                   <p className="text-[10px] font-mono text-neutral-400">--color-warning</p>
