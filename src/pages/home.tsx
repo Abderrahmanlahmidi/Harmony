@@ -3,6 +3,7 @@ import { Github, Sparkles, Palette, Zap, ArrowRight, Layout, ShieldCheck, Cpu, M
 import { Button } from "../components/atoms/Button.tsx"
 import { useNavigate } from 'react-router-dom';
 import { useDarkMode } from '../hooks/useDarkMode';
+import { ButtonIcon } from '../components/atoms/ButtonIcon.tsx';
 
 export default function Home() {
   const navigate = useNavigate();
@@ -24,13 +25,6 @@ export default function Home() {
         </div>
         <div className="flex items-center gap-4 md:gap-6 text-sm font-medium text-neutral-500">
           <button
-            onClick={toggleTheme}
-            className="p-2 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors cursor-pointer"
-            aria-label="Toggle theme"
-          >
-            {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
-          </button>
-          <button
             onClick={() => navigate("/system")}
             className="hover:text-neutral-900 transition-colors cursor-pointer"
           >
@@ -40,6 +34,13 @@ export default function Home() {
           <Button variant="outline" size="sm" onClick={() => navigate("/system")}>
             Dashboard
           </Button>
+          <ButtonIcon
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+            icon= {isDarkMode ? <Sun size={20} /> : <Moon size={20} />} 
+            variant='outline'
+            size='sm'
+          />
         </div>
       </nav>
 

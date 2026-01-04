@@ -1,103 +1,131 @@
 import { ButtonIcon } from '../../../../../components/atoms/ButtonIcon.tsx'
 import { Plus, Settings, Trash2, Heart, Edit, Star, Eye, MoreHorizontal, X, ChevronRight, Check } from 'lucide-react'
+import CodeBlock from '../CodeBlock.tsx';
 
-export default function ButtonIconPage() {
+export default function ButtonsIconPage() {
     return (
         <div className="space-y-12 pb-20">
             <header className="space-y-4">
-                <h1 className="text-4xl font-bold text-neutral-900 tracking-tight">ButtonIcon</h1>
-                <p className="text-xl text-neutral-600 max-w-2xl">
+                <h1 className="text-4xl font-bold text-neutral-50 dark:text-neutral-900 tracking-tight">ButtonIcon</h1>
+                <p className="text-xl text-neutral-600 dark:text-neutral-400 max-w-2xl">
                     Icon-only buttons for compact actions and interfaces. Perfect for toolbars, navigation, and minimalist designs.
                 </p>
             </header>
 
             <section className="space-y-6">
-                <div className="border-b border-neutral-200 pb-2">
-                    <h2 className="text-2xl font-semibold text-neutral-900">Variants</h2>
-                </div>
-                <p className="text-neutral-600">Explore the different visual styles of the ButtonIcon component.</p>
+                <CodeBlock
+                    title="Variants"
+                    description="Explore the different visual styles of the ButtonIcon component."
+                    code={`import { ButtonIcon } from "@/components/atoms/ButtonIcon";
+import { Plus, Settings, Trash2, Heart } from "lucide-react";
 
-                <div className="bg-white dark:bg-neutral-100 p-8 rounded-2xl border border-neutral-200 flex flex-wrap gap-4 items-center">
-                    <ButtonIcon variant="primary" icon={<Plus size={20} />} label="Add" />
-                    <ButtonIcon variant="secondary" icon={<Settings size={20} />} label="Settings" />
-                    <ButtonIcon variant="outline" icon={<Trash2 size={20} />} label="Delete" />
-                    <ButtonIcon variant="ghost" icon={<Heart size={20} />} label="Like" />
-                </div>
+export default function VariantsExample() {
+  return (
+    <div className="flex flex-wrap gap-4 items-center">
+      <ButtonIcon variant="primary" icon={<Plus size={20} />} label="Add" />
+      <ButtonIcon variant="secondary" icon={<Settings size={20} />} label="Settings" />
+      <ButtonIcon variant="outline" icon={<Trash2 size={20} />} label="Delete" />
+      <ButtonIcon variant="ghost" icon={<Heart size={20} />} label="Like" />
+    </div>
+  );
+}`}
+                >
+                    <div className="flex flex-wrap gap-4 items-center justify-center">
+                        <ButtonIcon variant="primary" icon={<Plus size={20} />} label="Add" />
+                        <ButtonIcon variant="secondary" icon={<Settings size={20} />} label="Settings" />
+                        <ButtonIcon variant="outline" icon={<Trash2 size={20} />} label="Delete" />
+                        <ButtonIcon variant="ghost" icon={<Heart size={20} />} label="Like" />
+                    </div>
+                </CodeBlock>
             </section>
 
             <section className="space-y-6">
-                <div className="border-b border-neutral-200 pb-2">
-                    <h2 className="text-2xl font-semibold text-neutral-900">Sizes</h2>
-                </div>
-                <p className="text-neutral-600">ButtonIcon comes in three distinct sizes: Small, Medium (default), and Large.</p>
+                <CodeBlock
+                    title="Sizes"
+                    description="ButtonIcon comes in three distinct sizes: Small, Medium (default), and Large."
+                    code={`import { ButtonIcon } from "@/components/atoms/ButtonIcon";
+import { Eye, Settings, Plus } from "lucide-react";
 
-                <div className="bg-white dark:bg-neutral-100 p-8 rounded-2xl border border-neutral-200 flex flex-wrap gap-4 items-end">
-                    <ButtonIcon size="sm" icon={<Eye size={16} />} label="View" />
-                    <ButtonIcon size="md" icon={<Settings size={20} />} label="Settings" />
-                    <ButtonIcon size="lg" icon={<Plus size={24} />} label="Add" />
-                </div>
+export default function SizesExample() {
+  return (
+    <div className="flex flex-wrap gap-4 items-end">
+      <ButtonIcon size="sm" icon={<Eye size={16} />} label="View" />
+      <ButtonIcon size="md" icon={<Settings size={20} />} label="Settings" />
+      <ButtonIcon size="lg" icon={<Plus size={24} />} label="Add" />
+    </div>
+  );
+}`}
+                >
+                    <div className="flex flex-wrap gap-4 items-end justify-center">
+                        <ButtonIcon size="sm" icon={<Eye size={16} />} label="View" />
+                        <ButtonIcon size="md" icon={<Settings size={20} />} label="Settings" />
+                        <ButtonIcon size="lg" icon={<Plus size={24} />} label="Add" />
+                    </div>
+                </CodeBlock>
             </section>
 
             <section className="space-y-6">
-                <div className="border-b border-neutral-200 pb-2">
-                    <h2 className="text-2xl font-semibold text-neutral-900">Icon Examples</h2>
-                </div>
-                <p className="text-neutral-600">Common use cases for icon buttons with appropriate labels.</p>
+                <CodeBlock
+                    title="Icon Examples"
+                    description="Common use cases for icon buttons with appropriate labels."
+                    code={`import { ButtonIcon } from "@/components/atoms/ButtonIcon";
+import { Plus, Check, Trash2, Edit, Star, Heart, X, MoreHorizontal, ChevronRight } from "lucide-react";
 
-                <div className="bg-white dark:bg-neutral-100 p-8 rounded-2xl border border-neutral-200 flex flex-wrap gap-4 items-center">
-                    <ButtonIcon icon={<Plus size={20} />} label="Add item" />
-                    <ButtonIcon icon={<Check size={20} />} label="Confirm" />
-                    <ButtonIcon icon={<Trash2 size={20} />} label="Delete" />
-                    <ButtonIcon icon={<Edit size={20} />} label="Edit" />
-                    <ButtonIcon icon={<Star size={20} />} label="Favorite" />
-                    <ButtonIcon icon={<Heart size={20} />} label="Like" />
-                    <ButtonIcon icon={<X size={20} />} label="Close" />
-                    <ButtonIcon icon={<MoreHorizontal size={20} />} label="More options" />
-                    <ButtonIcon icon={<ChevronRight size={20} />} label="Next" />
-                </div>
+export default function IconExamples() {
+  return (
+    <div className="flex flex-wrap gap-4 items-center">
+      <ButtonIcon icon={<Plus size={20} />} label="Add item" />
+      <ButtonIcon icon={<Check size={20} />} label="Confirm" />
+      <ButtonIcon icon={<Trash2 size={20} />} label="Delete" />
+      <ButtonIcon icon={<Edit size={20} />} label="Edit" />
+      <ButtonIcon icon={<Star size={20} />} label="Favorite" />
+      <ButtonIcon icon={<Heart size={20} />} label="Like" />
+      <ButtonIcon icon={<X size={20} />} label="Close" />
+      <ButtonIcon icon={<MoreHorizontal size={20} />} label="More options" />
+      <ButtonIcon icon={<ChevronRight size={20} />} label="Next" />
+    </div>
+  );
+}`}
+                >
+                    <div className="flex flex-wrap gap-4 items-center justify-center">
+                        <ButtonIcon icon={<Plus size={20} />} label="Add item" />
+                        <ButtonIcon icon={<Check size={20} />} label="Confirm" />
+                        <ButtonIcon icon={<Trash2 size={20} />} label="Delete" />
+                        <ButtonIcon icon={<Edit size={20} />} label="Edit" />
+                        <ButtonIcon icon={<Star size={20} />} label="Favorite" />
+                        <ButtonIcon icon={<Heart size={20} />} label="Like" />
+                        <ButtonIcon icon={<X size={20} />} label="Close" />
+                        <ButtonIcon icon={<MoreHorizontal size={20} />} label="More options" />
+                        <ButtonIcon icon={<ChevronRight size={20} />} label="Next" />
+                    </div>
+                </CodeBlock>
             </section>
 
             <section className="space-y-6">
-                <div className="border-b border-neutral-200 pb-2">
-                    <h2 className="text-2xl font-semibold text-neutral-900">States</h2>
-                </div>
-                <p className="text-neutral-600">ButtonIcon can be displayed in loading and disabled states.</p>
+                <CodeBlock
+                    title="States"
+                    description="ButtonIcon can be displayed in loading and disabled states."
+                    code={`import { ButtonIcon } from "@/components/atoms/ButtonIcon";
+import { Star, Heart, Trash2, Settings } from "lucide-react";
 
-                <div className="bg-white dark:bg-neutral-100 p-8 rounded-2xl border border-neutral-200 flex flex-wrap gap-4 items-center">
-                    <ButtonIcon isLoading icon={<Star size={20} />} label="Loading" />
-                    <ButtonIcon variant="secondary" isLoading icon={<Heart size={20} />} label="Loading" />
-                    <ButtonIcon disabled icon={<Trash2 size={20} />} label="Delete" />
-                    <ButtonIcon variant="outline" disabled icon={<Settings size={20} />} label="Settings" />
-                </div>
-            </section>
-
-            <section className="space-y-6">
-                <div className="border-b border-neutral-200 pb-2">
-                    <h2 className="text-2xl font-semibold text-neutral-900">Example Usage</h2>
-                </div>
-                <pre className="bg-neutral-900 dark:bg-black text-neutral-100 dark:text-neutral-400 p-6 rounded-2xl overflow-x-auto text-sm font-mono">
-                    {`import { ButtonIcon } from '@/components/atoms/ButtonIcon'
-import { Plus, Trash2 } from 'lucide-react'
-
-export const MyComponent = () => (
-  <div className="flex gap-2">
-    <ButtonIcon 
-      variant="primary" 
-      size="md" 
-      icon={<Plus size={20} />}
-      label="Add new item"
-      onClick={() => console.log('Add clicked')}
-    />
-    <ButtonIcon 
-      variant="outline" 
-      size="sm" 
-      icon={<Trash2 size={16} />}
-      label="Delete item"
-      onClick={() => console.log('Delete clicked')}
-    />
-  </div>
-)`}
-                </pre>
+export default function StatesExample() {
+  return (
+    <div className="flex flex-wrap gap-4 items-center">
+      <ButtonIcon isLoading icon={<Star size={20} />} label="Loading" />
+      <ButtonIcon variant="secondary" isLoading icon={<Heart size={20} />} label="Loading" />
+      <ButtonIcon disabled icon={<Trash2 size={20} />} label="Delete" />
+      <ButtonIcon variant="outline" disabled icon={<Settings size={20} />} label="Settings" />
+    </div>
+  );
+}`}
+                >
+                    <div className="flex flex-wrap gap-4 items-center justify-center">
+                        <ButtonIcon isLoading icon={<Star size={20} />} label="Loading" />
+                        <ButtonIcon variant="secondary" isLoading icon={<Heart size={20} />} label="Loading" />
+                        <ButtonIcon disabled icon={<Trash2 size={20} />} label="Delete" />
+                        <ButtonIcon variant="outline" disabled icon={<Settings size={20} />} label="Settings" />
+                    </div>
+                </CodeBlock>
             </section>
         </div>
     )

@@ -14,14 +14,15 @@ import {
   Home,
   BookOpen,
   Moon,
-  Sun
+  Sun,
+  TextCursorInput
 } from 'lucide-react'
 import { useDarkMode } from '../../../hooks/useDarkMode'
 
 const navigation = [
   { name: 'Introduction', icon: FileText, path: '/system', end: true },
   { name: 'How to use', icon: BookOpen, path: '/system/usage' },
-  { name: 'Colors', icon: Palette, path: '/system/colors' },
+  { name: 'Colors Palette', icon: Palette, path: '/system/color-palette' },
   { name: 'Typography', icon: Type, path: '/system/typography' },
   {
     name: 'Components',
@@ -29,7 +30,7 @@ const navigation = [
     children: [
       { name: 'Buttons', icon: MousePointer2, path: '/system/buttons' },
       { name: 'ButtonIcon', icon: PlusCircle, path: '/system/button-icon' },
-      // { name: 'Inputs', icon: Type, path: '/system/inputs' },
+      { name: 'Inputs', icon: TextCursorInput, path: '/system/inputs' },
       // { name: 'Cards', icon: Layout, path: '/system/cards' },
       // { name: 'Modals', icon: Layers, path: '/system/modals' },
     ]
