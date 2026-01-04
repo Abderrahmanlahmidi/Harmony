@@ -44,3 +44,12 @@ export const Outline: Story = {
     },
 };
 
+export const Loading: Story = {
+    args: {
+        variant: 'primary',
+        isLoading: true,
+        children: 'Loading',
+    },
+};
+
+

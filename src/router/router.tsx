@@ -10,6 +10,15 @@ import ButtonsPage from "../pages/design/content/components/atoms/buttons.tsx";
 import TypographyPage from "../pages/design/content/docs/typography.tsx";
 import ButtonsIconPage from "../pages/design/content/components/atoms/buttonIcon.tsx";
 import InputsPage from "../pages/design/content/components/atoms/inputs.tsx";
+import BadgesPage from "../pages/design/content/components/atoms/badges.tsx";
+import AlertsPage from "../pages/design/content/components/atoms/alerts.tsx";
+import CardsPage from "../pages/design/content/components/atoms/cards.tsx";
+import SpinnersPage from "../pages/design/content/components/atoms/spinners.tsx";
+import ModalsPage from "../pages/design/content/components/atoms/modals.tsx";
+import RadiosPage from "../pages/design/content/components/atoms/radios.tsx";
+import CheckboxesPage from "../pages/design/content/components/atoms/checkboxes.tsx";
+import TogglesPage from "../pages/design/content/components/atoms/toggles.tsx";
+import ProgressPage from "../pages/design/content/components/atoms/progress.tsx";
 
 
 import ColorPalette from "../pages/design/content/docs/colorPalette.tsx";
@@ -55,8 +64,42 @@ export const router = createBrowserRouter([
                 path: "inputs",
                 element: <InputsPage />
             },
+            {
+                path: "badges",
+                element: <BadgesPage />
+            },
+            {
+                path: "alerts",
+                element: <AlertsPage />
+            },
+            {
+                path: "cards",
+                element: <CardsPage />
+            },
+            {
+                path: "spinners",
+                element: <SpinnersPage />
+            },
+            {
+                path: "modals",
+                element: <ModalsPage />
+            },
+            {
+                path: "radios",
+                element: <RadiosPage />
+            },
+            {
+                path: "checkboxes",
+                element: <CheckboxesPage />
+            },
+            {
+                path: "toggles",
+                element: <TogglesPage />
+            },
+            {
+                path: "progress",
+                element: <ProgressPage />
+            }
         ]
     }
 ])
-
-

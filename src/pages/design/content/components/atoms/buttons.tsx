@@ -1,14 +1,16 @@
 import { Button } from '../../../../../components/atoms/Button.tsx'
+import { Badge } from '../../../../../components/atoms/Badge.tsx'
 import { Plus, Mail, ArrowRight, Github } from 'lucide-react'
 import CodeBlock from '../CodeBlock.tsx';
 
 export default function ButtonsPage() {
   return (
-    <div className="space-y-12 pb-20">
-      <header className="space-y-4">
-        <h1 className="text-4xl font-bold text-neutral-50 dark:text-neutral-900 tracking-tight">Button</h1>
-        <p className="text-xl text-neutral-600 dark:text-neutral-400 max-w-2xl">
-          Buttons are used to trigger actions and events. They come in various sizes, variants, and states to suit different contexts.
+    <div className="space-y-16 max-w-6xl mx-auto p-12 pb-40">
+      <header className="space-y-6 max-w-2xl">
+        <Badge variant="primary" className="px-3 py-1 text-[0.65rem] font-bold tracking-widest uppercase">Components</Badge>
+        <h1 className="text-6xl font-black tracking-tighter text-neutral-900 leading-tight">Button</h1>
+        <p className="text-lg text-neutral-500 font-medium leading-relaxed">
+          Primary interaction component used to trigger actions, submit forms, and navigate through the application.
         </p>
       </header>
 

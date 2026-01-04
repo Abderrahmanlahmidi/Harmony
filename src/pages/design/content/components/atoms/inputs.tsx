@@ -1,4 +1,5 @@
 import { Input } from "../../../../../components/atoms/Input";
+import { Badge } from "../../../../../components/atoms/Badge";
 import {
   Mail,
   Search,
@@ -12,16 +13,16 @@ import CodeBlock from "../CodeBlock";
 
 export default function InputPage() {
   return (
-    <div className="space-y-12 max-w-4xl mx-auto p-8 pb-32">
-      <div className="space-y-4">
-        <h1 className="text-4xl font-bold tracking-tight dark:text-neutral-900 text-neutral-50">
+    <div className="space-y-16 max-w-6xl mx-auto p-12 pb-40">
+      <header className="space-y-6 max-w-2xl">
+        <Badge variant="primary" className="px-3 py-1 text-[0.65rem] font-bold tracking-widest uppercase">Forms</Badge>
+        <h1 className="text-6xl font-black tracking-tighter text-neutral-900 leading-tight">
           Input
         </h1>
-        <p className="text-xl text-neutral-500 dark:text-neutral-400">
-          A fundamental component for collecting user data with support for
-          various sizes, states, and icons.
+        <p className="text-lg text-neutral-500 font-medium leading-relaxed">
+          Standardized form controls for text collection, featuring validation states, icon support, and varied size variants.
         </p>
-      </div>
+      </header>
 
       <section className="space-y-6">
         <CodeBlock
