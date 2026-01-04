@@ -7,7 +7,7 @@ import Usage from "../pages/design/content/docs/usage.tsx";
 import Introduction from "../pages/design/content/docs/introduction.tsx";
 
 import ButtonsPage from "../pages/design/content/components/atoms/buttons.tsx";
-import TypographyPage from "../pages/design/content/docs/typography.tsx";
+import TypographyPage from "../pages/design/content/components/atoms/typography.tsx";
 import ButtonsIconPage from "../pages/design/content/components/atoms/buttonIcon.tsx";
 import InputsPage from "../pages/design/content/components/atoms/inputs.tsx";
 import BadgesPage from "../pages/design/content/components/atoms/badges.tsx";
@@ -104,7 +104,7 @@ export const router = createBrowserRouter([
                 path: "navbar",
                 element: <NavbarPage />
             },
-          
+
         ]
     }
 ])

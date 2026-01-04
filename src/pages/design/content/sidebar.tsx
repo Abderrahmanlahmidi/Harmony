@@ -34,11 +34,11 @@ const navigation = [
   { name: 'Introduction', icon: FileText, path: '/system', end: true },
   { name: 'How to use', icon: BookOpen, path: '/system/usage' },
   { name: 'Colors', icon: Palette, path: '/system/colors' },
-  { name: 'Typography', icon: Type, path: '/system/typography' },
   {
     name: 'Components',
     icon: Box,
     children: [
+      { name: 'Typography', icon: Type, path: '/system/typography' },
       { name: 'Buttons', icon: MousePointer2, path: '/system/buttons' },
       { name: 'ButtonIcon', icon: PlusCircle, path: '/system/button-icon' },
       { name: 'Inputs', icon: TextCursorInput, path: '/system/inputs' },
