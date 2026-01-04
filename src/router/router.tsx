@@ -20,9 +20,7 @@ import CheckboxesPage from "../pages/design/content/components/atoms/checkboxes.
 import TogglesPage from "../pages/design/content/components/atoms/toggles.tsx";
 import ProgressPage from "../pages/design/content/components/atoms/progress.tsx";
 import SearchPage from "../pages/design/content/components/atoms/search.tsx";
-
-
-
+import NavbarPage from "../pages/design/content/components/layouts/navbar.tsx";
 
 export const router = createBrowserRouter([
     {
@@ -101,7 +99,12 @@ export const router = createBrowserRouter([
             {
                 path: "search",
                 element: <SearchPage />
-            }
+            },
+            {
+                path: "navbar",
+                element: <NavbarPage />
+            },
+          
         ]
     }
 ])

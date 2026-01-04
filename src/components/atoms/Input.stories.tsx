@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Input } from './Input';
-import { Mail, Lock, User, Search, AlertCircle, CheckCircle2 } from 'lucide-react';
+import { Mail, Lock, Search, AlertCircle, CheckCircle2 } from 'lucide-react';
 
 const meta = {
     title: 'Atoms/Input',

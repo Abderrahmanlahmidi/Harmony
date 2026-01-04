@@ -1,95 +1,79 @@
-import React from "react";
-import { Navbar } from "../../../../../components/layouts/Navbar";
-import { Badge } from "../../../../../components/atoms/Badge";
+
 import CodeBlock from "../CodeBlock";
-import { Layout, Menu, Smartphone, MousePointer2, SmartphoneIcon } from "lucide-react";
+import { Badge } from "../../../../../components/atoms/Badge";
+import { Navigation, MousePointer, Smartphone, Monitor } from "lucide-react";
 
 export default function NavbarPage() {
     return (
-        <div className="space-y-16 max-w-6xl mx-auto p-12 pb-40">
-            {/* HERO SECTION */}
-            <header className="space-y-6 max-w-2xl">
-                <div className="flex items-center gap-4">
-                    <Badge variant="primary" className="px-3 py-1 text-[0.65rem] font-bold tracking-widest uppercase">Structure</Badge>
-                    <Badge variant="neutral" className="px-3 py-1 text-[0.65rem] font-bold tracking-widest uppercase italic border-neutral-300">Responsive</Badge>
+        <div className="space-y-12 pb-20">
+            <header className="space-y-4">
+                <div className="flex items-center gap-3">
+                    <Badge variant="primary" className="rounded-lg">Layout</Badge>
+                    <span className="text-neutral-400 font-mono text-sm">v1.0.0</span>
                 </div>
-                <h1 className="text-6xl font-black tracking-tighter text-neutral-900 leading-tight">
-                    Navbar.
+                <h1 className="text-5xl font-black text-neutral-900 tracking-tighter flex items-center gap-4">
+                    <Navigation className="w-10 h-10 text-primary" />
+                    Navbar
                 </h1>
-                <p className="text-lg text-neutral-500 font-medium leading-relaxed">
-                    A highly polished, responsive navigation header with Glassmorphism effects, scroll detection, and mobile menu support.
+                <p className="text-xl text-neutral-500 max-w-2xl font-medium leading-relaxed">
+                    A responsive, multi-functional navigation bar with theme switching, glassmorphism support, and animated mobile states.
                 </p>
             </header>
 
-            {/* LIVE PREVIEW SECTION */}
-            <section className="space-y-8">
-                <div className="space-y-2">
-                    <h2 className="text-3xl font-black tracking-tighter text-neutral-900">Live Preview</h2>
-                    <p className="text-neutral-500 font-medium">Interact with the navbar below. Try scrolling to see the glass effect.</p>
+            {/* PREVIEW */}
+            <section className="space-y-6">
+                <div className="flex items-center justify-between border-b border-neutral-200 pb-2">
+                    <h2 className="text-2xl font-black text-neutral-900 italic uppercase">Interactive Preview</h2>
+                    <div className="flex gap-2">
+                        <div className="p-2 bg-neutral-100 rounded-lg text-neutral-400"><Monitor size={18} /></div>
+                        <div className="p-2 hover:bg-neutral-100 rounded-lg text-neutral-400 transition-colors"><Smartphone size={18} /></div>
+                    </div>
                 </div>
 
-                <div className="relative h-96 w-full rounded-[3rem] border border-neutral-200 bg-neutral-100 overflow-hidden">
-                    <div className="absolute inset-0 overflow-y-auto p-0 pt-0">
-                        {/* Mock Scrollable Content */}
-                        <div className="h-[1000px] w-full pt-32 px-12 space-y-8">
-                            <Navbar />
-                            <div className="max-w-3xl space-y-6">
-                                <h1 className="text-5xl font-black text-neutral-900">Scroll down to see the magic.</h1>
-                                <p className="text-xl text-neutral-500 leading-relaxed font-medium">
-                                    The Navbar uses hardware-accelerated Glassmorphism that activates as soon as you start scrolling, creating a premium depth effect.
-                                </p>
-                                <div className="grid grid-cols-2 gap-4">
-                                    {[1, 2, 3, 4].map(i => (
-                                        <div key={i} className="h-40 bg-white rounded-[2rem] border border-neutral-200 shadow-sm" />
-                                    ))}
-                                </div>
-                            </div>
+                <div className="relative h-[200px] bg-neutral-100/50 rounded-3xl border-2 border-dashed border-neutral-300 flex items-center justify-center overflow-hidden">
+                    <p className="text-neutral-400 font-bold italic">Navbar is fixed to viewport. Scroll documentation to see behavior.</p>
+                </div>
+            </section>
+
+            {/* USAGE */}
+            <section className="space-y-8">
+                <CodeBlock
+                    title="Implementation"
+                    description="The Navbar uses Framer Motion for backdrop transitions and Lucide icons for actions."
+                    code={`import { Navbar } from "@/components/layouts/Navbar";\n\n<Navbar />`}
+                >
+                    <div className="p-8 bg-neutral-900 rounded-3xl">
+                        <div className="flex items-center gap-4 text-white">
+                            <MousePointer className="text-primary animate-bounce" />
+                            <span className="font-bold">Check the top of this page to see the Navbar in action.</span>
                         </div>
                     </div>
-                    {/* Perspective Label */}
-                    <div className="absolute bottom-8 right-8 px-4 py-2 bg-neutral-900 text-neutral-50 rounded-full text-xs font-bold uppercase tracking-widest shadow-xl">
-                        Isolated Preview
-                    </div>
-                </div>
+                </CodeBlock>
             </section>
 
             {/* TECHNICAL SPECS */}
-            <section className="space-y-8">
-                <div className="space-y-2 border-b border-neutral-100 dark:border-neutral-700 pb-8 uppercase">
-                    <h2 className="text-3xl font-black tracking-tighter text-neutral-900 leading-none italic">Technical Specs</h2>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div className="p-8 bg-neutral-50 dark:bg-neutral-50 border border-neutral-200 dark:border-neutral-200 rounded-3xl space-y-4 shadow-sm transition-all duration-300 group hover:border-neutral-300">
-                        <Smartphone size={24} className="text-neutral-900" />
-                        <h4 className="font-black text-neutral-900 uppercase leading-none text-sm">Responsive Menu</h4>
-                        <p className="text-sm text-neutral-500 font-medium leading-relaxed">Touch-optimized mobile menu with smooth Framer Motion entrance/exit.</p>
+            <section className="grid md:grid-cols-3 gap-6">
+                <div className="p-6 bg-white border border-neutral-200 rounded-3xl space-y-3">
+                    <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
+                        <Navigation size={20} />
                     </div>
-                    <div className="p-8 bg-neutral-50 dark:bg-neutral-50 border border-neutral-200 dark:border-neutral-200 rounded-3xl space-y-4 shadow-sm transition-all duration-300 group hover:border-neutral-300">
-                        <MousePointer2 size={24} className="text-neutral-900" />
-                        <h4 className="font-black text-neutral-900 uppercase leading-none text-sm">Scroll Reactive</h4>
-                        <p className="text-sm text-neutral-500 font-medium leading-relaxed">Automatic background transition from transparent to glass on scroll.</p>
-                    </div>
-                    <div className="p-8 bg-neutral-50 dark:bg-neutral-50 border border-neutral-200 dark:border-neutral-200 rounded-3xl space-y-4 shadow-sm transition-all duration-300 group hover:border-neutral-300">
-                        <Layout size={24} className="text-neutral-900" />
-                        <h4 className="font-black text-neutral-900 uppercase leading-none text-sm">Theme Aware</h4>
-                        <p className="text-sm text-neutral-500 font-medium leading-relaxed">Built-in theme toggle support that syncs with the application state.</p>
-                    </div>
+                    <h3 className="font-black text-neutral-900">Sticky & Blured</h3>
+                    <p className="text-sm text-neutral-500 font-medium">Automatically applies backdrop-blur and shadow when the user scrolls past 20px.</p>
                 </div>
-            </section>
-
-            {/* IMPLEMENTATION */}
-            <section className="space-y-8 pb-40">
-                <div className="space-y-2">
-                    <h2 className="text-3xl font-black tracking-tighter text-neutral-900">Implementation</h2>
-                    <p className="text-neutral-500 font-medium">Quick copy-paste example for your layout component.</p>
+                <div className="p-6 bg-white border border-neutral-200 rounded-3xl space-y-3">
+                    <div className="w-10 h-10 bg-secondary/10 rounded-xl flex items-center justify-center text-secondary">
+                        <Smartphone size={20} />
+                    </div>
+                    <h3 className="font-black text-neutral-900">Mobile Optimized</h3>
+                    <p className="text-sm text-neutral-500 font-medium">Features a full-screen animated menu for smaller viewports with smooth transitions.</p>
                 </div>
-
-                <CodeBlock
-                    title="Navbar Usage"
-                    description="The navbar is designed to be placed at the root of your layout."
-                    code={`import { Navbar } from "@/components/layouts/Navbar";\n\nexport default function RootLayout({ children }) {\n  return (\n    <div className="min-h-screen bg-neutral-50">\n      <Navbar />\n      <main>{children}</main>\n    </div>\n  );\n}`}
-                />
+                <div className="p-6 bg-white border border-neutral-200 rounded-3xl space-y-3">
+                    <div className="w-10 h-10 bg-success/10 rounded-xl flex items-center justify-center text-success">
+                        <Badge variant="success" size="sm" className="p-1" />
+                    </div>
+                    <h3 className="font-black text-neutral-900">Theme Aware</h3>
+                    <p className="text-sm text-neutral-500 font-medium">Deeply integrated with the useDarkMode hook for seamless global theme switching.</p>
+                </div>
             </section>
         </div>
     );
