@@ -12,19 +12,18 @@ import {
   Sun,
   Layers,
   Activity,
-  Box,
   Smartphone,
   Globe,
   Menu,
   X,
   FileText,
-  BookOpen
 } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, easeOut } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { useDarkMode } from "../hooks/useDarkMode";
 import { Button } from "../components/atoms/Button.tsx";
 import { cn } from "../utils/cn";
+import { github } from "../constants/socialConstants.ts";
 
 const FEATURE_CARDS = [
   {
@@ -57,6 +56,8 @@ const FEATURE_CARDS = [
   }
 ];
 
+
+
 export default function Home() {
   const navigate = useNavigate();
   const { isDarkMode, toggleTheme } = useDarkMode();
@@ -85,7 +86,7 @@ export default function Home() {
     visible: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.8, ease: "easeOut" }
+      transition: { duration: 0.8, ease: easeOut}
     }
   };
 
@@ -93,9 +94,9 @@ export default function Home() {
     <div className="min-h-screen bg-white dark:bg-neutral-50 selection:bg-primary selection:text-white overflow-x-hidden">
       {/* Global Background Elements */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-primary/5 rounded-full blur-[160px] animate-pulse" />
-        <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-secondary/5 rounded-full blur-[160px] animate-pulse" style={{ animationDelay: '2s' }} />
-        <div className="absolute top-[20%] left-[30%] w-[30%] h-[30%] bg-warning/5 rounded-full blur-[120px]" />
+        {/* <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-primary/5 rounded-full blur-[160px] animate-pulse" /> */}
+        {/* <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-secondary/5 rounded-full blur-[160px] animate-pulse" style={{ animationDelay: '2s' }} /> */}
+        {/* <div className="absolute top-[20%] left-[30%] w-[30%] h-[30%] bg-warning/5 rounded-full blur-[120px]" /> */}
         <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] dark:bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:32px_32px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-20" />
       </div>
 
@@ -114,7 +115,7 @@ export default function Home() {
 
             <div className="hidden md:flex items-center gap-8">
               <button onClick={() => navigate("/system")} className="text-sm font-bold text-neutral-500 hover:text-neutral-900 transition-colors uppercase tracking-widest">Documentation</button>
-              <a href="https://github.com" target="_blank" rel="noopener" className="text-sm font-bold text-neutral-500 hover:text-neutral-900 transition-colors uppercase tracking-widest">Github</a>
+              <a href={github} target="_blank" rel="noopener" className="text-sm font-bold text-neutral-500 hover:text-neutral-900 transition-colors uppercase tracking-widest">Github</a>
               <div className="h-4 w-px bg-neutral-200" />
               <button
                 onClick={toggleTheme}
@@ -122,7 +123,7 @@ export default function Home() {
               >
                 {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
               </button>
-              <Button variant="primary" size="md" onClick={() => navigate("/system")} className="rounded-2xl shadow-xl shadow-primary/20">
+              <Button variant="primary" size="md" onClick={() => navigate("/system")} className="rounded-2xl ">
                 Get Started
               </Button>
             </div>
@@ -153,7 +154,7 @@ export default function Home() {
               <button onClick={() => { setIsMenuOpen(false); }} className="flex items-center gap-4 p-4 rounded-2xl bg-neutral-50 dark:bg-neutral-100/5 text-lg font-bold text-neutral-900">
                 <Layers className="text-secondary" /> Components
               </button>
-              <a href="https://github.com" target="_blank" className="flex items-center gap-4 p-4 rounded-2xl bg-neutral-50 dark:bg-neutral-100/5 text-lg font-bold text-neutral-900">
+              <a href={github} target="_blank" className="flex items-center gap-4 p-4 rounded-2xl bg-neutral-50 dark:bg-neutral-100/5 text-lg font-bold text-neutral-900">
                 <Github className="text-neutral-900" /> GitHub
               </a>
             </div>
@@ -183,10 +184,10 @@ export default function Home() {
             initial="hidden"
             animate="visible"
           >
-            <motion.div variants={itemVariants} className="inline-flex items-center gap-3 px-6 py-2 bg-neutral-100 dark:bg-neutral-100/10 rounded-full border border-neutral-200 dark:border-neutral-200/20 backdrop-blur-md">
-              <Sparkles className="w-4 h-4 text-primary animate-pulse" />
-              <span className="text-xs font-black text-neutral-500 uppercase tracking-[0.2em]">Next-Gen Design System</span>
-            </motion.div>
+            <div className="inline-flex items-center gap-3 px-6 py-2 bg-neutral-100 dark:bg-neutral-100/10 rounded-full border border-neutral-200 dark:border-neutral-200/20 backdrop-blur-md">
+              <Sparkles className="w-4 h-4 text-primary" />
+              <span className="text-xs font-black text-neutral-700 uppercase tracking-[0.2em]">Next-Gen Design System</span>
+            </div>
 
             <motion.h1 variants={itemVariants} className="text-6xl md:text-8xl font-black tracking-tighter text-neutral-900 leading-[0.9] max-w-4xl">
               Architecting the <br />
@@ -201,7 +202,7 @@ export default function Home() {
               <Button
                 variant="primary"
                 size="lg"
-                className="h-16 px-10 rounded-2xl text-xl shadow-2xl shadow-primary/30"
+                className="h-16 px-10 rounded-2xl text-xl"
                 rightIcon={<ArrowRight size={24} />}
                 onClick={() => navigate("/system")}
               >
@@ -209,7 +210,7 @@ export default function Home() {
               </Button>
               <button
                 className="h-16 px-10 rounded-2xl text-xl font-black border-2 border-neutral-100 dark:border-neutral-200/10 hover:bg-neutral-100 transition-all flex items-center gap-3"
-                onClick={() => window.open('https://github.com', '_blank')}
+                onClick={() => window.open(github, '_blank')}
               >
                 <Github size={24} />
                 View Source
@@ -217,7 +218,7 @@ export default function Home() {
             </motion.div>
 
             {/* Tech Stack Chips */}
-            <motion.div variants={itemVariants} className="pt-12 flex flex-wrap justify-center gap-10 opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
+            <motion.div variants={itemVariants} className="pt-12 flex flex-wrap justify-center gap-10 opacity">
               <div className="flex items-center gap-2 font-black text-sm uppercase tracking-widest"><Cpu className="text-primary" /> React v19</div>
               <div className="flex items-center gap-2 font-black text-sm uppercase tracking-widest"><Smartphone className="text-secondary" /> Tailwind v4</div>
               <div className="flex items-center gap-2 font-black text-sm uppercase tracking-widest"><Globe className="text-success" /> Framer Motion</div>
@@ -256,10 +257,9 @@ export default function Home() {
       {/* Showcase Section / Visual Hook */}
       <section className="py-32 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="bg-white dark:bg-neutral-100 border border-neutral-200 rounded-[60px] p-12 md:p-24 text-neutral-900 dark:text-white relative overflow-hidden transition-colors duration-300">
-            {/* Decorative Elements */}
-            <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_100%_0%,rgba(99,102,241,0.05)_0%,transparent_50%)]" />
-            <div className="absolute bottom-0 left-0 w-full h-full bg-[radial-gradient(circle_at_0%_100%,rgba(14,165,233,0.05)_0%,transparent_50%)]" />
+          <div className="bg-netural-100 dark:bg-neutral-50 border border-neutral-200 rounded-[60px] p-12 md:p-24 text-neutral-900 dark:text-white relative overflow-hidden transition-colors duration-300">
+            {/* <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_100%_0%,rgba(99,102,241,0.05)_0%,transparent_50%)]" />
+            <div className="absolute bottom-0 left-0 w-full h-full bg-[radial-gradient(circle_at_0%_100%,rgba(14,165,233,0.05)_0%,transparent_50%)]" /> */}
 
             <div className="grid lg:grid-cols-2 gap-20 items-center relative z-10">
               <div className="space-y-8">
@@ -331,7 +331,7 @@ export default function Home() {
             <Button
               variant="primary"
               size="lg"
-              className="h-20 px-12 rounded-3xl text-2xl shadow-[0_20px_60px_-15px_rgba(99,102,241,0.3)]"
+              className="h-20 px-12 rounded-3xl text-2xl "
               onClick={() => navigate("/system")}
             >
               Get Started Now
@@ -354,7 +354,7 @@ export default function Home() {
             <button onClick={() => navigate("/system")} className="hover:text-primary transition-colors">Documentation</button>
             <button onClick={() => navigate("/system")} className="hover:text-primary transition-colors">Components</button>
             <a href="#" className="hover:text-primary transition-colors">Twitter</a>
-            <a href="https://github.com" target="_blank" className="hover:text-primary transition-colors">Github</a>
+            <a href={github} target="_blank" className="hover:text-primary transition-colors">Github</a>
           </div>
 
           <div className="text-sm font-bold text-neutral-400 uppercase tracking-widest opacity-40">
