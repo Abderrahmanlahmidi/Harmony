@@ -44,7 +44,7 @@ export default function ModalsPage() {
                     description="Example of how to trigger semantic modals using outline buttons."
                     code={`const [isOpen, setIsOpen] = useState(false);\n\n<Button variant="outline" onClick={() => setIsOpen(true)}>Open Modal</Button>\n\n<Modal \n  isOpen={isOpen} \n  variant="success" \n  title="Action Required" \n  onClose={() => setIsOpen(false)}\n/>`}
                 >
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-8 bg-neutral-900 dark:bg-neutral-50 rounded-[2.5rem] border border-neutral-700 dark:border-neutral-200 transition-all duration-300">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-8 bg-neutral-50 dark:bg-neutral-50 rounded-[1.5rem] border border-neutral-200 dark:border-neutral-200 transition-all duration-300">
                         <Button
                             variant="outline"
                             className="border-success/40 text-success hover:bg-success/10 transition-all font-black dark:border-success/30 dark:text-success dark:hover:bg-success/10"
@@ -78,31 +78,6 @@ export default function ModalsPage() {
                         </Button>
                     </div>
                 </CodeBlock>
-            </section>
-
-            {/* Technical Props */}
-            <section className="space-y-8 pb-20">
-                <div className="space-y-2 border-b border-neutral-100 dark:border-neutral-700 pb-8 uppercase">
-                    <h2 className="text-3xl font-black tracking-tighter text-neutral-900 leading-none italic">Technical Specs</h2>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div className="p-8 bg-neutral-50 dark:bg-neutral-50 border border-neutral-200 dark:border-neutral-200 rounded-3xl space-y-4 shadow-sm transition-all duration-300 group hover:border-neutral-300 dark:hover:border-neutral-700">
-                        <Layout size={24} className="text-neutral-900" />
-                        <h4 className="font-black text-neutral-900 uppercase leading-none">Spring Physics</h4>
-                        <p className="text-sm text-neutral-500 font-medium leading-relaxed">Entrance uses calibrated spring motion for a physical feel.</p>
-                    </div>
-                    <div className="p-8 bg-neutral-50 dark:bg-neutral-50 border border-neutral-200 dark:border-neutral-200 rounded-3xl space-y-4 shadow-sm transition-all duration-300 group hover:border-neutral-300 dark:hover:border-neutral-700">
-                        <Layout size={24} className="text-neutral-900" />
-                        <h4 className="font-black text-neutral-900 uppercase leading-none">Focus Lock</h4>
-                        <p className="text-sm text-neutral-500 font-medium leading-relaxed">Background scrolling is automatically disabled when the modal is active.</p>
-                    </div>
-                    <div className="p-8 bg-neutral-50 dark:bg-neutral-50 border border-neutral-200 dark:border-neutral-200 rounded-3xl space-y-4 shadow-sm transition-all duration-300 group hover:border-neutral-300 dark:hover:border-neutral-700">
-                        <Layout size={24} className="text-neutral-900" />
-                        <h4 className="font-black text-neutral-900 uppercase leading-none">Thematic Sync</h4>
-                        <p className="text-sm text-neutral-500 font-medium leading-relaxed">Icons and highlights automatically sync with the chosen semantic variant.</p>
-                    </div>
-                </div>
             </section>
 
             {/* The Modal Renders */}

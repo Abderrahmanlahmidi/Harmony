@@ -79,7 +79,7 @@ export const Navbar: React.FC = () => {
                     >
                         <Github size={20} />
                     </a>
-                    <button className="px-6 py-2.5 bg-neutral-900 text-neutral-50 rounded-xl font-black text-sm hover:scale-105 transition-transform active:scale-95 shadow-lg shadow-neutral-900/10">
+                    <button className="px-6 py-2.5 bg-neutral-900 text-neutral-50 rounded-xl font-black text-sm hover:scale-105 transition-transform active:scale-95">
                         Get Started
                     </button>
                 </div>
@@ -123,7 +123,7 @@ export const Navbar: React.FC = () => {
                                     {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
                                 </button>
                             </div>
-                            <button className="w-full py-4 bg-neutral-900 text-neutral-50 rounded-2xl font-black text-lg mt-4 shadow-xl">
+                            <button className="w-full py-4 bg-neutral-900 text-neutral-50 rounded-2xl font-black text-lg mt-4">
                                 Get Started
                             </button>
                         </div>

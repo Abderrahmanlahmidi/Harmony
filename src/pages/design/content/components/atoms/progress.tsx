@@ -80,30 +80,6 @@ export default function ProgressPage() {
                 </CodeBlock>
             </section>
 
-            {/* TECHNICAL SPECS */}
-            <section className="space-y-8">
-                <div className="space-y-2 border-b border-neutral-100 dark:border-neutral-700 pb-8 uppercase">
-                    <h2 className="text-3xl font-black tracking-tighter text-neutral-900 leading-none italic">Technical Specs</h2>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div className="p-8 bg-neutral-50 border border-neutral-200 rounded-3xl space-y-4 shadow-sm">
-                        <Zap size={24} className="text-neutral-900" />
-                        <h4 className="font-black text-neutral-900 uppercase leading-none text-sm">Motion Blur</h4>
-                        <p className="text-sm text-neutral-500 font-medium leading-relaxed">Hardware accelerated width transitions ensure sub-pixel smoothness during value updates.</p>
-                    </div>
-                    <div className="p-8 bg-neutral-50 border border-neutral-200 rounded-3xl space-y-4 shadow-sm">
-                        <Activity size={24} className="text-neutral-900" />
-                        <h4 className="font-black text-neutral-900 uppercase leading-none text-sm">Indeterminate</h4>
-                        <p className="text-sm text-neutral-500 font-medium leading-relaxed">A custom ease-in-out spring loop provides a continuous physical feel for long operations.</p>
-                    </div>
-                    <div className="p-8 bg-neutral-50 border border-neutral-200 rounded-3xl space-y-4 shadow-sm">
-                        <CheckCircle2 size={24} className="text-neutral-900" />
-                        <h4 className="font-black text-neutral-900 uppercase leading-none text-sm">Aria Values</h4>
-                        <p className="text-sm text-neutral-500 font-medium leading-relaxed">Integrated accessibility attributes ensure screen readers correctly interpret the progress state.</p>
-                    </div>
-                </div>
-            </section>
         </div>
     );
 }

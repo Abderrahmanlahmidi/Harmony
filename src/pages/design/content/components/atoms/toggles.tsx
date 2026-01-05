@@ -86,31 +86,6 @@ export default function TogglesPage() {
                     </div>
                 </CodeBlock>
             </section>
-
-            {/* TECHNICAL SPECS */}
-            <section className="space-y-8">
-                <div className="space-y-2 border-b border-neutral-100 dark:border-neutral-700 pb-8 uppercase">
-                    <h2 className="text-3xl font-black tracking-tighter text-neutral-900 leading-none italic">Technical Specs</h2>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div className="p-8 bg-neutral-50 border border-neutral-200 rounded-3xl space-y-4 shadow-sm">
-                        <Zap size={24} className="text-neutral-900" />
-                        <h4 className="font-black text-neutral-900 uppercase leading-none text-sm">Spring Physics</h4>
-                        <p className="text-sm text-neutral-500 font-medium leading-relaxed">High-frequency spring animations simulate the weight and resistance of a real-world switch.</p>
-                    </div>
-                    <div className="p-8 bg-neutral-50 border border-neutral-200 rounded-3xl space-y-4 shadow-sm">
-                        <CheckCircle2 size={24} className="text-neutral-900" />
-                        <h4 className="font-black text-neutral-900 uppercase leading-none text-sm">Theme Sync</h4>
-                        <p className="text-sm text-neutral-500 font-medium leading-relaxed">Automatic track and thumb color inversion based on system or manual dark mode preferences.</p>
-                    </div>
-                    <div className="p-8 bg-neutral-50 border border-neutral-200 rounded-3xl space-y-4 shadow-sm">
-                        <Settings2 size={24} className="text-neutral-900" />
-                        <h4 className="font-black text-neutral-900 uppercase leading-none text-sm">Binary Logic</h4>
-                        <p className="text-sm text-neutral-500 font-medium leading-relaxed">Optimized for mutually exclusive Boolean states with instant visual confirmation.</p>
-                    </div>
-                </div>
-            </section>
         </div>
     );
 }

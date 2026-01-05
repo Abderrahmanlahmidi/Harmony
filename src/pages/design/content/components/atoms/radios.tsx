@@ -115,30 +115,6 @@ export default function RadiosPage() {
                 </CodeBlock>
             </section>
 
-            {/* TECHNICAL SPECS */}
-            <section className="space-y-8">
-                <div className="space-y-2 border-b border-neutral-100 dark:border-neutral-700 pb-8 uppercase">
-                    <h2 className="text-3xl font-black tracking-tighter text-neutral-900 leading-none italic">Technical Specs</h2>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div className="p-8 bg-neutral-50 border border-neutral-200 rounded-3xl space-y-4 shadow-sm">
-                        <CheckCircle2 size={24} className="text-neutral-900" />
-                        <h4 className="font-black text-neutral-900 uppercase leading-none text-sm">Framer Motion</h4>
-                        <p className="text-sm text-neutral-500 font-medium leading-relaxed">Hardware-accelerated animations for smooth selection transitions.</p>
-                    </div>
-                    <div className="p-8 bg-neutral-50 border border-neutral-200 rounded-3xl space-y-4 shadow-sm">
-                        <List size={24} className="text-neutral-900" />
-                        <h4 className="font-black text-neutral-900 uppercase leading-none text-sm">Rich Labeling</h4>
-                        <p className="text-sm text-neutral-500 font-medium leading-relaxed">Integrated description and error support for contextual clarity.</p>
-                    </div>
-                    <div className="p-8 bg-neutral-50 border border-neutral-200 rounded-3xl space-y-4 shadow-sm">
-                        <Settings2 size={24} className="text-neutral-900" />
-                        <h4 className="font-black text-neutral-900 uppercase leading-none text-sm">Custom Grouping</h4>
-                        <p className="text-sm text-neutral-500 font-medium leading-relaxed">Logical fieldset wrapper for accessibility and layout control.</p>
-                    </div>
-                </div>
-            </section>
         </div>
     );
 }

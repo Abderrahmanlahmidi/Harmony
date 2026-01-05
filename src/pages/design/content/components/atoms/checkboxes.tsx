@@ -117,31 +117,6 @@ export default function CheckboxesPage() {
                     </div>
                 </CodeBlock>
             </section>
-
-            {/* TECHNICAL SPECS */}
-            <section className="space-y-8">
-                <div className="space-y-2 border-b border-neutral-100 dark:border-neutral-700 pb-8 uppercase">
-                    <h2 className="text-3xl font-black tracking-tighter text-neutral-900 leading-none italic">Technical Specs</h2>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div className="p-8 bg-neutral-50 border border-neutral-200 rounded-3xl space-y-4 shadow-sm">
-                        <CheckCircle2 size={24} className="text-neutral-900" />
-                        <h4 className="font-black text-neutral-900 uppercase leading-none text-sm">SVG Animate</h4>
-                        <p className="text-sm text-neutral-500 font-medium leading-relaxed">Path-length animations for a surgical, high-end physical feel during interaction.</p>
-                    </div>
-                    <div className="p-8 bg-neutral-50 border border-neutral-200 rounded-3xl space-y-4 shadow-sm">
-                        <Layout size={24} className="text-neutral-900" />
-                        <h4 className="font-black text-neutral-900 uppercase leading-none text-sm">Indeterminate</h4>
-                        <p className="text-sm text-neutral-500 font-medium leading-relaxed">Built-in support for the indeterminate state, essential for complex tree structures.</p>
-                    </div>
-                    <div className="p-8 bg-neutral-50 border border-neutral-200 rounded-3xl space-y-4 shadow-sm">
-                        <Layers size={24} className="text-neutral-900" />
-                        <h4 className="font-black text-neutral-900 uppercase leading-none text-sm">Aria Compatible</h4>
-                        <p className="text-sm text-neutral-500 font-medium leading-relaxed">Fully accessible patterns that respect standard screen reader expectations.</p>
-                    </div>
-                </div>
-            </section>
         </div>
     );
 }

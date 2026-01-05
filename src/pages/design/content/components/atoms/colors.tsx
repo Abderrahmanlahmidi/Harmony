@@ -48,7 +48,7 @@ const ColorSwatch = ({ shade, hex }: { shade: string; hex: string }) => {
       onClick={handleCopy}
     >
       <div
-        className="aspect-square w-full rounded-lg shadow-sm border border-black/5 dark:border-white/10 group-hover:shadow-md transition-all duration-200"
+        className="aspect-square w-full rounded-lg  border border-black/5 dark:border-white/10  transition-all duration-200"
         style={{ backgroundColor: hex }}
       >
         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
@@ -74,7 +74,7 @@ export default function Colors() {
     <div className="space-y-16 max-w-7xl mx-auto p-12 pb-40">
       <header className="space-y-6 max-w-3xl">
         <div className="flex items-center gap-4">
-          <Palette className="w-10 h-10 text-primary animate-pulse" />
+          <Palette className="w-10 h-10 text-primary" />
           <div className="h-8 w-px bg-neutral-200" />
           <span className="text-sm font-black uppercase tracking-widest text-neutral-400">Design Tokens</span>
         </div>

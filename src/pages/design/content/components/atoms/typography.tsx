@@ -78,8 +78,7 @@ export default function TypographyPage() {
             </section>
 
             {/* Scale Section */}
-            <section className="bg-neutral-100 dark:bg-neutral-100/10 rounded-[40px] p-12 border border-neutral-200 dark:border-neutral-200/50 space-y-8 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/10 rounded-full blur-[100px] -mr-32 -mt-32" />
+            <section className="bg-neutral-50 dark:bg-neutral-50 rounded-[40px] p-12 border border-neutral-200 dark:border-neutral-200/50 space-y-8 relative overflow-hidden">
                 <div className="relative z-10 space-y-4">
                     <h2 className="text-3xl font-black tracking-tighter text-neutral-900 italic uppercase">Type Scale</h2>
                     <p className="text-neutral-500 max-w-xl font-medium">Every variant is calculated to maintain a perfect vertical rhythm and visual balance.</p>

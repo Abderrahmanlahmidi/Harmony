@@ -2,7 +2,6 @@ import { useState } from "react";
 import { SearchBar } from "../../../../../components/atoms/SearchBar";
 import { Badge } from "../../../../../components/atoms/Badge";
 import CodeBlock from "../CodeBlock";
-import { MousePointer2, Keyboard, Zap } from "lucide-react";
 
 export default function SearchPage() {
     const [searchValue, setSearchValue] = useState("");
@@ -69,31 +68,6 @@ export default function SearchPage() {
                         <SearchBar size="lg" placeholder="Large Search" />
                     </div>
                 </CodeBlock>
-            </section>
-
-            {/* TECHNICAL SPECS */}
-            <section className="space-y-8">
-                <div className="space-y-2 border-b border-neutral-100 dark:border-neutral-700 pb-8 uppercase">
-                    <h2 className="text-3xl font-black tracking-tighter text-neutral-900 leading-none italic">Technical Specs</h2>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div className="p-8 bg-neutral-50 border border-neutral-200 rounded-3xl space-y-4 shadow-sm">
-                        <MousePointer2 size={24} className="text-neutral-900" />
-                        <h4 className="font-black text-neutral-900 uppercase leading-none text-sm">Spring Hover</h4>
-                        <p className="text-sm text-neutral-500 font-medium leading-relaxed">Micro-scaling animations on focus provide immediate physical validation of interaction.</p>
-                    </div>
-                    <div className="p-8 bg-neutral-50 border border-neutral-200 rounded-3xl space-y-4 shadow-sm">
-                        <Keyboard size={24} className="text-neutral-900" />
-                        <h4 className="font-black text-neutral-900 uppercase leading-none text-sm">KBD Shortcuts</h4>
-                        <p className="text-sm text-neutral-500 font-medium leading-relaxed">Integrated hint system for command-palette style discovery and efficiency.</p>
-                    </div>
-                    <div className="p-8 bg-neutral-50 border border-neutral-200 rounded-3xl space-y-4 shadow-sm">
-                        <Zap size={24} className="text-neutral-900" />
-                        <h4 className="font-black text-neutral-900 uppercase leading-none text-sm">Async Loading</h4>
-                        <p className="text-sm text-neutral-500 font-medium leading-relaxed">Built-in loading indicators for live-search patterns and API-driven filtering.</p>
-                    </div>
-                </div>
             </section>
         </div>
     );
