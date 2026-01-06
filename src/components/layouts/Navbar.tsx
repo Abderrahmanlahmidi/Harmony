@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Layout, Github, Sun, Moon } from "lucide-react";
+import { Menu, X, Github, Sun, Moon } from "lucide-react";
 import { cn } from "../../utils/cn";
 import { useDarkMode } from "../../hooks/useDarkMode";
+
 
 interface NavItem {
     label: string;
@@ -41,8 +42,13 @@ export const Navbar: React.FC = () => {
             <div className="max-w-7xl mx-auto flex items-center justify-between">
                 {/* Logo */}
                 <div className="flex items-center gap-2 group cursor-pointer">
-                    <div className="w-10 h-10 bg-neutral-900 dark:bg-neutral-900 rounded-xl flex items-center justify-center transition-transform group-hover:scale-110 duration-300">
-                        <Layout className="w-6 h-6 text-neutral-50" />
+                    <div className="w-10 h-10 flex items-center justify-center transition-transform group-hover:scale-110 duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-10 h-10">
+                            <rect x="0" y="0" width="24" height="24" rx="6" className="fill-neutral-900 dark:fill-neutral-50" />
+                            <rect x="3" y="3" width="18" height="18" rx="2" className="stroke-neutral-50 dark:stroke-neutral-900" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M3 9h18" className="stroke-neutral-50 dark:stroke-neutral-900" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M9 21V9" className="stroke-neutral-50 dark:stroke-neutral-900" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
                     </div>
                     <span className="text-xl font-black tracking-tighter text-neutral-900 dark:text-neutral-900">
                         HARMONY

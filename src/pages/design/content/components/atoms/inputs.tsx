@@ -1,210 +1,70 @@
-import { Input } from "../../../../../components/atoms/Input";
-import { Badge } from "../../../../../components/atoms/Badge";
-import {
-  Mail,
-  Search,
-  Lock,
-  User,
-  CheckCircle2,
-  AlertCircle,
-  HelpCircle,
-} from "lucide-react";
 import CodeBlock from "../CodeBlock";
+import { 
+  inputExamples, 
+  inputProps, 
+} from "../../../../../constants/input.data";
+
+import { PageHeader } from "../PageHeader";
+import { TextCursorInput } from "lucide-react";
 
 export default function InputPage() {
   return (
     <div className="space-y-16 max-w-6xl mx-auto p-12 pb-40">
-      <header className="space-y-6 max-w-2xl">
-        <Badge variant="primary" className="px-3 py-1 text-[0.65rem] font-bold tracking-widest uppercase">Forms</Badge>
-        <h1 className="text-6xl font-black tracking-tighter text-neutral-900 leading-tight">
-          Input
-        </h1>
-        <p className="text-lg text-neutral-500 font-medium leading-relaxed">
-          Standardized form controls for text collection, featuring validation states, icon support, and varied size variants.
-        </p>
-      </header>
+      {/* Using PageHeader component */}
+      <PageHeader
+        category="Forms"
+        title="Input"
+        description="Standardized form controls for text collection, featuring validation states, icon support, and varied size variants."
+        icon={
+          <TextCursorInput className="w-10 h-10 text-primary" />
+        }
+        version="v1.0.0"
+        badgeVariant="primary"
+      />
 
-      <section className="space-y-6">
-        <CodeBlock
-          title="Sizes"
-          description="Available in three standard sizes: small, medium, and large."
-          code={`import { Input } from "@/components/atoms/Input";
-
-export default function SizesExample() {
-  return (
-    <div className="flex flex-col gap-6 max-w-sm">
-      <Input size="sm" placeholder="Small Input" label="Small" />
-      <Input size="md" placeholder="Medium Input" label="Medium" />
-      <Input size="lg" placeholder="Large Input" label="Large" />
-    </div>
-  );
-}`}
-        >
-          <div className="flex flex-col gap-6 max-w-sm w-full">
-            <Input size="sm" placeholder="Small Input" label="Small" />
-            <Input size="md" placeholder="Medium Input" label="Medium" />
-            <Input size="lg" placeholder="Large Input" label="Large" />
+      {/* PREVIEW SECTION */}
+      <section className="space-y-8">
+        <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Interactive Preview</h2>
+        
+        {inputExamples.map((example, index) => (
+          <div key={index} className="space-y-6">
+            <CodeBlock
+              title={example.title}
+              description={example.description}
+              code={example.code}
+            >
+              {example.children}
+            </CodeBlock>
           </div>
-        </CodeBlock>
+        ))}
       </section>
 
-      {/* Variants Section */}
+      {/* PROPS DOCUMENTATION */}
       <section className="space-y-6">
-        <CodeBlock
-          title="Variants"
-          description="Background styles for different contexts."
-          code={`import { Input } from "@/components/atoms/Input";
-
-export default function VariantsExample() {
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <Input variant="default" label="Default" placeholder="Default variant" />
-      <Input variant="filled" label="Filled" placeholder="Filled variant" />
-    </div>
-  );
-}`}
-        >
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
-            <Input
-              variant="default"
-              label="Default"
-              placeholder="Default variant"
-            />
-            <Input
-              variant="filled"
-              label="Filled"
-              placeholder="Filled variant"
-            />
-          </div>
-        </CodeBlock>
-      </section>
-
-      {/* States Section */}
-      <section className="space-y-6">
-        <CodeBlock
-          title="States & Validation"
-          description="Visual feedback for interactions and validation."
-          code={`import { Input } from "@/components/atoms/Input";
-import { CheckCircle2, AlertCircle, Lock } from "lucide-react";
-
-export default function StatesExample() {
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <Input 
-            label="Success State" 
-            defaultValue="john.doe@example.com"
-            success="Email is available!"
-            endIcon={<CheckCircle2 className="text-success" size={18} />}
-        />
-        <Input 
-            label="Error State" 
-            defaultValue="not-an-email"
-            error="Please enter a valid email address"
-            endIcon={<AlertCircle className="text-danger" size={18} />}
-        />
-        <Input 
-            label="Disabled" 
-            placeholder="Cannot type here"
-            disabled
-            startIcon={<Lock size={18} />}
-        />
-        <Input 
-            label="With Helper Text" 
-            placeholder="Create a password"
-            helperText="Must be at least 8 characters long."
-            type="password"
-        />
-    </div>
-  );
-}`}
-        >
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
-            <Input
-              label="Success State"
-              defaultValue="john.doe@example.com"
-              success="Email is available!"
-              endIcon={<CheckCircle2 className="text-success" size={18} />}
-            />
-            <Input
-              label="Error State"
-              defaultValue="not-an-email"
-              error="Please enter a valid email address"
-              endIcon={<AlertCircle className="text-danger" size={18} />}
-            />
-            <Input
-              label="Disabled"
-              placeholder="Cannot type here"
-              disabled
-              startIcon={<Lock size={18} />}
-            />
-            <Input
-              label="With Helper Text"
-              placeholder="Create a password"
-              helperText="Must be at least 8 characters long."
-              type="password"
-            />
-          </div>
-        </CodeBlock>
-      </section>
-
-      {/* Icons Section */}
-      <section className="space-y-6">
-        <CodeBlock
-          title="Icons"
-          description="Start and end icons for better context."
-          code={`import { Input } from "@/components/atoms/Input";
-import { Search, User, HelpCircle, Mail } from "lucide-react";
-
-export default function IconsExample() {
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <Input 
-            label="Search" 
-            placeholder="Search documentation..." 
-            startIcon={<Search size={18} />}
-        />
-        <Input 
-            label="Account" 
-            placeholder="Username" 
-            startIcon={<User size={18} />}
-        />
-        <Input 
-            label="With Tooltip Icon" 
-            placeholder="Enter value" 
-            endIcon={<HelpCircle size={18} />}
-        />
-        <Input 
-            label="Email" 
-            placeholder="your@email.com" 
-            startIcon={<Mail size={18} />}
-        />
-    </div>
-  );
-}`}
-        >
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
-            <Input
-              label="Search"
-              placeholder="Search documentation..."
-              startIcon={<Search size={18} />}
-            />
-            <Input
-              label="Account"
-              placeholder="Username"
-              startIcon={<User size={18} />}
-            />
-            <Input
-              label="With Tooltip Icon"
-              placeholder="Enter value"
-              endIcon={<HelpCircle size={18} />}
-            />
-            <Input
-              label="Email"
-              placeholder="your@email.com"
-              startIcon={<Mail size={18} />}
-            />
-          </div>
-        </CodeBlock>
+        <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Props Reference</h2>
+        
+        <div className="overflow-x-auto rounded-xl border border-neutral-200">
+          <table className="w-full">
+            <thead>
+              <tr className="bg-neutral-50 border-b border-neutral-200">
+                <th className="text-left p-4 font-semibold text-neutral-900">Prop</th>
+                <th className="text-left p-4 font-semibold text-neutral-900">Type</th>
+                <th className="text-left p-4 font-semibold text-neutral-900">Default</th>
+                <th className="text-left p-4 font-semibold text-neutral-900">Description</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-neutral-200">
+              {inputProps.map((row, index) => (
+                <tr key={index} className="hover:bg-neutral-50/50 transition-colors">
+                  <td className="p-4 font-mono text-sm text-primary font-medium">{row.prop}</td>
+                  <td className="p-4 font-mono text-sm text-neutral-600">{row.type}</td>
+                  <td className="p-4 font-mono text-sm text-neutral-600">{row.default}</td>
+                  <td className="p-4 text-neutral-600">{row.description}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </section>
     </div>
   );

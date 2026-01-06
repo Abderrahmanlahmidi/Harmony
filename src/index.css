@@ -41,6 +41,9 @@
     --color-neutral-900: #0f172a;
 
     --scrollbar-thumb: #cbd5e1;
+
+    --icon-bg: #f8fafc; 
+    --icon-color: #0f172a;
   }
 
   .dark {
@@ -57,6 +60,9 @@
     --color-neutral-900: #f8fafc;
 
     --scrollbar-thumb: #334155;
+
+--icon-bg: #0f172a;
+  --icon-color: #f8fafc;
   }
 }
 

@@ -35,24 +35,25 @@ const IconMap = {
 
 export interface AlertProps
     extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof alertVariants> {
+    Omit<VariantProps<typeof alertVariants>, "variant"> {
     onClose?: () => void;
     icon?: React.ReactNode;
     hideIcon?: boolean;
+    variant?: any;
 }
 
 const Alert = forwardRef<HTMLDivElement, AlertProps>(
     ({ className, variant = "info", layout = "default", children, onClose, icon, hideIcon = false, ...props }, ref) => {
 
         // Determine which icon to show
-        const IconComponent = IconMap[variant || "info"];
+        const IconComponent = IconMap[(variant as keyof typeof IconMap) || "info"] || Info;
         const renderedIcon = icon === undefined ? <IconComponent className="w-5 h-5" /> : icon;
 
         return (
             <div
                 ref={ref}
                 role="alert"
-                className={cn(alertVariants({ variant, layout }), className)}
+                className={cn(alertVariants({ variant: variant as any, layout }), className)}
                 {...props}
             >
                 {!hideIcon && renderedIcon && (

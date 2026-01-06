@@ -1,121 +1,105 @@
-import { Button } from '../../../../../components/atoms/Button.tsx'
-import { Badge } from '../../../../../components/atoms/Badge.tsx'
-import { Plus, Mail, ArrowRight, Github } from 'lucide-react'
+import { MousePointer } from 'lucide-react';
+
 import CodeBlock from '../CodeBlock.tsx';
+import { 
+  buttonExamples, 
+  buttonProps, 
+  variantDetails, 
+  sizeDetails 
+} from '../../../../../constants/buttons.data.tsx';
+import { Badge } from '../../../../../components/atoms/Badge.tsx';
+
+// Import your Button component
+import { Button as ButtonComponent } from '../../../../../components/atoms/Button.tsx';
+import { PageHeader } from '../PageHeader.tsx';
 
 export default function ButtonsPage() {
   return (
     <div className="space-y-16 max-w-6xl mx-auto p-12 pb-40">
-      <header className="space-y-6 max-w-2xl">
-        <Badge variant="primary" className="px-3 py-1 text-[0.65rem] font-bold tracking-widest uppercase">Components</Badge>
-        <h1 className="text-6xl font-black tracking-tighter text-neutral-900 leading-tight">Button</h1>
-        <p className="text-lg text-neutral-500 font-medium leading-relaxed">
-          Primary interaction component used to trigger actions, submit forms, and navigate through the application.
-        </p>
-      </header>
+      {/* Using PageHeader component */}
+      <PageHeader
+        category="Components"
+        title="Button"
+        description="Primary interaction component used to trigger actions, submit forms, and navigate through the application."
+        icon={<MousePointer className="w-10 h-10 text-primary" />}
+        version="v1.0.0"
+        badgeVariant="primary"
+      />
 
-      <section className="space-y-6">
-        <CodeBlock
-          title="Variants"
-          description="Explore the different visual styles of the Button component."
-          code={`import { Button } from "@/components/atoms/Button";
-
-export default function VariantsExample() {
-  return (
-    <div className="flex flex-wrap gap-4">
-      <Button variant="primary">Primary</Button>
-      <Button variant="secondary">Secondary</Button>
-      <Button variant="outline">Outline</Button>
-    </div>
-  );
-}`}
-        >
-          <div className="flex flex-wrap gap-4 items-center justify-center">
-            <Button variant="primary">Primary</Button>
-            <Button variant="secondary">Secondary</Button>
-            <Button variant="outline">Outline</Button>
+      {/* PREVIEW SECTION */}
+      <section className="space-y-8">
+        <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Interactive Preview</h2>
+        
+        {buttonExamples.map((example, index) => (
+          <div key={index} className="space-y-6">
+            <CodeBlock
+              title={example.title}
+              description={example.description}
+              code={example.code}
+            >
+              {example.children}
+            </CodeBlock>
           </div>
-        </CodeBlock>
+        ))}
       </section>
 
+      {/* SIZES DETAILS */}
       <section className="space-y-6">
-        <CodeBlock
-          title="Sizes"
-          description="Buttons come in three distinct sizes: Small, Medium (default), and Large."
-          code={`import { Button } from "@/components/atoms/Button";
-
-export default function SizesExample() {
-  return (
-    <div className="flex flex-wrap gap-4 items-end">
-      <Button size="sm">Small</Button>
-      <Button size="md">Medium</Button>
-      <Button size="lg">Large</Button>
-    </div>
-  );
-}`}
-        >
-          <div className="flex flex-wrap gap-4 items-end justify-center">
-            <Button size="sm">Small</Button>
-            <Button size="md">Medium</Button>
-            <Button size="lg">Large</Button>
-          </div>
-        </CodeBlock>
+        <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Size Specifications</h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {sizeDetails.map((size, index) => (
+            <div key={index} className="p-6 border border-neutral-200 rounded-2xl">
+              <div className="flex items-center justify-between mb-4">
+                <ButtonComponent size={size.size as any}>
+                  {size.size.toUpperCase()}
+                </ButtonComponent>
+                <div className="text-sm font-mono text-neutral-500">{size.padding}</div>
+              </div>
+              <div className="space-y-3">
+                <div>
+                  <div className="text-sm font-semibold text-neutral-900 mb-1">CSS Classes:</div>
+                  <code className="text-xs font-mono bg-neutral-100 p-2 rounded-lg block">
+                    {size.classes}
+                  </code>
+                </div>
+                <div>
+                  <div className="text-sm font-semibold text-neutral-900 mb-1">Usage:</div>
+                  <p className="text-sm text-neutral-600">{size.usage}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
 
-
+      {/* PROPS DOCUMENTATION */}
       <section className="space-y-6">
-        <CodeBlock
-          title="With Icons"
-          description="Icons can be added to both the left and right sides of the button text."
-          code={`import { Button } from "@/components/atoms/Button";
-import { Plus, ArrowRight, Mail, Github } from "lucide-react";
-
-export default function IconsExample() {
-  return (
-    <div className="flex flex-wrap gap-4">
-      <Button leftIcon={<Plus size={18} />}>Add Item</Button>
-      <Button variant="secondary" rightIcon={<ArrowRight size={18} />}>Continue</Button>
-      <Button variant="outline" leftIcon={<Mail size={18} />}>Send Email</Button>
-      <Button variant="primary" leftIcon={<Github size={18} />}>GitHub</Button>
-    </div>
-  );
-}`}
-        >
-          <div className="flex flex-wrap gap-4 items-center justify-center">
-            <Button leftIcon={<Plus size={18} />}>Add Item</Button>
-            <Button variant="secondary" rightIcon={<ArrowRight size={18} />}>Continue</Button>
-            <Button variant="outline" leftIcon={<Mail size={18} />}>Send Email</Button>
-            <Button variant="primary" leftIcon={<Github size={18} />}>GitHub</Button>
-          </div>
-        </CodeBlock>
-      </section>
-
-
-      <section className="space-y-6">
-        <CodeBlock
-          title="States"
-          description="Buttons can be displayed in loading and disabled states."
-          code={`import { Button } from "@/components/atoms/Button";
-
-export default function StatesExample() {
-  return (
-    <div className="flex flex-wrap gap-4">
-      <Button isLoading>Loading...</Button>
-      <Button variant="secondary" isLoading>Loading...</Button>
-      <Button disabled>Disabled</Button>
-      <Button variant="outline" disabled>Disabled</Button>
-    </div>
-  );
-}`}
-        >
-          <div className="flex flex-wrap gap-4 items-center justify-center">
-            <Button isLoading>Loading...</Button>
-            <Button variant="secondary" isLoading>Loading...</Button>
-            <Button disabled>Disabled</Button>
-            <Button variant="outline" disabled>Disabled</Button>
-          </div>
-        </CodeBlock>
+        <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Props Reference</h2>
+        
+        <div className="overflow-x-auto rounded-xl border border-neutral-200">
+          <table className="w-full">
+            <thead>
+              <tr className="bg-neutral-50 border-b border-neutral-200">
+                <th className="text-left p-4 font-semibold text-neutral-900">Prop</th>
+                <th className="text-left p-4 font-semibold text-neutral-900">Type</th>
+                <th className="text-left p-4 font-semibold text-neutral-900">Default</th>
+                <th className="text-left p-4 font-semibold text-neutral-900">Description</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-neutral-200">
+              {buttonProps.map((row, index) => (
+                <tr key={index} className="hover:bg-neutral-50/50 transition-colors">
+                  <td className="p-4 font-mono text-sm text-primary font-medium">{row.prop}</td>
+                  <td className="p-4 font-mono text-sm text-neutral-600">{row.type}</td>
+                  <td className="p-4 font-mono text-sm text-neutral-600">{row.default}</td>
+                  <td className="p-4 text-neutral-600">{row.description}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </section>
     </div>
-  )
+  );
 }

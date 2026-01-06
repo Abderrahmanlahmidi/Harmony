@@ -1,0 +1,42 @@
+# Source files
+src/
+!src/components/
+
+# Development files
+.storybook/
+.vscode/
+.git/
+.github/
+
+# Build files
+node_modules/
+build_errors.txt
+build_output.txt
+
+# Config files
+*.config.js
+*.config.ts
+tsconfig*.json
+vite.config.ts
+vitest.shims.d.ts
+eslint.config.js
+
+# Documentation (keep only necessary)
+README.md
+!LIBRARY_README.md
+
+# Test files
+**/*.test.ts
+**/*.test.tsx
+**/*.spec.ts
+**/*.spec.tsx
+**/*.stories.tsx
+
+# Misc
+*.log
+.DS_Store
+.env
+.env.local
+coverage/
+public/
+index.html

@@ -1,71 +1,37 @@
-import { Type } from 'lucide-react'
+import { Type } from 'lucide-react';
 import { Typography } from "../../../../../components/atoms/Typography.tsx";
 import CodeBlock from "../CodeBlock";
+import { 
+  typographyExamples, 
+  variantsTableData, 
+  codeExamples, 
+  typographyScale,
+  typographyProps 
+} from "../../../../../constants/typography.data.ts";
+import { PageHeader } from '../PageHeader.tsx';
 
-const TYPOGRAPHY_EXAMPLES = [
-    {
-        variant: "display" as const,
-        title: "Display",
-        description: "Reserved for large, impactful headlines and hero sections.",
-        code: `<Typography variant="display">\n  Exceptional products start here.\n</Typography>`,
-        content: "Exceptional products start here."
-    },
-    {
-        variant: "heading" as const,
-        title: "Heading",
-        description: "Primary headers for sections and page content.",
-        code: `<Typography variant="heading">\n  Section Headline\n</Typography>`,
-        content: "Section Headline"
-    },
-    {
-        variant: "bodyLarge" as const,
-        title: "Body Large",
-        description: "Introductory paragraphs or large lead text.",
-        code: `<Typography variant="bodyLarge">\n  Harmony is a system built for speed and clarity.\n</Typography>`,
-        content: "Harmony is a system built for speed and clarity."
-    },
-    {
-        variant: "bodyMedium" as const,
-        title: "Body Medium",
-        description: "Standard body text for descriptions and content.",
-        code: `<Typography variant="bodyMedium">\n  This is the foundation for all descriptive elements.\n</Typography>`,
-        content: "This is the foundation for all descriptive elements."
-    },
-    {
-        variant: "caption" as const,
-        title: "Caption",
-        description: "Meta info, labels, and technical data.",
-        code: `<Typography variant="caption">\n  Version 1.0.0 • Released 2024\n</Typography>`,
-        content: "Version 1.0.0 • Released 2024"
-    }
-] as const;
 
 export default function TypographyPage() {
     return (
-        <div className="space-y-16 max-w-7xl mx-auto p-12 pb-40">
-            <header className="space-y-6 max-w-3xl">
-                <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center text-secondary">
-                        <Type size={24} />
-                    </div>
-                    <div className="h-8 w-px bg-neutral-200" />
-                    <span className="text-sm font-black uppercase tracking-widest text-neutral-400">Foundation</span>
-                </div>
-                <h1 className="text-7xl font-black tracking-tighter text-neutral-900 leading-tight italic">
-                    Typography.
-                </h1>
-                <p className="text-xl text-neutral-500 font-medium leading-relaxed">
-                    A flexible typographic system that provides clear hierarchy and professional readability across all interfaces.
-                </p>
-            </header>
+        <div className="space-y-16 pb-40">
+            <PageHeader
+                category="Foundation"
+                title="Typography"
+                description="A flexible typographic system that provides clear hierarchy and professional readability across all interfaces."
+                icon={<Type className="w-10 h-10 text-primary" />}
+                version="v1.0.0"
+            />
 
-            <section className="space-y-12">
-                <div className="grid gap-12">
-                    {TYPOGRAPHY_EXAMPLES.map((example, index) => (
+            {/* PREVIEW */}
+            <section className="space-y-6">
+                <div className="flex items-center justify-between border-b border-neutral-200 pb-2">
+                    <h2 className="text-2xl font-black text-neutral-900 italic uppercase">Live Preview</h2>
+                </div>
+
+                <div className="space-y-8">
+                    {typographyExamples.map((example, index) => (
                         <div key={index} className="space-y-4">
                             <CodeBlock
-                                title={example.title}
-                                description={example.description}
                                 code={example.code}
                             >
                                 <Typography variant={example.variant}>
@@ -77,22 +43,156 @@ export default function TypographyPage() {
                 </div>
             </section>
 
-            {/* Scale Section */}
-            <section className="bg-neutral-50 dark:bg-neutral-50 rounded-[40px] p-12 border border-neutral-200 dark:border-neutral-200/50 space-y-8 relative overflow-hidden">
-                <div className="relative z-10 space-y-4">
-                    <h2 className="text-3xl font-black tracking-tighter text-neutral-900 italic uppercase">Type Scale</h2>
-                    <p className="text-neutral-500 max-w-xl font-medium">Every variant is calculated to maintain a perfect vertical rhythm and visual balance.</p>
-                </div>
+            {/* OVERVIEW */}
+            <section className="space-y-6">
+                <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Overview</h2>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="p-6 rounded-2xl bg-primary/5 border border-primary/10">
+                        <h3 className="text-lg font-bold text-neutral-900 mb-4">Typography System</h3>
+                        <ul className="space-y-3 text-neutral-600">
+                            <li className="flex items-start gap-2">
+                                <div className="w-1.5 h-1.5 bg-primary rounded-full mt-1.5"></div>
+                                <span>Five distinct variants for clear hierarchy</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                                <div className="w-1.5 h-1.5 bg-primary rounded-full mt-1.5"></div>
+                                <span>Poppins font family for modern readability</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                                <div className="w-1.5 h-1.5 bg-primary rounded-full mt-1.5"></div>
+                                <span>Semantic HTML tags (h1, h2, p, span)</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                                <div className="w-1.5 h-1.5 bg-primary rounded-full mt-1.5"></div>
+                                <span>Built-in label system for documentation</span>
+                            </li>
+                        </ul>
+                    </div>
 
-                <div className="grid border-t border-neutral-200 dark:border-neutral-200/20 pt-8 gap-4">
-                    {TYPOGRAPHY_EXAMPLES.map((t, idx) => (
-                        <div key={idx} className="flex items-center justify-between py-2 border-b border-neutral-200 dark:border-neutral-200/10">
-                            <span className="text-xs font-mono text-neutral-400 uppercase tracking-widest">{t.variant}</span>
-                            <span className="text-xs font-mono text-secondary font-bold">Poppins</span>
+                    <div className="p-6 rounded-2xl bg-neutral-50 border border-neutral-200">
+                        <h3 className="text-lg font-bold text-neutral-900 mb-4">Best Practices</h3>
+                        <ul className="space-y-3 text-neutral-600">
+                            <li className="flex items-start gap-2">
+                                <div className="w-1.5 h-1.5 bg-neutral-400 rounded-full mt-1.5"></div>
+                                <span>Use display variant only once per page</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                                <div className="w-1.5 h-1.5 bg-neutral-400 rounded-full mt-1.5"></div>
+                                <span>Maintain consistent heading hierarchy</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                                <div className="w-1.5 h-1.5 bg-neutral-400 rounded-full mt-1.5"></div>
+                                <span>Limit line length to 50-75 characters</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                                <div className="w-1.5 h-1.5 bg-neutral-400 rounded-full mt-1.5"></div>
+                                <span>Ensure sufficient contrast for accessibility</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            {/* INSTALLATION & USAGE */}
+            <section className="space-y-6">
+                <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Usage Examples</h2>
+                
+                {codeExamples.map((example, index) => (
+                    <div key={index} className="space-y-4">
+                        <h3 className="text-lg font-bold text-neutral-900">{example.title}</h3>
+                        <div className="bg-neutral-900 rounded-xl p-6">
+                            <pre className="text-sm text-neutral-100 font-mono overflow-x-auto">
+                                <code>{example.code}</code>
+                            </pre>
                         </div>
-                    ))}
+                    </div>
+                ))}
+            </section>
+
+            {/* VARIANTS REFERENCE */}
+            <section className="space-y-6">
+                <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Variants Reference</h2>
+                
+                <div className="overflow-x-auto rounded-xl border border-neutral-200">
+                    <table className="w-full">
+                        <thead>
+                            <tr className="bg-neutral-50 border-b border-neutral-200">
+                                <th className="text-left p-4 font-semibold text-neutral-900">Variant</th>
+                                <th className="text-left p-4 font-semibold text-neutral-900">HTML Tag</th>
+                                <th className="text-left p-4 font-semibold text-neutral-900">CSS Classes</th>
+                                <th className="text-left p-4 font-semibold text-neutral-900">Recommended Usage</th>
+                            </tr>
+                        </thead>
+                        <tbody className="divide-y divide-neutral-200">
+                            {variantsTableData.map((row, index) => (
+                                <tr key={index} className="hover:bg-neutral-50/50 transition-colors">
+                                    <td className="p-4 font-mono text-sm text-primary font-medium">{row.variant}</td>
+                                    <td className="p-4 font-mono text-sm text-neutral-600">{row.tag}</td>
+                                    <td className="p-4 font-mono text-sm text-neutral-600">{row.classes}</td>
+                                    <td className="p-4 text-neutral-600">{row.usage}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            {/* TYPE SCALE */}
+            <section className="space-y-6">
+                <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Type Scale</h2>
+                
+                <div className="bg-neutral-50 dark:bg-neutral-50 rounded-2xl p-8 border border-neutral-200">
+                    <div className="space-y-8">
+                        <div className="grid grid-cols-1 md:grid-cols-5 gap-4 text-center">
+                            {typographyScale.map((scale, index) => (
+                                <div key={index} className="space-y-2">
+                                    <div className="text-lg font-bold text-neutral-900">{scale.size}</div>
+                                    <div className="text-sm text-neutral-500">Line: {scale.lineHeight}</div>
+                                    <div className="text-xs text-neutral-400">Weight: {scale.weight}</div>
+                                </div>
+                            ))}
+                        </div>
+                        
+                        <div className="space-y-4">
+                            {typographyScale.map((scale, index) => (
+                                <div key={index} className="flex items-center justify-between py-3 border-b border-neutral-200/50 last:border-0">
+                                    <div className="text-sm font-medium text-neutral-900">{scale.example}</div>
+                                    <div className="text-xs text-neutral-400 font-mono">{scale.size.split(' ')[0]}</div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* PROPS DOCUMENTATION */}
+            <section className="space-y-6">
+                <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Props Reference</h2>
+                
+                <div className="overflow-x-auto rounded-xl border border-neutral-200">
+                    <table className="w-full">
+                        <thead>
+                            <tr className="bg-neutral-50 border-b border-neutral-200">
+                                <th className="text-left p-4 font-semibold text-neutral-900">Prop</th>
+                                <th className="text-left p-4 font-semibold text-neutral-900">Type</th>
+                                <th className="text-left p-4 font-semibold text-neutral-900">Default</th>
+                                <th className="text-left p-4 font-semibold text-neutral-900">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody className="divide-y divide-neutral-200">
+                            {typographyProps.map((row, index) => (
+                                <tr key={index} className="hover:bg-neutral-50/50 transition-colors">
+                                    <td className="p-4 font-mono text-sm text-primary font-medium">{row.prop}</td>
+                                    <td className="p-4 font-mono text-sm text-neutral-600">{row.type}</td>
+                                    <td className="p-4 font-mono text-sm text-neutral-600">{row.default}</td>
+                                    <td className="p-4 text-neutral-600">{row.description}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
                 </div>
             </section>
         </div>
-    )
+    );
 }

@@ -24,6 +24,7 @@ import { useDarkMode } from "../hooks/useDarkMode";
 import { Button } from "../components/atoms/Button.tsx";
 import { cn } from "../utils/cn";
 import { github } from "../constants/socialConstants.ts";
+import favicon from "../../public/favicon.svg"
 
 const FEATURE_CARDS = [
   {
@@ -105,9 +106,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <div className={cn("p-4 rounded-3xl transition-all duration-500 flex items-center justify-between", scrolled ? "bg-white/90 dark:bg-neutral-50/90 border border-neutral-200 dark:border-neutral-200/20" : "")}>
             <div className="flex items-center gap-2 group cursor-pointer" onClick={() => navigate("/")}>
-              <div className="w-10 h-10 bg-neutral-900 rounded-xl flex items-center justify-center transition-transform duration-300">
-                <Layout className="w-6 h-6 text-neutral-50" />
-              </div>
+              <img src={favicon} alt="" className="w-8 h-8" />
               <span className="text-xl font-black tracking-tighter text-neutral-900 transition-colors">
                 HARMONY
               </span>

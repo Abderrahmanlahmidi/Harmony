@@ -1,7 +1,13 @@
+// SearchPage.tsx
 import { useState } from "react";
 import { SearchBar } from "../../../../../components/atoms/SearchBar";
-import { Badge } from "../../../../../components/atoms/Badge";
+import { Search } from "lucide-react";
 import CodeBlock from "../CodeBlock";
+import {
+    searchExamples,
+    searchProps,
+} from "../../../../../constants/search.data";
+import { PageHeader } from '../PageHeader';
 
 export default function SearchPage() {
     const [searchValue, setSearchValue] = useState("");
@@ -17,57 +23,77 @@ export default function SearchPage() {
 
     return (
         <div className="space-y-16 max-w-6xl mx-auto p-12 pb-40">
-            {/* HERO SECTION */}
-            <header className="space-y-6 max-w-2xl">
-                <div className="flex items-center gap-4">
-                    <Badge variant="primary" className="px-3 py-1 text-[0.65rem] font-bold tracking-widest uppercase">Atoms</Badge>
-                    <Badge variant="neutral" className="px-3 py-1 text-[0.65rem] font-bold tracking-widest uppercase italic border-neutral-300">Navigation</Badge>
-                </div>
-                <h1 className="text-6xl font-black tracking-tighter text-neutral-900 leading-tight">
-                    Search Bar.
-                </h1>
-                <p className="text-lg text-neutral-500 font-medium leading-relaxed">
-                    A premium discovery tool. Features hardware-accelerated focus states, glassmorphism variants, and integrated keyboard shortcut indicators.
-                </p>
-            </header>
+            {/* Using PageHeader component */}
+            <PageHeader
+                category="Navigation"
+                title="Search Bar"
+                description="A premium discovery tool with hardware-accelerated focus states, glassmorphism variants, and integrated keyboard shortcut indicators."
+                icon={<Search className="w-10 h-10 text-primary" />}
+                version="v1.0.0"
+                badgeVariant="primary"
+            />
 
-            {/* BASIC USAGE */}
+            {/* PREVIEW SECTION */}
             <section className="space-y-8">
-                <CodeBlock
-                    title="Interactive Search"
-                    description="Standard search bar with integrated loading states and clear functionality."
-                    code={`import { SearchBar } from "@/components/atoms/SearchBar";\n\n<SearchBar \n  placeholder="Search anything..." \n  isLoading={isLoading} \n  onChange={handleChange} \n/>`}
-                >
-                    <div className="p-4 w-full max-w-lg mx-auto">
-                        <SearchBar
-                            placeholder="Explore components, icons, and more..."
-                            isLoading={isLoading}
-                            value={searchValue}
-                            onChange={handleSearch}
-                            onClear={() => setSearchValue("")}
-                        />
-                        {searchValue && !isLoading && (
-                            <p className="text-center mt-4 text-sm text-neutral-400 animate-in fade-in slide-in-from-top-2">
-                                Searching for: <span className="font-bold text-neutral-900">"{searchValue}"</span>
-                            </p>
-                        )}
+                <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Interactive Preview</h2>
+
+                {searchExamples.map((example, index) => (
+                    <div key={index} className="space-y-6">
+                        <CodeBlock
+                            title={example.title}
+                            description={example.description}
+                            code={example.code}
+                        >
+                            <div className="p-4 space-y-6 w-full max-w-lg mx-auto">
+                                {example.examples.map((ex: any, exIndex) => (
+                                    <div key={exIndex}>
+                                        <SearchBar
+                                            placeholder={ex.placeholder}
+                                            isLoading={ex.showLoading ? isLoading : false}
+                                            value={ex.showLoading ? searchValue : ""}
+                                            onChange={ex.showLoading ? handleSearch : undefined}
+                                            onClear={ex.showClear ? () => setSearchValue("") : undefined}
+                                            size={(ex.size as any) || "md"}
+                                        />
+                                        {ex.showLoading && searchValue && !isLoading && (
+                                            <p className="text-center mt-4 text-sm text-neutral-400 animate-in fade-in slide-in-from-top-2">
+                                                Searching for: <span className="font-bold text-neutral-900">"{searchValue}"</span>
+                                            </p>
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
+                        </CodeBlock>
                     </div>
-                </CodeBlock>
+                ))}
             </section>
 
-            {/* SCALING */}
-            <section className="space-y-8">
-                <CodeBlock
-                    title="Adaptive Scaling"
-                    description="Three distinct sizes for varying layout requirements."
-                    code={`<SearchBar size="sm" />\n<SearchBar size="md" />\n<SearchBar size="lg" />`}
-                >
-                    <div className="p-4 space-y-6 w-full max-w-lg mx-auto">
-                        <SearchBar size="sm" placeholder="Small Search" />
-                        <SearchBar size="md" placeholder="Medium Search" />
-                        <SearchBar size="lg" placeholder="Large Search" />
-                    </div>
-                </CodeBlock>
+            {/* PROPS DOCUMENTATION */}
+            <section className="space-y-6">
+                <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Props Reference</h2>
+
+                <div className="overflow-x-auto rounded-xl border border-neutral-200">
+                    <table className="w-full">
+                        <thead>
+                            <tr className="bg-neutral-50 border-b border-neutral-200">
+                                <th className="text-left p-4 font-semibold text-neutral-900">Prop</th>
+                                <th className="text-left p-4 font-semibold text-neutral-900">Type</th>
+                                <th className="text-left p-4 font-semibold text-neutral-900">Default</th>
+                                <th className="text-left p-4 font-semibold text-neutral-900">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody className="divide-y divide-neutral-200">
+                            {searchProps.map((row, index) => (
+                                <tr key={index} className="hover:bg-neutral-50/50 transition-colors">
+                                    <td className="p-4 font-mono text-sm text-primary font-medium">{row.prop}</td>
+                                    <td className="p-4 font-mono text-sm text-neutral-600">{row.type}</td>
+                                    <td className="p-4 font-mono text-sm text-neutral-600">{row.default}</td>
+                                    <td className="p-4 text-neutral-600">{row.description}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
             </section>
         </div>
     );

@@ -30,6 +30,8 @@ import {
 import { useDarkMode } from '../../../hooks/useDarkMode'
 import { useState } from 'react'
 
+
+
 const navigation = [
   { name: 'Introduction', icon: FileText, path: '/system', end: true },
   { name: 'How to use', icon: BookOpen, path: '/system/usage' },
@@ -102,10 +104,19 @@ export default function Sidebar({ isCollapsed, onToggle }: SidebarProps) {
 
       <div className={`p-6 border-b border-neutral-100 relative ${isCollapsed ? 'flex flex-col items-center' : ''}`}>
         <div className="flex items-center gap-3 overflow-hidden">
-          <div className="w-8 h-8 bg-neutral-900 rounded-lg flex-shrink-0 flex items-center justify-center">
-            <Layout className="w-5 h-5 text-neutral-50" />
+          <div className="w-8 h-8 flex items-center justify-center shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-8 h-8">
+              <rect x="0" y="0" width="24" height="24" rx="6" className="fill-neutral-900 dark:fill-neutral-50" />
+              <rect x="3" y="3" width="18" height="18" rx="2" className="stroke-neutral-50 dark:stroke-neutral-900" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M3 9h18" className="stroke-neutral-50 dark:stroke-neutral-900" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M9 21V9" className="stroke-neutral-50 dark:stroke-neutral-900" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
           </div>
-          {!isCollapsed && <span className="font-bold text-neutral-900 tracking-tight whitespace-nowrap">Harmony</span>}
+          {!isCollapsed && (
+            <span className="font-bold text-neutral-900 tracking-tight whitespace-nowrap">
+              Harmony
+            </span>
+          )}
         </div>
 
 
@@ -157,7 +168,7 @@ export default function Sidebar({ isCollapsed, onToggle }: SidebarProps) {
                         : 'text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900'}
                     `}
                   >
-                    <child.icon className="w-4 h-4 flex-shrink-0" />
+                    <child.icon className="w-4 h-4 shrink-0" />
                     {!isCollapsed && <span className="truncate">{child.name}</span>}
                   </NavLink>
                 ))}
@@ -175,7 +186,7 @@ export default function Sidebar({ isCollapsed, onToggle }: SidebarProps) {
                     : 'text-neutral-600 hover:bg-neutral-100'}
                 `}
               >
-                <item.icon className="w-4 h-4 flex-shrink-0" />
+                <item.icon className="w-4 h-4 shrink-0" />
                 {!isCollapsed && <span className="truncate">{item.name}</span>}
               </NavLink>
             )}
@@ -193,7 +204,7 @@ export default function Sidebar({ isCollapsed, onToggle }: SidebarProps) {
             text-neutral-600 hover:bg-neutral-100 transition-all duration-200 w-full
           `}
         >
-          {isDarkMode ? <Sun className="w-4 h-4 flex-shrink-0" /> : <Moon className="w-4 h-4 flex-shrink-0" />}
+          {isDarkMode ? <Sun className="w-4 h-4 shrink-0" /> : <Moon className="w-4 h-4 shrink-0" />}
           {!isCollapsed && <span className="truncate">{isDarkMode ? 'Light Mode' : 'Dark Mode'}</span>}
         </button>
 
@@ -205,7 +216,7 @@ export default function Sidebar({ isCollapsed, onToggle }: SidebarProps) {
             text-neutral-600 hover:bg-neutral-100 transition-all duration-200 w-full
           `}
         >
-          <Home className="w-4 h-4 flex-shrink-0" />
+          <Home className="w-4 h-4 shrink-0" />
           {!isCollapsed && <span className="truncate">Back to Home</span>}
         </button>
 
@@ -220,10 +231,10 @@ export default function Sidebar({ isCollapsed, onToggle }: SidebarProps) {
             text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900 transition-all duration-200 w-full
           `}
         >
-          <Github className="w-4 h-4 flex-shrink-0" />
+          <Github className="w-4 h-4 shrink-0" />
           {!isCollapsed && <span className="truncate">GitHub Repository</span>}
         </a>
       </div>
-    </aside>
+    </aside >
   )
 }

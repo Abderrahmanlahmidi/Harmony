@@ -1,124 +1,273 @@
-import { Spinner } from "../../../../../components/atoms/Spinner";
+import { Loader2 } from 'lucide-react';
+
 import { Button } from "../../../../../components/atoms/Button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "../../../../../components/atoms/Card";
 import CodeBlock from "../CodeBlock";
-import { Badge } from "../../../../../components/atoms/Badge";
-import { Loader2, RefreshCw, Loader, CircleDashed } from "lucide-react";
+
+import { 
+  spinnerExamples, 
+  spinnerProps, 
+  sizeDetails, 
+  variantDetails,
+  thicknessDetails,
+  usageExamples 
+} from "../../../../../constants/spinner.data";
+
+
+import { Spinner as SpinnerComponent } from "../../../../../components/atoms/Spinner";
+import { PageHeader } from '../PageHeader';
+
 
 export default function SpinnersPage() {
-    return (
-        <div className="space-y-16 max-w-6xl mx-auto p-12 pb-40">
-            <header className="space-y-6 max-w-2xl">
-                <div className="flex items-center gap-4">
-                    <Badge variant="primary" className="px-3 py-1 text-[0.65rem] font-bold tracking-widest uppercase italic">Feedback</Badge>
-                    <Loader2 className="w-5 h-5 text-primary animate-spin" />
-                </div>
-                <h1 className="text-6xl font-black tracking-tighter text-neutral-900 leading-tight">
-                    Spinners
-                </h1>
-                <p className="text-lg text-neutral-500 font-medium leading-relaxed">
-                    Indicate an ongoing process or loading state to keep users informed about system activity.
-                </p>
-            </header>
+  return (
+    <div className="space-y-16 max-w-6xl mx-auto p-12 pb-40">
+      <PageHeader
+        category="Feedback"
+        title="Spinners"
+        description="Indicate an ongoing process or loading state to keep users informed about system activity."
+        icon={<Loader2 className="w-10 h-10 text-primary" />}
+        version="v1.0.0"
+        badgeVariant="primary"
+      />
 
-            {/* Design Variants */}
-            <section className="space-y-8">
-                <div className="space-y-2">
-                    <h2 className="text-2xl font-bold tracking-tight">Sizes & Visuals</h2>
-                    <p className="text-neutral-500 font-medium">Standardized sizes from micro-interactions to full-page loading states.</p>
-                </div>
+      {/* PREVIEW SECTION */}
+      <section className="space-y-8">
+        <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Interactive Preview</h2>
+        
+        {spinnerExamples.map((example, index) => (
+          <div key={index} className="space-y-6">
+            <CodeBlock
+              title={example.title}
+              description={example.description}
+              code={example.code}
+            >
+              {example.children}
+            </CodeBlock>
+          </div>
+        ))}
+      </section>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <CodeBlock
-                        title="Flexible Sizing"
-                        description="From 12px to 48px to fit any context."
-                        code={`<Spinner size="xs" />\n<Spinner size="sm" />\n<Spinner size="md" />\n<Spinner size="lg" />\n<Spinner size="xl" />`}
-                    >
-                        <div className="flex items-center gap-8">
-                            <Spinner size="xs" thickness="thick" />
-                            <Spinner size="sm" thickness="thick" />
-                            <Spinner size="md" thickness="thick" />
-                            <Spinner size="lg" thickness="thick" />
-                            <Spinner size="xl" thickness="thick" />
-                        </div>
-                    </CodeBlock>
-
-                    <CodeBlock
-                        title="Decorative Loaders"
-                        description="Pass any Lucide icon as a prop to maintain size and color consistency."
-                        code={`<Spinner icon={<Loader2 />} />\n<Spinner icon={<RefreshCw />} size="lg" />\n<Spinner icon={<CircleDashed />} size="xl" />`}
-                    >
-                        <div className="flex items-center gap-8">
-                            <Spinner icon={<Loader2 />} size="sm" />
-                            <Spinner icon={<Loader />} size="md" />
-                            <Spinner icon={<RefreshCw />} size="lg" />
-                            <Spinner icon={<CircleDashed />} size="xl" />
-                        </div>
-                    </CodeBlock>
-                </div>
-            </section>
-
-            {/* Application Examples */}
-            <section className="space-y-8">
-                <div className="space-y-2">
-                    <h2 className="text-2xl font-bold tracking-tight">Implementation Cases</h2>
-                    <p className="text-neutral-500 font-medium">Common patterns for integrating spinners into existing components.</p>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <CodeBlock
-                        title="Native Button Support"
-                        description="Direct use through the isLoading prop for seamless transitions."
-                        code={`<Button isLoading>Processing</Button>\n<Button variant="outline" isLoading>Loading</Button>`}
-                    >
-                        <div className="flex flex-col gap-4">
-                            <Button className="min-w-[140px]" isLoading>
-                                Processing
-                            </Button>
-                            <Button variant="outline" className="min-w-[140px]" isLoading>
-                                Loading
-                            </Button>
-                        </div>
-                    </CodeBlock>
-
-                    <CodeBlock
-                        title="Within Cards"
-                        description="Using spinners for asynchronous data loading inside containers."
-                        code={`<Card className="p-8 flex justify-center">\n  <Spinner size="lg" />\n</Card>`}
-                    >
-                        <Card className="w-full max-w-[280px]">
-                            <CardHeader>
-                                <CardTitle className="text-lg text-neutral-900">Dashboard Metric</CardTitle>
-                                <CardDescription>Fetching real-time data</CardDescription>
-                            </CardHeader>
-                            <CardContent className="h-24 flex items-center justify-center">
-                                <Spinner size="lg" thickness="thick" />
-                            </CardContent>
-                        </Card>
-                    </CodeBlock>
-                </div>
-            </section>
-
-            {/* Full Page Overlay */}
-            <section className="space-y-8">
-                <CodeBlock
-                    title="Fullscreen Experience"
-                    description="Opaque or blurred overlays for critical loading states."
-                    code={`<div className="bg-neutral-50/50 backdrop-blur-sm">\n  <Spinner size="xl" thickness="thick" />\n</div>`}
-                >
-                    <div className="relative w-full h-[200px] border border-neutral-200 rounded-2xl overflow-hidden bg-white dark:bg-neutral-50">
-                        <div className="p-6 space-y-4">
-                            <div className="h-4 w-3/4 bg-neutral-100 rounded animate-pulse" />
-                            <div className="h-4 w-1/2 bg-neutral-100 rounded animate-pulse" />
-                            <div className="h-20 w-full bg-neutral-50 rounded animate-pulse" />
-                        </div>
-                        <div className="absolute inset-0 bg-neutral-50/60 backdrop-blur-[2px] flex flex-col items-center justify-center gap-4">
-                            <Spinner size="xl" thickness="thick" />
-                            <p className="text-xs font-black uppercase tracking-widest text-neutral-400">Restoring Session</p>
-                        </div>
-                    </div>
-                </CodeBlock>
-            </section>
+      {/* SIZES DETAILS */}
+      <section className="space-y-6">
+        <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Size Specifications</h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+          {sizeDetails.map((size, index) => (
+            <div key={index} className="p-4 border border-neutral-200 rounded-xl text-center">
+              <div className="flex flex-col items-center justify-center gap-3 mb-3">
+                <SpinnerComponent 
+                  size={size.size as any}
+                  thickness="thick"
+                />
+                <div className="text-lg font-bold text-neutral-900">{size.size.toUpperCase()}</div>
+              </div>
+              <div className="space-y-2">
+                <div className="text-xs font-mono text-neutral-500">{size.dimensions}</div>
+                <div className="text-xs text-neutral-600">{size.usage}</div>
+                <code className="text-xs font-mono bg-neutral-100 p-1 rounded-lg block">
+                  {size.classes}
+                </code>
+              </div>
+            </div>
+          ))}
         </div>
-    );
+      </section>
+
+      {/* VARIANTS DETAILS */}
+      <section className="space-y-6">
+        <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Color Variants</h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          {variantDetails.map((variant, index) => (
+            <div key={index} className="p-4 border border-neutral-200 rounded-xl">
+              <div className="flex items-center gap-3 mb-3">
+                <SpinnerComponent 
+                  variant={variant.variant as any}
+                  size="lg"
+                  thickness="thick"
+                />
+                <div>
+                  <div className="font-semibold text-neutral-900 capitalize">{variant.variant}</div>
+                  <div className="text-xs text-neutral-500">{variant.semantic}</div>
+                </div>
+              </div>
+              <div className="space-y-2">
+                <div>
+                  <div className="text-xs font-semibold text-neutral-900 mb-1">CSS Classes:</div>
+                  <code className="text-xs font-mono bg-neutral-100 p-1.5 rounded-lg block">
+                    {variant.classes}
+                  </code>
+                </div>
+                <div>
+                  <div className="text-xs font-semibold text-neutral-900 mb-1">Usage:</div>
+                  <p className="text-xs text-neutral-600">{variant.usage}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* THICKNESS DETAILS */}
+      <section className="space-y-6">
+        <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Thickness Options</h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {thicknessDetails.map((thickness, index) => (
+            <div key={index} className="p-6 border border-neutral-200 rounded-2xl">
+              <div className="flex items-center justify-between mb-4">
+                <SpinnerComponent 
+                  thickness={thickness.thickness as any}
+                  size="xl"
+                />
+                <div className="text-lg font-bold text-neutral-900 capitalize">{thickness.thickness}</div>
+              </div>
+              <div className="space-y-3">
+                <div>
+                  <div className="text-sm font-semibold text-neutral-900 mb-1">CSS Classes:</div>
+                  <code className="text-xs font-mono bg-neutral-100 p-2 rounded-lg block">
+                    {thickness.classes}
+                  </code>
+                </div>
+                <div>
+                  <div className="text-sm font-semibold text-neutral-900 mb-1">Visual:</div>
+                  <p className="text-sm text-neutral-600">{thickness.visual}</p>
+                </div>
+                <div>
+                  <div className="text-sm font-semibold text-neutral-900 mb-1">Usage:</div>
+                  <p className="text-sm text-neutral-600">{thickness.usage}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* USAGE EXAMPLES */}
+      <section className="space-y-6">
+        <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Common Use Cases</h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {usageExamples.map((usage, index) => (
+            <div key={index} className="p-4 border border-neutral-200 rounded-xl hover:bg-neutral-50 transition-colors">
+              <div className="flex items-center gap-2 mb-3">
+                <SpinnerComponent size="sm" thickness="thick" />
+                <div className="font-semibold text-neutral-900">{usage.title}</div>
+              </div>
+              <div className="space-y-2">
+                <div className="text-sm">
+                  <span className="font-medium text-neutral-700">Context:</span> {usage.context}
+                </div>
+                <div className="text-sm">
+                  <span className="font-medium text-neutral-700">Duration:</span> {usage.duration}
+                </div>
+                <div className="text-sm">
+                  <span className="font-medium text-neutral-700">Placement:</span> {usage.placement}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* REAL-WORLD EXAMPLES */}
+      <section className="space-y-6">
+        <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Real World Examples</h2>
+        
+        <div className="space-y-4">
+          <div className="p-6 border border-neutral-200 rounded-2xl">
+            <div className="flex items-center justify-between mb-4">
+              <div className="font-semibold text-neutral-900">Dashboard Loading</div>
+              <div className="text-sm text-neutral-500">Showing multiple loading states</div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-base text-neutral-900">User Stats</CardTitle>
+                  <CardDescription>Loading analytics</CardDescription>
+                </CardHeader>
+                <CardContent className="h-32 flex items-center justify-center">
+                  <SpinnerComponent size="lg" thickness="thick" />
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-base text-neutral-900">Recent Activity</CardTitle>
+                  <CardDescription>Fetching data</CardDescription>
+                </CardHeader>
+                <CardContent className="h-32 flex items-center justify-center">
+                  <SpinnerComponent size="lg" variant="secondary" thickness="thick" />
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-base text-neutral-900">Notifications</CardTitle>
+                  <CardDescription>Syncing messages</CardDescription>
+                </CardHeader>
+                <CardContent className="h-32 flex items-center justify-center">
+                  <SpinnerComponent size="lg" variant="current" thickness="thick" />
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          <div className="p-6 border border-neutral-200 rounded-2xl">
+            <div className="flex items-center justify-between mb-4">
+              <div className="font-semibold text-neutral-900">Form Submission</div>
+              <div className="text-sm text-neutral-500">Showing inline and overlay loading</div>
+            </div>
+            <div className="space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="space-y-3">
+                  <div className="h-4 w-3/4 bg-neutral-100 rounded animate-pulse" />
+                  <div className="h-10 w-full border border-neutral-200 rounded-lg" />
+                </div>
+                <div className="space-y-3">
+                  <div className="h-4 w-2/3 bg-neutral-100 rounded animate-pulse" />
+                  <div className="h-10 w-full border border-neutral-200 rounded-lg" />
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <Button isLoading className="min-w-[120px]">
+                  Save Changes
+                </Button>
+                <Button variant="outline" className="min-w-[120px]">
+                  Cancel
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+            {/* PROPS DOCUMENTATION */}
+      <section className="space-y-6">
+        <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Props Reference</h2>
+        
+        <div className="overflow-x-auto rounded-xl border border-neutral-200">
+          <table className="w-full">
+            <thead>
+              <tr className="bg-neutral-50 border-b border-neutral-200">
+                <th className="text-left p-4 font-semibold text-neutral-900">Prop</th>
+                <th className="text-left p-4 font-semibold text-neutral-900">Type</th>
+                <th className="text-left p-4 font-semibold text-neutral-900">Default</th>
+                <th className="text-left p-4 font-semibold text-neutral-900">Description</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-neutral-200">
+              {spinnerProps.map((row, index) => (
+                <tr key={index} className="hover:bg-neutral-50/50 transition-colors">
+                  <td className="p-4 font-mono text-sm text-primary font-medium">{row.prop}</td>
+                  <td className="p-4 font-mono text-sm text-neutral-600">{row.type}</td>
+                  <td className="p-4 font-mono text-sm text-neutral-600">{row.default}</td>
+                  <td className="p-4 text-neutral-600">{row.description}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+  );
 }

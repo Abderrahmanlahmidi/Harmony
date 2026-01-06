@@ -84,7 +84,7 @@ export default function ModalsPage() {
             <Modal
                 isOpen={activeModal?.isOpen || false}
                 onClose={closeModal}
-                variant={activeModal?.variant || "info"}
+                variant={(activeModal?.variant || "info") as any}
                 title={activeModal?.variant === "success" ? "Operation Successful" :
                     activeModal?.variant === "warning" ? "Caution Advised" :
                         activeModal?.variant === "danger" ? "Critical Failure" : "System Information"}
