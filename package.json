@@ -1,70 +1,32 @@
 {
-    "name": "harmony-react-ui",
-    "version": "1.0.1",
-    "description": "A modern, accessible React component library with beautiful design and smooth animations",
-    "main": "./dist/index.js",
-    "module": "./dist/index.mjs",
-    "types": "./dist/index.d.ts",
-    "exports": {
-        ".": {
-            "types": "./dist/index.d.ts",
-            "import": "./dist/index.mjs",
-            "require": "./dist/index.js"
-        },
-        "./styles.css": "./dist/styles.css"
-    },
-    "files": [
-        "dist",
-        "README.md",
-        "LICENSE"
+    "name": "harmony-monorepo",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Harmony React UI - Component Library and Documentation",
+    "workspaces": [
+        "packages/*"
     ],
     "scripts": {
-        "build:types": "echo 'Type generation temporarily disabled'",
-        "build:bundle": "tsup",
-        "build:lib": "npm run build:bundle",
-        "prepublishOnly": "npm run build:lib",
-        "test": "vitest run",
-        "test:watch": "vitest"
+        "dev": "npm run dev --workspace=@harmony/docs",
+        "dev:docs": "npm run dev --workspace=@harmony/docs",
+        "build:lib": "npm run build --workspace=harmony-react-ui",
+        "build:docs": "npm run build --workspace=@harmony/docs",
+        "build": "npm run build:lib && npm run build:docs",
+        "publish:lib": "npm publish --workspace=harmony-react-ui",
+        "test": "npm run test --workspaces",
+        "clean": "rimraf packages/*/dist packages/*/node_modules node_modules"
     },
-    "keywords": [
-        "react",
-        "components",
-        "ui",
-        "design-system",
-        "tailwindcss",
-        "typescript",
-        "harmony",
-        "accessible",
-        "a11y"
-    ],
+    "devDependencies": {
+        "rimraf": "^6.0.1"
+    },
+    "engines": {
+        "node": ">=18.0.0",
+        "npm": ">=9.0.0"
+    },
     "author": "Abderrahman Lahmidi",
     "license": "MIT",
     "repository": {
         "type": "git",
         "url": "https://github.com/Abderrahmanlahmidi/Harmony"
-    },
-    "bugs": {
-        "url": "https://github.com/Abderrahmanlahmidi/Harmony/issues"
-    },
-    "homepage": "https://github.com/Abderrahmanlahmidi/Harmony#readme",
-    "peerDependencies": {
-        "react": "^18.0.0 || ^19.0.0",
-        "react-dom": "^18.0.0 || ^19.0.0"
-    },
-    "dependencies": {
-        "class-variance-authority": "^0.7.1",
-        "clsx": "^2.1.1",
-        "framer-motion": "^12.23.26",
-        "lucide-react": "^0.562.0",
-        "tailwind-merge": "^3.4.0"
-    },
-    "devDependencies": {
-        "@types/react": "^19.2.5",
-        "@types/react-dom": "^19.2.3",
-        "tsup": "^8.0.1",
-        "typescript": "~5.9.3"
-    },
-    "publishConfig": {
-        "access": "public"
     }
 }

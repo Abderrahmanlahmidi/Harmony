@@ -1,0 +1,71 @@
+{
+    "name": "harmony-react-ui",
+    "version": "1.0.1",
+    "description": "A modern, accessible React component library with beautiful design and smooth animations",
+    "main": "./dist/index.js",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.mjs",
+            "require": "./dist/index.js"
+        },
+        "./styles.css": "./dist/styles.css"
+    },
+    "files": [
+        "dist",
+        "README.md",
+        "LICENSE"
+    ],
+    "scripts": {
+        "build:types": "echo 'Type generation temporarily disabled'",
+        "build:bundle": "tsup",
+        "build": "npm run build:bundle",
+        "prepublishOnly": "npm run build",
+        "test": "vitest run",
+        "test:watch": "vitest"
+    },
+    "keywords": [
+        "react",
+        "components",
+        "ui",
+        "design-system",
+        "tailwindcss",
+        "typescript",
+        "harmony",
+        "accessible",
+        "a11y"
+    ],
+    "author": "Abderrahman Lahmidi",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Abderrahmanlahmidi/Harmony",
+        "directory": "packages/harmony-ui"
+    },
+    "bugs": {
+        "url": "https://github.com/Abderrahmanlahmidi/Harmony/issues"
+    },
+    "homepage": "https://github.com/Abderrahmanlahmidi/Harmony#readme",
+    "peerDependencies": {
+        "react": "^18.0.0 || ^19.0.0",
+        "react-dom": "^18.0.0 || ^19.0.0"
+    },
+    "dependencies": {
+        "class-variance-authority": "^0.7.1",
+        "clsx": "^2.1.1",
+        "framer-motion": "^12.23.26",
+        "lucide-react": "^0.562.0",
+        "tailwind-merge": "^3.4.0"
+    },
+    "devDependencies": {
+        "@types/react": "^19.2.5",
+        "@types/react-dom": "^19.2.3",
+        "tsup": "^8.0.1",
+        "typescript": "^5.6.3"
+    },
+    "publishConfig": {
+        "access": "public"
+    }
+}
