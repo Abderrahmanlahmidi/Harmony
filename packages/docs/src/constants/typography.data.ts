@@ -146,4 +146,3 @@ export const typographyProps = [
     { prop: "showLabel", type: "boolean", default: "false", description: "Shows the variant name above the text for documentation purposes" },
     { prop: "ref", type: "React.Ref<HTMLElement>", default: "-", description: "Forwarded ref to the underlying HTML element" }
 ];
-

@@ -1,4 +1,3 @@
-// buttons.data.ts
 import { Plus, ArrowRight, Mail, Github } from "lucide-react";
 import {  Button  } from "harmony-react-ui";
 
@@ -153,6 +152,3 @@ export const sizeDetails = [
     usage: "Hero sections, important CTAs, mobile touch targets"
   }
 ];
-
-
-

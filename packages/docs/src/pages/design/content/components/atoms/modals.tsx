@@ -32,7 +32,7 @@ export default function ModalsPage() {
                 </p>
             </header>
 
-            {/* Basic Usage */}
+            {}
             <section className="space-y-8">
                 <div className="space-y-2">
                     <h2 className="text-3xl font-black tracking-tighter text-neutral-900">Semantic Triggers</h2>
@@ -80,7 +80,7 @@ export default function ModalsPage() {
                 </CodeBlock>
             </section>
 
-            {/* The Modal Renders */}
+            {}
             <Modal
                 isOpen={activeModal?.isOpen || false}
                 onClose={closeModal}
@@ -99,6 +99,3 @@ export default function ModalsPage() {
         </div>
     );
 }
-
-
-

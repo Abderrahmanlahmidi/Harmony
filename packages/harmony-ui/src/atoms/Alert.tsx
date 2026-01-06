@@ -25,7 +25,7 @@ const alertVariants = cva(
     }
 );
 
-/* Map internal variant names to standard icons */
+
 const IconMap = {
     info: Info,
     danger: AlertCircle,
@@ -45,7 +45,7 @@ export interface AlertProps
 const Alert = forwardRef<HTMLDivElement, AlertProps>(
     ({ className, variant = "info", layout = "default", children, onClose, icon, hideIcon = false, ...props }, ref) => {
 
-        // Determine which icon to show
+        
         const IconComponent = IconMap[(variant as keyof typeof IconMap) || "info"] || Info;
         const renderedIcon = icon === undefined ? <IconComponent className="w-5 h-5" /> : icon;
 

@@ -218,6 +218,3 @@ export const usageExamples = [
     description: "Indicate user permissions or roles"
   }
 ];
-
-
-

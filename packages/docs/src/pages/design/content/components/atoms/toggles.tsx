@@ -29,7 +29,7 @@ export default function TogglesPage() {
 
   return (
     <div className="space-y-16 max-w-6xl mx-auto p-12 pb-40">
-      {/* Using PageHeader component */}
+      {}
       <PageHeader
         category="Form"
         title="Toggle"
@@ -39,7 +39,7 @@ export default function TogglesPage() {
         badgeVariant="primary"
       />
 
-      {/* PREVIEW SECTION */}
+      {}
       <section className="space-y-8">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Interactive Preview</h2>
 
@@ -87,7 +87,7 @@ export default function TogglesPage() {
         ))}
       </section>
 
-      {/* SIZES DETAILS */}
+      {}
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Size Specifications</h2>
 
@@ -124,7 +124,7 @@ export default function TogglesPage() {
         </div>
       </section>
 
-      {/* USAGE EXAMPLES */}
+      {}
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Common Use Cases</h2>
 
@@ -155,7 +155,7 @@ export default function TogglesPage() {
         </div>
       </section>
 
-      {/* REAL-WORLD EXAMPLES */}
+      {}
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Real World Examples</h2>
 
@@ -216,7 +216,7 @@ export default function TogglesPage() {
         </div>
       </section>
 
-      {/* PROPS DOCUMENTATION */}
+      {}
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Props Reference</h2>
 
@@ -247,6 +247,3 @@ export default function TogglesPage() {
     </div>
   );
 }
-
-
-

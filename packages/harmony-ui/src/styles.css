@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-    /* Brand Colors */
+    
     --color-primary: #6366f1;
     --color-primary-hover: #4f46e5;
     --color-secondary: #0ea5e9;
     --color-secondary-hover: #0284c7;
 
-    /* Semantic Colors */
+    
     --color-success: #10b981;
     --color-success-hover: #059669;
     --color-success-light: #d1fae5;
@@ -24,7 +24,7 @@
     --color-info-hover: #2563eb;
     --color-info-light: #dbeafe;
 
-    /* Neutral palette */
+    
     --color-neutral-50: #f8fafc;
     --color-neutral-100: #f1f5f9;
     --color-neutral-200: #e2e8f0;

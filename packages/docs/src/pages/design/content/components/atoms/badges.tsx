@@ -9,14 +9,14 @@ import {
   usageExamples 
 } from "../../../../../constants/badge.data";
 
-// Import your Badge component
+
 import {   Badge as BadgeComponent  } from "harmony-react-ui";
 import { PageHeader } from '../PageHeader';
 
 export default function BadgesPage() {
   return (
     <div className="space-y-16 max-w-6xl mx-auto p-12 pb-40">
-      {/* Using PageHeader component */}
+      {}
       <PageHeader
         category="Components"
         title="Badge"
@@ -26,7 +26,7 @@ export default function BadgesPage() {
         badgeVariant="primary"
       />
 
-      {/* PREVIEW SECTION */}
+      {}
       <section className="space-y-8">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Interactive Preview</h2>
         
@@ -43,7 +43,7 @@ export default function BadgesPage() {
         ))}
       </section>
 
-      {/* SIZES DETAILS */}
+      {}
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Size Specifications</h2>
         
@@ -78,7 +78,7 @@ export default function BadgesPage() {
         </div>
       </section>
 
-      {/* SHAPES DETAILS */}
+      {}
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Shape Variations</h2>
         
@@ -113,7 +113,7 @@ export default function BadgesPage() {
         </div>
       </section>
 
-      {/* USAGE EXAMPLES */}
+      {}
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Common Use Cases</h2>
         
@@ -148,7 +148,7 @@ export default function BadgesPage() {
     
 
 
-      {/* REAL-WORLD EXAMPLES */}
+      {}
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Real World Examples</h2>
         
@@ -224,7 +224,7 @@ export default function BadgesPage() {
         </div>
       </section>
 
-        {/* PROPS DOCUMENTATION */}
+        {}
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Props Reference</h2>
         
@@ -255,6 +255,3 @@ export default function BadgesPage() {
     </div>
   );
 }
-
-
-

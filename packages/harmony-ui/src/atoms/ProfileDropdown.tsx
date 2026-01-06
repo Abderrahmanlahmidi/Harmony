@@ -83,7 +83,7 @@ export const ProfileDropdown: React.FC<ProfileDropdownProps> = ({ user }) => {
                             "bg-white/80 dark:bg-neutral-900/80 backdrop-blur-xl border border-neutral-200 dark:border-neutral-800 shadow-2xl"
                         )}
                     >
-                        {/* Header */}
+                        {}
                         <div className="p-6 border-b border-neutral-100 dark:border-neutral-800/50 bg-neutral-50/50 dark:bg-neutral-800/30">
                             <div className="flex items-center gap-4">
                                 <div className="w-12 h-12 rounded-2xl bg-neutral-900 dark:bg-neutral-50 flex items-center justify-center font-black text-white dark:text-neutral-900 text-lg">
@@ -100,7 +100,7 @@ export const ProfileDropdown: React.FC<ProfileDropdownProps> = ({ user }) => {
                             </div>
                         </div>
 
-                        {/* Menu Items */}
+                        {}
                         <div className="py-3 px-2">
                             {menuItems.map((item, index) => (
                                 <button
@@ -125,7 +125,7 @@ export const ProfileDropdown: React.FC<ProfileDropdownProps> = ({ user }) => {
                             ))}
                         </div>
 
-                        {/* Footer / Logout */}
+                        {}
                         <div className="p-2 pt-0 border-t border-neutral-100 dark:border-neutral-800/50">
                             <button
                                 className={cn(

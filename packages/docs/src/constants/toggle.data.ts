@@ -1,4 +1,3 @@
-// toggle.data.ts
 export const toggleExamples = [
   {
     title: "Interactive Settings",
@@ -200,4 +199,3 @@ export const animationDetails = [
     duration: "200ms"
   }
 ];
-

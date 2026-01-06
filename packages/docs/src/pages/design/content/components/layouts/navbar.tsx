@@ -1,11 +1,11 @@
 import { Navigation } from "lucide-react";
-import {Navbar} from "../../../../../../../harmony-ui/src/layouts/Navbar"
-import { 
-  overviewCards, 
-  codeExamples, 
-  featureCards, 
-  stylingExamples, 
-  propsTableData 
+import { Navbar } from "../../../../../../../harmony-ui/src/layouts/Navbar"
+import {
+  overviewCards,
+  codeExamples,
+  featureCards,
+  stylingExamples,
+  propsTableData
 } from "../../../../../constants/navbar.data";
 import { Zap, Smartphone, Palette, Layout, Menu, X, Sun, Moon, Github } from "lucide-react";
 import { PageHeader } from "../PageHeader";
@@ -23,22 +23,22 @@ const IconComponent = ({ name }: { name: string }) => {
     Moon: <Moon className="w-5 h-5 text-primary absolute opacity-0" />,
     Github: <Github className="w-5 h-5 text-primary" />
   };
-  
+
   return icons[name] || null;
 };
 
 export default function NavbarPage() {
   return (
     <div className="space-y-12 pb-20">
-     <PageHeader
-                category="Layout"
-                title="Navbar"
-                description="A responsive, multi-functional navigation bar with theme switching, glassmorphism support, and animated mobile states."
-                icon={<Navigation className="w-10 h-10 text-primary" />}
-                version="v1.0.0"
-            />
+      <PageHeader
+        category="Layout"
+        title="Navbar"
+        description="A responsive, multi-functional navigation bar with theme switching, glassmorphism support, and animated mobile states."
+        icon={<Navigation className="w-10 h-10 text-primary" />}
+        version="v1.0.0"
+      />
 
-      {/* PREVIEW */}
+      { }
       <section className="space-y-6">
         <div className="flex items-center justify-between border-b border-neutral-200 pb-2">
           <h2 className="text-2xl font-black text-neutral-900 italic uppercase">Live Preview</h2>
@@ -48,7 +48,7 @@ export default function NavbarPage() {
         </div>
       </section>
 
-      {/* OVERVIEW */}
+      { }
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Overview</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -71,7 +71,7 @@ export default function NavbarPage() {
         </div>
       </section>
 
-      {/* INSTALLATION & USAGE */}
+      { }
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Installation & Usage</h2>
         {codeExamples.map((example, index) => (
@@ -86,7 +86,7 @@ export default function NavbarPage() {
         ))}
       </section>
 
-      {/* FEATURES BREAKDOWN */}
+      { }
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Features Breakdown</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -108,20 +108,20 @@ export default function NavbarPage() {
         </div>
       </section>
 
-      {/* STYLING & CUSTOMIZATION */}
+      { }
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Styling & Customization</h2>
         <div className="space-y-4">
           <h3 className="text-lg font-bold text-neutral-900">Custom Styling Examples</h3>
           <div className="bg-neutral-900 rounded-xl p-6">
             <pre className="text-sm text-neutral-100 font-mono overflow-x-auto">
-              <code>{stylingExamples.map(example => `// ${example.title}\n${example.code}\n`).join('\n')}</code>
+              <code>{stylingExamples.map(example => `/* ${example.title} */\n${example.code}`).join('\n\n')}</code>
             </pre>
           </div>
         </div>
       </section>
 
-      {/* PROPS DOCUMENTATION */}
+      { }
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Props Reference</h2>
         <div className="overflow-x-auto rounded-xl border border-neutral-200">
@@ -150,6 +150,3 @@ export default function NavbarPage() {
     </div>
   );
 }
-
-
-

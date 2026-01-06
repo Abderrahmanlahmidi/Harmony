@@ -9,7 +9,7 @@ export default function ToastsPage() {
 
     return (
         <div className="space-y-16 max-w-6xl mx-auto p-12 pb-40">
-            {/* --- HERO SECTION --- */}
+            {}
             <header className="space-y-6 max-w-2xl">
                 <div className="flex items-center gap-4">
                     <Badge variant="primary" className="px-3 py-1 text-[0.65rem] font-bold tracking-widest uppercase">Feedback</Badge>
@@ -23,7 +23,7 @@ export default function ToastsPage() {
                 </p>
             </header>
 
-            {/* Basic Usage */}
+            {}
             <section className="space-y-8">
                 <CodeBlock
                     title="Push Notifications"
@@ -43,7 +43,7 @@ export default function ToastsPage() {
                 </CodeBlock>
             </section>
 
-            {/* Semantic Variants */}
+            {}
             <section className="space-y-8">
                 <CodeBlock
                     title="Glass Feedback"
@@ -88,7 +88,3 @@ export default function ToastsPage() {
         </div>
     );
 }
-
-
-
-

@@ -188,6 +188,3 @@ export default function Colors() {
     </div>
   );
 }
-
-
-

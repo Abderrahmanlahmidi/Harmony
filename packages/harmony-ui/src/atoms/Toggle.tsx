@@ -65,7 +65,7 @@ export const Toggle = React.forwardRef<HTMLInputElement, ToggleProps>(
                             {...props}
                         />
 
-                        {/* Track */}
+                        {}
                         <div className={cn(
                             "relative flex items-center rounded-full transition-all duration-300",
                             sizes[size].track,
@@ -74,7 +74,7 @@ export const Toggle = React.forwardRef<HTMLInputElement, ToggleProps>(
                             "peer-focus-visible:ring-4 peer-focus-visible:ring-primary/10",
                             error && "ring-2 ring-danger/50"
                         )}>
-                            {/* Thumb */}
+                            {}
                             <motion.div
                                 initial={false}
                                 animate={{

@@ -228,6 +228,3 @@ export const usageExamples = [
     dismissible: true
   }
 ];
-
-
-

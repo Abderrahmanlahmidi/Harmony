@@ -51,7 +51,7 @@ export const Modal: React.FC<ModalProps> = ({
         <AnimatePresence>
             {isOpen && (
                 <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-                    {/* Backdrop */}
+                    {}
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -60,7 +60,7 @@ export const Modal: React.FC<ModalProps> = ({
                         className="fixed inset-0 bg-neutral-900/60 dark:bg-neutral-50/60 backdrop-blur-md"
                     />
 
-                    {/* Modal Card */}
+                    {}
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -70,7 +70,7 @@ export const Modal: React.FC<ModalProps> = ({
                             "relative w-full max-w-lg bg-neutral-50 rounded-[2.5rem] shadow-2xl overflow-hidden z-[101]",
                         )}
                     >
-                        {/* Close Button */}
+                        {}
                         <button
                             onClick={onClose}
                             className="absolute top-8 right-8 p-2 rounded-xl text-neutral-400 hover:text-neutral-900 hover:bg-neutral-100 transition-all z-10 active:scale-90"
@@ -106,7 +106,7 @@ export const Modal: React.FC<ModalProps> = ({
                             )}
                         </div>
 
-                        {/* Actions */}
+                        {}
                         <div className="p-8 pt-4 flex items-center justify-end gap-3 border-t border-neutral-100">
                             <button
                                 onClick={onClose}

@@ -47,7 +47,7 @@ const Spinner = forwardRef<HTMLDivElement, SpinnerProps>(
                     !icon && "rounded-full",
                     !icon && variants[variant],
                     !icon && thicknesses[thickness],
-                    icon && variants[variant].split(' ').pop(), // Just take the text color for icons
+                    icon && variants[variant].split(' ').pop(), 
                     sizes[size],
                     className
                 )}

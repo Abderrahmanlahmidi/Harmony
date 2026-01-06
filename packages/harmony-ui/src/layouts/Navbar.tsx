@@ -40,7 +40,7 @@ export const Navbar: React.FC = () => {
             )}
         >
             <div className="max-w-7xl mx-auto flex items-center justify-between">
-                {/* Logo */}
+                {}
                 <div className="flex items-center gap-2 group cursor-pointer">
                     <div className="w-10 h-10 flex items-center justify-center transition-transform group-hover:scale-110 duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-10 h-10">
@@ -55,7 +55,7 @@ export const Navbar: React.FC = () => {
                     </span>
                 </div>
 
-                {/* Desktop Navigation */}
+                {}
                 <div className="hidden md:flex items-center gap-8">
                     {navItems.map((item) => (
                         <a
@@ -68,7 +68,7 @@ export const Navbar: React.FC = () => {
                     ))}
                 </div>
 
-                {/* Desktop Actions */}
+                {}
                 <div className="hidden md:flex items-center gap-4">
                     <button
                         onClick={toggleTheme}
@@ -90,7 +90,7 @@ export const Navbar: React.FC = () => {
                     </button>
                 </div>
 
-                {/* Mobile Menu Toggle */}
+                {}
                 <button
                     onClick={() => setIsOpen(!isOpen)}
                     className="md:hidden p-2 rounded-xl text-neutral-900 hover:bg-neutral-100 transition-all"
@@ -99,7 +99,7 @@ export const Navbar: React.FC = () => {
                 </button>
             </div>
 
-            {/* Mobile Navigation */}
+            {}
             <AnimatePresence>
                 {isOpen && (
                     <motion.div

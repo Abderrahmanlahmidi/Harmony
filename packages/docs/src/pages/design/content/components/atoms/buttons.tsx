@@ -9,14 +9,14 @@ import {
 } from '../../../../../constants/buttons.data.tsx';
 import {  Badge  } from "harmony-react-ui";
 
-// Import your Button component
+
 import {  Button as ButtonComponent  } from "harmony-react-ui";
 import { PageHeader } from '../PageHeader.tsx';
 
 export default function ButtonsPage() {
   return (
     <div className="space-y-16 max-w-6xl mx-auto p-12 pb-40">
-      {/* Using PageHeader component */}
+      {}
       <PageHeader
         category="Components"
         title="Button"
@@ -26,7 +26,7 @@ export default function ButtonsPage() {
         badgeVariant="primary"
       />
 
-      {/* PREVIEW SECTION */}
+      {}
       <section className="space-y-8">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Interactive Preview</h2>
         
@@ -43,7 +43,7 @@ export default function ButtonsPage() {
         ))}
       </section>
 
-      {/* SIZES DETAILS */}
+      {}
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Size Specifications</h2>
         
@@ -73,7 +73,7 @@ export default function ButtonsPage() {
         </div>
       </section>
 
-      {/* PROPS DOCUMENTATION */}
+      {}
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Props Reference</h2>
         
@@ -103,6 +103,3 @@ export default function ButtonsPage() {
     </div>
   );
 }
-
-
-

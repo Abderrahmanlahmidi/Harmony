@@ -57,7 +57,7 @@ export const SearchBar = React.forwardRef<HTMLInputElement, SearchBarProps>(
                         isFocused && "border-primary ring-4 ring-primary/5"
                     )}
                 >
-                    {/* Search Icon / Loader */}
+                    {}
                     <div className={cn(
                         "absolute pointer-events-none flex items-center justify-center transition-colors duration-300",
                         iconPositions[size],
@@ -94,7 +94,7 @@ export const SearchBar = React.forwardRef<HTMLInputElement, SearchBarProps>(
                         type="text"
                     />
 
-                    {/* Actions Area */}
+                    {}
                     <div className="absolute right-2 flex items-center gap-2">
                         <AnimatePresence>
                             {value && (

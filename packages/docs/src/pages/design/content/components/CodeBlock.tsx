@@ -29,12 +29,12 @@ export default function CodeBlock({ children, code, title, description }: CodeBl
                 </div>
             )}
 
-            {/* Preview Area */}
+            {}
             <div className="p-8 bg-neutral-50/50 min-h-[160px] flex items-center justify-center border-b border-neutral-200">
                 <div className="w-full flex justify-center">{children}</div>
             </div>
 
-            {/* Control Bar */}
+            {}
             <div className="px-4 py-2 bg-white dark:bg-neutral-50 flex justify-between items-center">
                 <div className="text-xs font-medium text-neutral-500">
                     Preview
@@ -57,7 +57,7 @@ export default function CodeBlock({ children, code, title, description }: CodeBl
                 </div>
             </div>
 
-            {/* Code Area */}
+            {}
             <div
                 className={cn(
                     "grid transition-all duration-200 ease-in-out bg-neutral-950",
@@ -73,8 +73,3 @@ export default function CodeBlock({ children, code, title, description }: CodeBl
         </div>
     );
 }
-
-
-
-
-

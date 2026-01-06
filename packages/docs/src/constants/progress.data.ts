@@ -1,4 +1,3 @@
-// progress.data.ts - Updated for new linear-only Progress component
 export const progressExamples = [
   {
     title: "Basic Progress",
@@ -138,4 +137,3 @@ export const usageExamples = [
     description: "Show data synchronization status"
   }
 ];
-

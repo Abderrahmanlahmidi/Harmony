@@ -17,7 +17,7 @@ export default function CardsPage() {
                 </p>
             </header>
 
-            {/* Design Variants */}
+            {}
             <section className="space-y-8">
                 <div className="space-y-2">
                     <h2 className="text-2xl font-bold tracking-tight">Design Architecture</h2>
@@ -61,7 +61,7 @@ export default function CardsPage() {
                 </div>
             </section>
 
-            {/* Premium Content Layouts */}
+            {}
             <section className="space-y-8">
                 <div className="space-y-2">
                     <h2 className="text-2xl font-bold tracking-tight">Content Layouts</h2>
@@ -101,7 +101,7 @@ export default function CardsPage() {
                 </CodeBlock>
             </section>
 
-            {/* Media Integration */}
+            {}
             <section className="space-y-8">
                 <div className="space-y-2">
                     <h2 className="text-2xl font-bold tracking-tight">Media Integration</h2>
@@ -173,8 +173,3 @@ export default function CardsPage() {
         </div>
     );
 }
-
-
-
-
-

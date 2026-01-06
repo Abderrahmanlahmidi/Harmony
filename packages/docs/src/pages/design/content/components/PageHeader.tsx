@@ -1,4 +1,3 @@
-// components/docs/PageHeader.tsx
 import {  Badge  } from "harmony-react-ui";
 import React from "react";
 import { cn } from "harmony-react-ui";
@@ -41,6 +40,3 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
     </header>
   );
 };
-
-
-

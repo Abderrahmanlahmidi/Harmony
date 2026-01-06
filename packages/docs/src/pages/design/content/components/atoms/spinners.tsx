@@ -30,7 +30,7 @@ export default function SpinnersPage() {
         badgeVariant="primary"
       />
 
-      {/* PREVIEW SECTION */}
+      {}
       <section className="space-y-8">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Interactive Preview</h2>
         
@@ -47,7 +47,7 @@ export default function SpinnersPage() {
         ))}
       </section>
 
-      {/* SIZES DETAILS */}
+      {}
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Size Specifications</h2>
         
@@ -73,7 +73,7 @@ export default function SpinnersPage() {
         </div>
       </section>
 
-      {/* VARIANTS DETAILS */}
+      {}
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Color Variants</h2>
         
@@ -108,7 +108,7 @@ export default function SpinnersPage() {
         </div>
       </section>
 
-      {/* THICKNESS DETAILS */}
+      {}
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Thickness Options</h2>
         
@@ -143,7 +143,7 @@ export default function SpinnersPage() {
         </div>
       </section>
 
-      {/* USAGE EXAMPLES */}
+      {}
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Common Use Cases</h2>
         
@@ -170,7 +170,7 @@ export default function SpinnersPage() {
         </div>
       </section>
 
-      {/* REAL-WORLD EXAMPLES */}
+      {}
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Real World Examples</h2>
         
@@ -240,7 +240,7 @@ export default function SpinnersPage() {
         </div>
       </section>
 
-            {/* PROPS DOCUMENTATION */}
+            {}
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Props Reference</h2>
         
@@ -271,6 +271,3 @@ export default function SpinnersPage() {
     </div>
   );
 }
-
-
-

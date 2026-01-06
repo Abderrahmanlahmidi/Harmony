@@ -1,4 +1,3 @@
-// ProgressPage.tsx - Updated for new linear-only Progress component
 import { TrendingUp } from 'lucide-react';
 import CodeBlock from "../CodeBlock";
 import { 
@@ -15,7 +14,7 @@ import {  Progress as ProgressComponent } from "harmony-react-ui";
 export default function ProgressPage() {
   return (
     <div className="space-y-16 max-w-6xl mx-auto p-12 pb-40">
-      {/* Using PageHeader component */}
+      {}
       <PageHeader
         category="Feedback"
         title="Progress"
@@ -25,7 +24,7 @@ export default function ProgressPage() {
         badgeVariant="primary"
       />
 
-      {/* PREVIEW SECTION */}
+      {}
       <section className="space-y-8">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Interactive Preview</h2>
         
@@ -49,7 +48,7 @@ export default function ProgressPage() {
         ))}
       </section>
 
-      {/* VARIANT DETAILS */}
+      {}
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Color Variants</h2>
         
@@ -84,7 +83,7 @@ export default function ProgressPage() {
         </div>
       </section>
 
-      {/* SIZE DETAILS */}
+      {}
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Size Specifications</h2>
         
@@ -108,7 +107,7 @@ export default function ProgressPage() {
         </div>
       </section>
 
-      {/* USAGE EXAMPLES */}
+      {}
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Common Use Cases</h2>
         
@@ -141,7 +140,7 @@ export default function ProgressPage() {
         </div>
       </section>
 
-      {/* REAL-WORLD EXAMPLES */}
+      {}
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Real World Examples</h2>
         
@@ -207,7 +206,7 @@ export default function ProgressPage() {
         </div>
       </section>
 
-      {/* PROPS DOCUMENTATION */}
+      {}
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Props Reference</h2>
         
@@ -238,6 +237,3 @@ export default function ProgressPage() {
     </div>
   );
 }
-
-
-

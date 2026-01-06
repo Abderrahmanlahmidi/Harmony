@@ -1,4 +1,3 @@
-// input.data.ts
 import { Mail, Search, Lock, User, CheckCircle2, AlertCircle, HelpCircle } from "lucide-react";
 import {  Input  } from "harmony-react-ui";
 
@@ -183,7 +182,3 @@ export const inputProps = [
   { prop: "placeholder", type: "string", default: "undefined", description: "Placeholder text" },
   { prop: "type", type: "string", default: "'text'", description: "HTML input type (text, password, email, etc.)" },
 ];
-
-
-
-

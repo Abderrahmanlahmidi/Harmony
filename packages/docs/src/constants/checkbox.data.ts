@@ -1,4 +1,3 @@
-// checkbox.data.ts
 export const checkboxExamples = [
   {
     title: "Basic Selection",
@@ -211,4 +210,3 @@ export const usageExamples = [
     group: true
   }
 ];
-

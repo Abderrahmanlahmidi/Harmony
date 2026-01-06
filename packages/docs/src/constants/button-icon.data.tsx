@@ -124,8 +124,3 @@ export const buttonIconProps = [
   { prop: "onClick", type: "React.MouseEventHandler<HTMLButtonElement>", default: "undefined", description: "Click handler function" },
   { prop: "className", type: "string", default: "undefined", description: "Additional CSS classes" },
 ];
-
-
-
-
-

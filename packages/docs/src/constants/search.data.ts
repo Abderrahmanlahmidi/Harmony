@@ -1,4 +1,3 @@
-// search.data.ts
 export const searchExamples = [
   {
     title: "Basic Search",
@@ -170,4 +169,3 @@ export const usageExamples = [
     description: "Keyboard command interface"
   }
 ];
-

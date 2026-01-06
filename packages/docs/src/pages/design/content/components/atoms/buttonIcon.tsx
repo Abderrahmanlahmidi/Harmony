@@ -9,7 +9,7 @@ import { PageHeader } from '../PageHeader.tsx';
 export default function ButtonsIconPage() {
   return (
     <div className="space-y-16 max-w-6xl mx-auto p-12 pb-40">
-      {/* Using PageHeader component */}
+      {}
       <PageHeader
         category="Components"
         title="Button Icon"
@@ -19,7 +19,7 @@ export default function ButtonsIconPage() {
         badgeVariant="primary"
       />
 
-      {/* PREVIEW SECTION */}
+      {}
       <section className="space-y-8">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Interactive Preview</h2>
         
@@ -37,7 +37,7 @@ export default function ButtonsIconPage() {
       </section>
 
 
-      {/* PROPS DOCUMENTATION */}
+      {}
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Props Reference</h2>
         
@@ -67,6 +67,3 @@ export default function ButtonsIconPage() {
     </div>
   );
 }
-
-
-

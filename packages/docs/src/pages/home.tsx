@@ -2,8 +2,6 @@ import { useState, useEffect } from "react";
 import {
   Github,
   Sparkles,
-  Palette,
-  Zap,
   ArrowRight,
   Layout,
   ShieldCheck,
@@ -24,39 +22,8 @@ import { useDarkMode } from "../hooks/useDarkMode";
 import { Button } from "harmony-react-ui";
 import { cn } from "harmony-react-ui";
 import { github } from "../constants/socialConstants.ts";
+import { FEATURE_CARDS } from "../constants/home.data";
 const favicon = "/favicon.svg";
-
-const FEATURE_CARDS = [
-  {
-    title: "Atomic Design",
-    description: "Built on atomic principles for maximum reusability and clean architectural structure.",
-    icon: <Layers className="w-6 h-6" />,
-    color: "text-primary",
-    bg: "bg-primary/10"
-  },
-  {
-    title: "Type Safe",
-    description: "100% TypeScript coverage ensures your components are bug-free and documented by default.",
-    icon: <ShieldCheck className="w-6 h-6" />,
-    color: "text-secondary",
-    bg: "bg-secondary/10"
-  },
-  {
-    title: "Fast Delivery",
-    description: "Optimized for next-generation tools like Vite and Tailwind CSS 4 for instant dev feedback.",
-    icon: <Zap className="w-6 h-6" />,
-    color: "text-warning",
-    bg: "bg-warning/10"
-  },
-  {
-    title: "Theme Ready",
-    description: "Deeply integrated dark mode and accessibility features built right into the core variables.",
-    icon: <Palette className="w-6 h-6" />,
-    color: "text-success",
-    bg: "bg-success/10"
-  }
-];
-
 
 
 export default function Home() {
@@ -93,15 +60,15 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-neutral-50 selection:bg-primary selection:text-white overflow-x-hidden">
-      {/* Global Background Elements */}
+      { }
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        {/* <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-primary/5 rounded-full blur-[160px] animate-pulse" /> */}
-        {/* <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-secondary/5 rounded-full blur-[160px] animate-pulse" style={{ animationDelay: '2s' }} /> */}
-        {/* <div className="absolute top-[20%] left-[30%] w-[30%] h-[30%] bg-warning/5 rounded-full blur-[120px]" /> */}
+        { }
+        { }
+        { }
         <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] dark:bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:32px_32px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-20" />
       </div>
 
-      {/* Navigation */}
+      { }
       <nav className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${scrolled ? 'py-4' : 'py-8'}`}>
         <div className="max-w-7xl mx-auto px-6">
           <div className={cn("p-4 rounded-3xl transition-all duration-500 flex items-center justify-between", scrolled ? "bg-white/90 dark:bg-neutral-50/90 border border-neutral-200 dark:border-neutral-200/20" : "")}>
@@ -137,7 +104,7 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Mobile Menu Overlay */}
+      { }
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
@@ -174,7 +141,7 @@ export default function Home() {
         )}
       </AnimatePresence>
 
-      {/* Hero Section */}
+      { }
       <section className="relative pt-48 pb-32">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
@@ -216,7 +183,7 @@ export default function Home() {
               </button>
             </motion.div>
 
-            {/* Tech Stack Chips */}
+            { }
             <motion.div variants={itemVariants} className="pt-12 flex flex-wrap justify-center gap-10 opacity">
               <div className="flex items-center gap-2 font-black text-sm uppercase tracking-widest"><Cpu className="text-primary" /> React v19</div>
               <div className="flex items-center gap-2 font-black text-sm uppercase tracking-widest"><Smartphone className="text-secondary" /> Tailwind v4</div>
@@ -227,7 +194,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features Grid */}
+      { }
       <section className="py-32 relative">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -253,12 +220,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Showcase Section / Visual Hook */}
+      { }
       <section className="py-32 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="bg-netural-100 dark:bg-neutral-50 border border-neutral-200 rounded-[60px] p-12 md:p-24 text-neutral-900 dark:text-white relative overflow-hidden transition-colors duration-300">
-            {/* <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_100%_0%,rgba(99,102,241,0.05)_0%,transparent_50%)]" />
-            <div className="absolute bottom-0 left-0 w-full h-full bg-[radial-gradient(circle_at_0%_100%,rgba(14,165,233,0.05)_0%,transparent_50%)]" /> */}
+            { }
 
             <div className="grid lg:grid-cols-2 gap-20 items-center relative z-10">
               <div className="space-y-8">
@@ -273,7 +239,7 @@ export default function Home() {
               </div>
 
               <div className="relative">
-                {/* Visual Mockup of the System */}
+                { }
                 <div className="grid grid-cols-2 gap-6 scale-110 -rotate-6 transition-transform hover:rotate-0 duration-700">
                   <div className="space-y-6 pt-12">
                     <div className="bg-white dark:bg-white/5 backdrop-blur-md p-6 rounded-3xl border border-neutral-200 dark:border-white/10 space-y-4 shadow-xl dark:shadow-none transition-colors duration-300">
@@ -317,7 +283,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      { }
       <section className="py-48 text-center bg-white dark:bg-neutral-50 relative">
         <div className="max-w-4xl mx-auto px-6 space-y-10">
           <h2 className="text-6xl md:text-8xl font-black tracking-tighter text-neutral-900 leading-[0.9]">
@@ -339,7 +305,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
+      { }
       <footer className="py-20 border-t border-neutral-100 dark:border-neutral-200/20 px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
           <div className="flex items-center gap-3">
@@ -364,6 +330,3 @@ export default function Home() {
     </div>
   );
 }
-
-
-

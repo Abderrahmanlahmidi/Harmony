@@ -69,7 +69,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
                             {...props}
                         />
 
-                        {/* Box */}
+                        {}
                         <div className={cn(
                             "flex items-center justify-center border-2 transition-all duration-200",
                             sizes[size],
@@ -151,7 +151,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
 
 Checkbox.displayName = "Checkbox";
 
-// Checkbox Group
+
 export interface CheckboxGroupProps {
     children: React.ReactNode;
     label?: string;

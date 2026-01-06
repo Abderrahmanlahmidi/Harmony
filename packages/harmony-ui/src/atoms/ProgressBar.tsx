@@ -1,4 +1,3 @@
-// Progress.tsx
 import React from "react";
 import { cn } from "../utils/cn";
 
@@ -91,7 +90,7 @@ export const Progress: React.FC<ProgressProps> = ({
   );
 };
 
-// CSS for striped effect
+
 const style = document.createElement("style");
 style.textContent = `
   .progress-striped {

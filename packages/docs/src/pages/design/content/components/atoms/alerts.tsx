@@ -1,4 +1,3 @@
-// AlertsPage.tsx
 import { PageHeader } from "../PageHeader";
 import { AlertTriangle } from "lucide-react";
 
@@ -17,7 +16,3 @@ export default function AlertsPage() {
     </div>
   );
 }
-
-
-
-

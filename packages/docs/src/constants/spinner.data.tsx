@@ -211,6 +211,3 @@ export const usageExamples = [
     placement: "Subtle corner indicator"
   }
 ];
-
-
-

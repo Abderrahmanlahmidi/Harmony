@@ -20,7 +20,7 @@ export default function RadiosPage() {
 
   return (
     <div className="space-y-16 max-w-6xl mx-auto p-12 pb-40">
-      {/* Using PageHeader component */}
+      {}
       <PageHeader
         category="Form"
         title="Radio"
@@ -30,7 +30,7 @@ export default function RadiosPage() {
         badgeVariant="primary"
       />
 
-      {/* PREVIEW SECTION */}
+      {}
       <section className="space-y-8">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Interactive Preview</h2>
 
@@ -79,7 +79,7 @@ export default function RadiosPage() {
         ))}
       </section>
 
-      {/* SIZES DETAILS */}
+      {}
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Size Specifications</h2>
 
@@ -119,7 +119,7 @@ export default function RadiosPage() {
       </section>
 
 
-      {/* USAGE EXAMPLES */}
+      {}
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Common Use Cases</h2>
 
@@ -153,7 +153,7 @@ export default function RadiosPage() {
         </div>
       </section>
 
-      {/* REAL-WORLD EXAMPLES */}
+      {}
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Real World Examples</h2>
 
@@ -228,9 +228,9 @@ export default function RadiosPage() {
         </div>
       </section>
 
-      {/* PROPS DOCUMENTATION */}
+      {}
       <section className="space-y-8">
-        {/* Radio Props */}
+        {}
         <div className="space-y-6">
           <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Radio Props</h2>
 
@@ -258,7 +258,7 @@ export default function RadiosPage() {
           </div>
         </div>
 
-        {/* RadioGroup Props */}
+        {}
         <div className="space-y-6">
           <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">RadioGroup Props</h2>
 
@@ -289,6 +289,3 @@ export default function RadiosPage() {
     </div>
   );
 }
-
-
-

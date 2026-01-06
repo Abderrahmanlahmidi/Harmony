@@ -43,7 +43,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
                             {...props}
                         />
 
-                        {/* Outer Circle */}
+                        {}
                         <div className={cn(
                             "rounded-full border-2 transition-all duration-200",
                             sizes[size],
@@ -53,7 +53,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
                             error && "border-danger dark:border-danger"
                         )} />
 
-                        {/* Inner Dot */}
+                        {}
                         <motion.div
                             initial={false}
                             animate={{
@@ -104,7 +104,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
 
 Radio.displayName = "Radio";
 
-// Radio Group for better architecture
+
 export interface RadioGroupProps {
     children: React.ReactNode;
     label?: string;

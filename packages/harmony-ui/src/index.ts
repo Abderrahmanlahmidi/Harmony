@@ -1,4 +1,3 @@
-// Atoms
 export { Alert } from './atoms/Alert';
 export type { AlertProps } from './atoms/Alert';
 
@@ -45,5 +44,5 @@ export type { ToggleProps } from './atoms/Toggle';
 export { Typography } from './atoms/Typography';
 export type { TypographyProps } from './atoms/Typography';
 
-// Utils
+
 export { cn } from './utils/cn';

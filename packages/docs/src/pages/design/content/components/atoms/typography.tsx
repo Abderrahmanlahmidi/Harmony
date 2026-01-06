@@ -22,7 +22,7 @@ export default function TypographyPage() {
                 version="v1.0.0"
             />
 
-            {/* PREVIEW */}
+            {}
             <section className="space-y-6">
                 <div className="flex items-center justify-between border-b border-neutral-200 pb-2">
                     <h2 className="text-2xl font-black text-neutral-900 italic uppercase">Live Preview</h2>
@@ -43,7 +43,7 @@ export default function TypographyPage() {
                 </div>
             </section>
 
-            {/* OVERVIEW */}
+            {}
             <section className="space-y-6">
                 <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Overview</h2>
                 
@@ -94,7 +94,7 @@ export default function TypographyPage() {
                 </div>
             </section>
 
-            {/* INSTALLATION & USAGE */}
+            {}
             <section className="space-y-6">
                 <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Usage Examples</h2>
                 
@@ -110,7 +110,7 @@ export default function TypographyPage() {
                 ))}
             </section>
 
-            {/* VARIANTS REFERENCE */}
+            {}
             <section className="space-y-6">
                 <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Variants Reference</h2>
                 
@@ -138,7 +138,7 @@ export default function TypographyPage() {
                 </div>
             </section>
 
-            {/* TYPE SCALE */}
+            {}
             <section className="space-y-6">
                 <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Type Scale</h2>
                 
@@ -166,7 +166,7 @@ export default function TypographyPage() {
                 </div>
             </section>
 
-            {/* PROPS DOCUMENTATION */}
+            {}
             <section className="space-y-6">
                 <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Props Reference</h2>
                 
@@ -196,6 +196,3 @@ export default function TypographyPage() {
         </div>
     );
 }
-
-
-

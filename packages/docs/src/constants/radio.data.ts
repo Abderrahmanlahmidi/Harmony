@@ -1,4 +1,3 @@
-// radio.data.ts
 export const radioExamples = [
   {
     title: "Basic Selection",
@@ -157,4 +156,3 @@ export const usageExamples = [
     group: true
   }
 ];
-

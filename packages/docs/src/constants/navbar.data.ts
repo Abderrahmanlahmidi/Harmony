@@ -49,7 +49,7 @@ export default function MyPage() {
   return (
     <div>
       <Navbar />
-      {/* Your page content */}
+      {}
     </div>
   );
 }`
@@ -170,4 +170,3 @@ export const propsTableData = [
   { prop: "glassEffect", type: "boolean", default: "true", description: "Enable/disable glassmorphism effect on scroll" },
   { prop: "fixed", type: "boolean", default: "true", description: "Fixed positioning at top of page" },
 ];
-

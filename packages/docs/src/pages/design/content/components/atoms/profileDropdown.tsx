@@ -6,12 +6,12 @@ export default function ProfileDropdownPage() {
     const mockUser = {
         name: "Abderrahman Lahmidi",
         email: "contact@abderrahman.io",
-        // avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=128&h=128&fit=crop"
+        
     };
 
     return (
         <div className="space-y-16 max-w-6xl mx-auto p-12 pb-40">
-            {/* --- HERO SECTION --- */}
+            {}
             <header className="space-y-6 max-w-2xl">
                 <div className="flex items-center gap-4">
                     <Badge variant="primary" className="px-3 py-1 text-[0.65rem] font-bold tracking-widest uppercase">Navigation</Badge>
@@ -25,7 +25,7 @@ export default function ProfileDropdownPage() {
                 </p>
             </header>
 
-            {/* Basic Usage */}
+            {}
             <section className="space-y-8">
                 <div className="space-y-2">
                     <h2 className="text-3xl font-black tracking-tighter text-neutral-900">Push to Expand</h2>
@@ -65,7 +65,7 @@ export default function ProfileDropdownPage() {
                 </div>
             </section>
 
-            {/* Design Features */}
+            {}
             <section className="space-y-12 pb-20">
                 <div className="space-y-2 border-b border-neutral-100 dark:border-neutral-800 pb-8">
                     <h2 className="text-3xl font-black tracking-tighter text-neutral-900 dark:text-white uppercase leading-none">Functional Pillars</h2>
@@ -100,7 +100,3 @@ export default function ProfileDropdownPage() {
         </div>
     );
 }
-
-
-
-
