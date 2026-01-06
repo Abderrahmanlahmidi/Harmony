@@ -5,7 +5,7 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
-        "build": "vite build"
+        "build": "npm run build --prefix ../harmony-ui && vite build"
     },
     "dependencies": {
         "clsx": "^2.1.1",
