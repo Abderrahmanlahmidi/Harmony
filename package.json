@@ -1,5 +1,5 @@
 {
-    "name": "@harmony-ui/react",
+    "name": "harmony-react-ui",
     "version": "1.0.0",
     "description": "A modern, accessible React component library with beautiful design and smooth animations",
     "main": "./dist/index.js",
@@ -63,5 +63,8 @@
         "@types/react-dom": "^19.2.3",
         "tsup": "^8.0.1",
         "typescript": "~5.9.3"
+    },
+    "publishConfig": {
+        "access": "public"
     }
 }
