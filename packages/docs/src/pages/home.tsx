@@ -15,6 +15,8 @@ import {
   Menu,
   X,
   FileText,
+  Copy,
+  Check
 } from "lucide-react";
 import { motion, AnimatePresence, easeOut } from "framer-motion";
 import { useNavigate } from "react-router-dom";
@@ -28,6 +30,13 @@ const favicon = "/favicon.svg";
 
 export default function Home() {
   const navigate = useNavigate();
+  const [copied, setCopied] = useState(false);
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText("npm i harmony-react-ui");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
   const { isDarkMode, toggleTheme } = useDarkMode();
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -175,11 +184,16 @@ export default function Home() {
                 Start Building
               </Button>
               <button
-                className="h-16 px-10 rounded-2xl text-xl font-black border-2 border-neutral-100 dark:border-neutral-200/10 hover:bg-neutral-100 transition-all flex items-center gap-3"
-                onClick={() => window.open(github, '_blank')}
+                className={cn(
+                  "h-16 px-10 rounded-2xl text-xl font-black border-2 transition-all flex items-center gap-3 min-w-[300px] justify-center",
+                  copied
+                    ? "border-success bg-success/10 text-success"
+                    : "border-neutral-100 dark:border-neutral-200/10 hover:bg-neutral-100 text-neutral-900"
+                )}
+                onClick={copyToClipboard}
               >
-                <Github size={24} />
-                View Source
+                {copied ? <Check size={24} /> : <Copy size={24} />}
+                {copied ? "Copied!" : "npm i harmony-react-ui"}
               </button>
             </motion.div>
 
@@ -323,7 +337,7 @@ export default function Home() {
           </div>
 
           <div className="text-sm font-bold text-neutral-400 uppercase tracking-widest opacity-40">
-            © 2024 Harmony UI. Built with passion.
+            © 2026 Harmony UI. Built with passion.
           </div>
         </div>
       </footer>

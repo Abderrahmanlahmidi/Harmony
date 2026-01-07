@@ -196,7 +196,7 @@ export default function Sidebar({ isCollapsed, onToggle }: SidebarProps) {
 
 
       <div className={`p-4 border-t border-neutral-100 space-y-2 ${isCollapsed ? 'flex flex-col items-center' : ''}`}>
-        <button
+        {/* <button
           onClick={toggleTheme}
           title={isCollapsed ? (isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode') : ''}
           className={`
@@ -206,7 +206,7 @@ export default function Sidebar({ isCollapsed, onToggle }: SidebarProps) {
         >
           {isDarkMode ? <Sun className="w-4 h-4 shrink-0" /> : <Moon className="w-4 h-4 shrink-0" />}
           {!isCollapsed && <span className="truncate">{isDarkMode ? 'Light Mode' : 'Dark Mode'}</span>}
-        </button>
+        </button> */}
 
         <button
           onClick={() => navigate('/')}
@@ -219,22 +219,7 @@ export default function Sidebar({ isCollapsed, onToggle }: SidebarProps) {
           <Home className="w-4 h-4 shrink-0" />
           {!isCollapsed && <span className="truncate">Back to Home</span>}
         </button>
-
-
-        <a
-          href="https://github.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          title={isCollapsed ? 'GitHub Repository' : ''}
-          className={`
-            flex items-center ${isCollapsed ? 'justify-center px-0 w-10 h-10' : 'gap-3 px-3'} py-2.5 rounded-lg text-sm font-medium 
-            text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900 transition-all duration-200 w-full
-          `}
-        >
-          <Github className="w-4 h-4 shrink-0" />
-          {!isCollapsed && <span className="truncate">GitHub Repository</span>}
-        </a>
       </div>
-    </aside >
+    </aside>
   )
 }
