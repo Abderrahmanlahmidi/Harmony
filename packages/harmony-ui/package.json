@@ -47,7 +47,7 @@
     "bugs": {
         "url": "https://github.com/Abderrahmanlahmidi/Harmony/issues"
     },
-    "homepage": "https://github.com/Abderrahmanlahmidi/Harmony#readme",
+    "homepage": "https://harmony-snowy-kappa.vercel.app/",
     "peerDependencies": {
         "react": "^18.0.0 || ^19.0.0",
         "react-dom": "^18.0.0 || ^19.0.0"

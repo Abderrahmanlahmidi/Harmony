@@ -185,15 +185,24 @@ export default function Home() {
               </Button>
               <button
                 className={cn(
-                  "h-16 px-10 rounded-2xl text-xl font-black border-2 transition-all flex items-center gap-3 min-w-[300px] justify-center",
+                  "h-16 px-10 rounded-2xl text-xl font-black border-2 transition-all flex items-center gap-3 min-w-[280px] justify-center",
                   copied
                     ? "border-success bg-success/10 text-success"
                     : "border-neutral-100 dark:border-neutral-200/10 hover:bg-neutral-100 text-neutral-900"
                 )}
                 onClick={copyToClipboard}
               >
-                {copied ? <Check size={24} /> : <Copy size={24} />}
-                {copied ? "Copied!" : "npm i harmony-react-ui"}
+                {copied ? (
+                  <>
+                    <Check size={24} />
+                    <span>Copied!</span>
+                  </>
+                ) : (
+                  <>
+                    <Copy size={24} />
+                    <span>npm i harmony-react-ui</span>
+                  </>
+                )}
               </button>
             </motion.div>
 
