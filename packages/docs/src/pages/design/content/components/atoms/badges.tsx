@@ -1,5 +1,4 @@
 import { Tag } from 'lucide-react';
-
 import CodeBlock from "../CodeBlock";
 import {
   badgeExamples,
@@ -9,12 +8,12 @@ import {
   usageExamples
 } from "../../../../../constants/badge.data";
 
-
 import { Badge as BadgeComponent } from "harmony-react-ui";
 import { PageHeader } from '../PageHeader';
 import { HARMONY_VERSION } from "../../../../../constants/common";
 
 export default function BadgesPage() {
+
   return (
     <div className="space-y-16 max-w-6xl mx-auto p-12 pb-40">
       { }
@@ -146,9 +145,6 @@ export default function BadgesPage() {
         </div>
       </section>
 
-
-
-
       { }
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Real World Examples</h2>
@@ -252,7 +248,6 @@ export default function BadgesPage() {
           </table>
         </div>
       </section>
-
     </div>
   );
 }
