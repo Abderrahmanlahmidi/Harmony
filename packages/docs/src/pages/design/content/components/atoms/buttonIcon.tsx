@@ -1,28 +1,29 @@
 import { Plus } from 'lucide-react';
 import CodeBlock from '../CodeBlock.tsx';
-import { 
-  buttonIconExamples, 
-  buttonIconProps, 
+import {
+  buttonIconExamples,
+  buttonIconProps,
 } from '../../../../../constants/button-icon.data.tsx';
 import { PageHeader } from '../PageHeader.tsx';
+import { HARMONY_VERSION } from "../../../../../constants/common";
 
 export default function ButtonsIconPage() {
   return (
     <div className="space-y-16 max-w-6xl mx-auto p-12 pb-40">
-      {}
+      { }
       <PageHeader
         category="Components"
         title="Button Icon"
         description="Icon-only buttons for compact actions and interfaces. Perfect for toolbars, navigation, and minimalist designs."
         icon={<Plus className="w-10 h-10 text-primary" />}
-        version="v1.0.0"
+        version={HARMONY_VERSION}
         badgeVariant="primary"
       />
 
-      {}
+      { }
       <section className="space-y-8">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Interactive Preview</h2>
-        
+
         {buttonIconExamples.map((example, index) => (
           <div key={index} className="space-y-6">
             <CodeBlock
@@ -37,10 +38,10 @@ export default function ButtonsIconPage() {
       </section>
 
 
-      {}
+      { }
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Props Reference</h2>
-        
+
         <div className="overflow-x-auto rounded-xl border border-neutral-200">
           <table className="w-full">
             <thead>

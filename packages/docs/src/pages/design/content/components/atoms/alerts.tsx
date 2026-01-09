@@ -9,6 +9,7 @@ import {
 } from "../../../../../constants/alert.data";
 import { Alert as AlertComponent, Badge } from "harmony-react-ui";
 import { PageHeader } from "../PageHeader";
+import { HARMONY_VERSION } from "../../../../../constants/common";
 
 export default function AlertsPage() {
   return (
@@ -18,7 +19,7 @@ export default function AlertsPage() {
         title="Alerts"
         description="Feedback messages for typical user actions, providing context-aware information and alerts."
         icon={<AlertTriangle className="w-10 h-10 text-primary" />}
-        version="v1.0.0"
+        version={HARMONY_VERSION}
         badgeVariant="primary"
       />
 

@@ -1,21 +1,22 @@
 import { Loader2 } from 'lucide-react';
 
-import {  Button  } from "harmony-react-ui";
-import {  Card, CardHeader, CardTitle, CardDescription, CardContent  } from "harmony-react-ui";
+import { Button } from "harmony-react-ui";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "harmony-react-ui";
 import CodeBlock from "../CodeBlock";
 
-import { 
-  spinnerExamples, 
-  spinnerProps, 
-  sizeDetails, 
+import {
+  spinnerExamples,
+  spinnerProps,
+  sizeDetails,
   variantDetails,
   thicknessDetails,
-  usageExamples 
+  usageExamples
 } from "../../../../../constants/spinner.data";
 
 
-import {  Spinner as SpinnerComponent  } from "harmony-react-ui";
+import { Spinner as SpinnerComponent } from "harmony-react-ui";
 import { PageHeader } from '../PageHeader';
+import { HARMONY_VERSION } from "../../../../../constants/common";
 
 
 export default function SpinnersPage() {
@@ -26,14 +27,14 @@ export default function SpinnersPage() {
         title="Spinners"
         description="Indicate an ongoing process or loading state to keep users informed about system activity."
         icon={<Loader2 className="w-10 h-10 text-primary" />}
-        version="v1.0.0"
+        version={HARMONY_VERSION}
         badgeVariant="primary"
       />
 
-      {}
+      { }
       <section className="space-y-8">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Interactive Preview</h2>
-        
+
         {spinnerExamples.map((example, index) => (
           <div key={index} className="space-y-6">
             <CodeBlock
@@ -47,15 +48,15 @@ export default function SpinnersPage() {
         ))}
       </section>
 
-      {}
+      { }
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Size Specifications</h2>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
           {sizeDetails.map((size, index) => (
             <div key={index} className="p-4 border border-neutral-200 rounded-xl text-center">
               <div className="flex flex-col items-center justify-center gap-3 mb-3">
-                <SpinnerComponent 
+                <SpinnerComponent
                   size={size.size as any}
                   thickness="thick"
                 />
@@ -73,15 +74,15 @@ export default function SpinnersPage() {
         </div>
       </section>
 
-      {}
+      { }
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Color Variants</h2>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {variantDetails.map((variant, index) => (
             <div key={index} className="p-4 border border-neutral-200 rounded-xl">
               <div className="flex items-center gap-3 mb-3">
-                <SpinnerComponent 
+                <SpinnerComponent
                   variant={variant.variant as any}
                   size="lg"
                   thickness="thick"
@@ -108,15 +109,15 @@ export default function SpinnersPage() {
         </div>
       </section>
 
-      {}
+      { }
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Thickness Options</h2>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {thicknessDetails.map((thickness, index) => (
             <div key={index} className="p-6 border border-neutral-200 rounded-2xl">
               <div className="flex items-center justify-between mb-4">
-                <SpinnerComponent 
+                <SpinnerComponent
                   thickness={thickness.thickness as any}
                   size="xl"
                 />
@@ -143,10 +144,10 @@ export default function SpinnersPage() {
         </div>
       </section>
 
-      {}
+      { }
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Common Use Cases</h2>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {usageExamples.map((usage, index) => (
             <div key={index} className="p-4 border border-neutral-200 rounded-xl hover:bg-neutral-50 transition-colors">
@@ -170,10 +171,10 @@ export default function SpinnersPage() {
         </div>
       </section>
 
-      {}
+      { }
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Real World Examples</h2>
-        
+
         <div className="space-y-4">
           <div className="p-6 border border-neutral-200 rounded-2xl">
             <div className="flex items-center justify-between mb-4">
@@ -240,10 +241,10 @@ export default function SpinnersPage() {
         </div>
       </section>
 
-            {}
+      { }
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Props Reference</h2>
-        
+
         <div className="overflow-x-auto rounded-xl border border-neutral-200">
           <table className="w-full">
             <thead>

@@ -1,31 +1,26 @@
 import { useState, useEffect } from "react";
 import {
-  Github,
   Sparkles,
   ArrowRight,
   Layout,
-  ShieldCheck,
-  Cpu,
   Moon,
   Sun,
   Layers,
   Activity,
-  Smartphone,
-  Globe,
   Menu,
   X,
   FileText,
   Copy,
-  Check
+  Check,
+  Github
 } from "lucide-react";
-import { motion, AnimatePresence, easeOut } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { useDarkMode } from "../hooks/useDarkMode";
 import { Button } from "harmony-react-ui";
 import { cn } from "harmony-react-ui";
 import { github } from "../constants/socialConstants.ts";
-import { FEATURE_CARDS } from "../constants/home.data";
-const favicon = "/favicon.svg";
+import { FEATURE_CARDS, CONTAINER_VARIANTS, ITEM_VARIANTS, TECH_STACK, FAVICON_PATH } from "../constants/home.data";
 
 
 export default function Home() {
@@ -47,25 +42,7 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.2
-      }
-    }
-  };
 
-  const itemVariants = {
-    hidden: { y: 30, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { duration: 0.8, ease: easeOut }
-    }
-  };
 
   return (
     <div className="min-h-screen bg-white dark:bg-neutral-50 selection:bg-primary selection:text-white overflow-x-hidden">
@@ -82,7 +59,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <div className={cn("p-4 rounded-3xl transition-all duration-500 flex items-center justify-between", scrolled ? "bg-white/90 dark:bg-neutral-50/90 border border-neutral-200 dark:border-neutral-200/20" : "")}>
             <div className="flex items-center gap-2 group cursor-pointer" onClick={() => navigate("/")}>
-              <img src={favicon} alt="" className="w-8 h-8" />
+              <img src={FAVICON_PATH} alt="" className="w-8 h-8" />
               <span className="text-xl font-black tracking-tighter text-neutral-900 transition-colors">
                 HARMONY
               </span>
@@ -155,7 +132,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             className="flex flex-col items-center text-center space-y-12"
-            variants={containerVariants}
+            variants={CONTAINER_VARIANTS}
             initial="hidden"
             animate="visible"
           >
@@ -164,16 +141,17 @@ export default function Home() {
               <span className="text-xs font-black text-neutral-700 uppercase tracking-[0.2em]">Next-Gen Design System</span>
             </div>
 
-            <motion.h1 variants={itemVariants} className="text-6xl md:text-8xl font-black tracking-tighter text-neutral-900 leading-[0.9] max-w-4xl">
+            <motion.h1 variants={ITEM_VARIANTS} className="text-6xl md:text-8xl font-black tracking-tighter text-neutral-900 leading-[0.9] max-w-4xl">
               Architecting the <br />
               <span className="text-primary italic">future</span> of web UI.
             </motion.h1>
 
-            <motion.p variants={itemVariants} className="text-xl md:text-2xl text-neutral-500 max-w-2xl font-medium leading-relaxed">
+
+            <motion.p variants={ITEM_VARIANTS} className="text-xl md:text-2xl text-neutral-500 max-w-2xl font-medium leading-relaxed">
               Harmony provides a high-fidelity foundation for building modern, accessible, and performant interfaces with absolute consistency.
             </motion.p>
 
-            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-6">
+            <motion.div variants={ITEM_VARIANTS} className="flex flex-col sm:flex-row gap-6">
               <Button
                 variant="primary"
                 size="lg"
@@ -207,11 +185,12 @@ export default function Home() {
             </motion.div>
 
             { }
-            <motion.div variants={itemVariants} className="pt-12 flex flex-wrap justify-center gap-10 opacity">
-              <div className="flex items-center gap-2 font-black text-sm uppercase tracking-widest"><Cpu className="text-primary" /> React v19</div>
-              <div className="flex items-center gap-2 font-black text-sm uppercase tracking-widest"><Smartphone className="text-secondary" /> Tailwind v4</div>
-              <div className="flex items-center gap-2 font-black text-sm uppercase tracking-widest"><Globe className="text-success" /> Framer Motion</div>
-              <div className="flex items-center gap-2 font-black text-sm uppercase tracking-widest"><ShieldCheck className="text-warning" /> Lucide Icons</div>
+            <motion.div variants={ITEM_VARIANTS} className="pt-12 flex flex-wrap justify-center gap-10 opacity">
+              {TECH_STACK.map((tech, index) => (
+                <div key={index} className="flex items-center gap-2 font-black text-sm uppercase tracking-widest">
+                  {tech.icon} {tech.name}
+                </div>
+              ))}
             </motion.div>
           </motion.div>
         </div>

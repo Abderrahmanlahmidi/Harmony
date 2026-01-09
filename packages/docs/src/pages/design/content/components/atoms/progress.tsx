@@ -1,33 +1,34 @@
 import { TrendingUp } from 'lucide-react';
 import CodeBlock from "../CodeBlock";
-import { 
-  progressExamples, 
+import {
+  progressExamples,
   progressProps,
-  variantDetails, 
+  variantDetails,
   sizeDetails,
-  usageExamples 
+  usageExamples
 } from "../../../../../constants/progress.data";
 
 import { PageHeader } from '../PageHeader';
-import {  Progress as ProgressComponent } from "harmony-react-ui";
+import { Progress as ProgressComponent } from "harmony-react-ui";
+import { HARMONY_VERSION } from "../../../../../constants/common";
 
 export default function ProgressPage() {
   return (
     <div className="space-y-16 max-w-6xl mx-auto p-12 pb-40">
-      {}
+      { }
       <PageHeader
         category="Feedback"
         title="Progress"
         description="Simple linear progress indicators for showing completion status and progress tracking. Clean, accessible, and customizable."
         icon={<TrendingUp className="w-10 h-10 text-primary" />}
-        version="v1.0.0"
+        version={HARMONY_VERSION}
         badgeVariant="primary"
       />
 
-      {}
+      { }
       <section className="space-y-8">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Interactive Preview</h2>
-        
+
         {progressExamples.map((example, index) => (
           <div key={index} className="space-y-6">
             <CodeBlock
@@ -48,16 +49,16 @@ export default function ProgressPage() {
         ))}
       </section>
 
-      {}
+      { }
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Color Variants</h2>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {variantDetails.map((variant, index) => (
             <div key={index} className="p-4 border border-neutral-200 rounded-xl">
               <div className="flex items-center gap-3 mb-3">
-                <div 
-                  className="w-4 h-4 rounded-full" 
+                <div
+                  className="w-4 h-4 rounded-full"
                   style={{ backgroundColor: variant.color }}
                 />
                 <div>
@@ -83,10 +84,10 @@ export default function ProgressPage() {
         </div>
       </section>
 
-      {}
+      { }
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Size Specifications</h2>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {sizeDetails.map((size, index) => (
             <div key={index} className="p-4 border border-neutral-200 rounded-xl">
@@ -107,10 +108,10 @@ export default function ProgressPage() {
         </div>
       </section>
 
-      {}
+      { }
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Common Use Cases</h2>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {usageExamples.map((usage, index) => (
             <div key={index} className="p-4 border border-neutral-200 rounded-xl hover:bg-neutral-50 transition-colors">
@@ -140,10 +141,10 @@ export default function ProgressPage() {
         </div>
       </section>
 
-      {}
+      { }
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Real World Examples</h2>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="p-6 border border-neutral-200 rounded-2xl">
             <h3 className="text-lg font-bold text-neutral-900 mb-4">File Upload Dashboard</h3>
@@ -206,10 +207,10 @@ export default function ProgressPage() {
         </div>
       </section>
 
-      {}
+      { }
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Props Reference</h2>
-        
+
         <div className="overflow-x-auto rounded-xl border border-neutral-200">
           <table className="w-full">
             <thead>

@@ -1,16 +1,17 @@
 import CodeBlock from "../CodeBlock";
-import { 
-  inputExamples, 
-  inputProps, 
+import {
+  inputExamples,
+  inputProps,
 } from "../../../../../constants/input.data";
 
 import { PageHeader } from "../PageHeader";
 import { TextCursorInput } from "lucide-react";
+import { HARMONY_VERSION } from "../../../../../constants/common";
 
 export default function InputPage() {
   return (
     <div className="space-y-16 max-w-6xl mx-auto p-12 pb-40">
-      {}
+      { }
       <PageHeader
         category="Forms"
         title="Input"
@@ -18,14 +19,14 @@ export default function InputPage() {
         icon={
           <TextCursorInput className="w-10 h-10 text-primary" />
         }
-        version="v1.0.0"
+        version={HARMONY_VERSION}
         badgeVariant="primary"
       />
 
-      {}
+      { }
       <section className="space-y-8">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Interactive Preview</h2>
-        
+
         {inputExamples.map((example, index) => (
           <div key={index} className="space-y-6">
             <CodeBlock
@@ -39,10 +40,10 @@ export default function InputPage() {
         ))}
       </section>
 
-      {}
+      { }
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Props Reference</h2>
-        
+
         <div className="overflow-x-auto rounded-xl border border-neutral-200">
           <table className="w-full">
             <thead>

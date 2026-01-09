@@ -11,8 +11,9 @@ import {
 } from "../../../../../constants/checkbox.data";
 
 
-import {  Checkbox as CheckboxComponent, CheckboxGroup as CheckboxGroupComponent  } from "harmony-react-ui";
+import { Checkbox as CheckboxComponent, CheckboxGroup as CheckboxGroupComponent } from "harmony-react-ui";
 import { PageHeader } from "../PageHeader";
+import { HARMONY_VERSION } from "../../../../../constants/common";
 
 export default function CheckboxesPage() {
   const [checkedItems, setCheckedItems] = useState({
@@ -47,17 +48,17 @@ export default function CheckboxesPage() {
 
   return (
     <div className="space-y-16 max-w-6xl mx-auto p-12 pb-40">
-      {}
+      { }
       <PageHeader
         category="Form"
         title="Checkbox"
         description="A multi-selection tool for independent options. Features SVG stroke animations, indeterminate states, and logical grouping."
         icon={<CheckSquare className="w-10 h-10 text-primary" />}
-        version="v1.0.0"
+        version={HARMONY_VERSION}
         badgeVariant="primary"
       />
 
-      {}
+      { }
       <section className="space-y-8">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Interactive Preview</h2>
 
@@ -124,7 +125,7 @@ export default function CheckboxesPage() {
         ))}
       </section>
 
-      {}
+      { }
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Size Specifications</h2>
 
@@ -161,7 +162,7 @@ export default function CheckboxesPage() {
         </div>
       </section>
 
-      {}
+      { }
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Common Use Cases</h2>
 
@@ -195,7 +196,7 @@ export default function CheckboxesPage() {
         </div>
       </section>
 
-      {}
+      { }
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Real World Examples</h2>
 
@@ -262,9 +263,9 @@ export default function CheckboxesPage() {
         </div>
       </section>
 
-      {}
+      { }
       <section className="space-y-8">
-        {}
+        { }
         <div className="space-y-6">
           <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Checkbox Props</h2>
 
@@ -292,7 +293,7 @@ export default function CheckboxesPage() {
           </div>
         </div>
 
-        {}
+        { }
         <div className="space-y-6">
           <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">CheckboxGroup Props</h2>
 

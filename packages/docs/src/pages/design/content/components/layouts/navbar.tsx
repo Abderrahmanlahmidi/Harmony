@@ -18,6 +18,9 @@ import {
   Github,
 } from "lucide-react";
 import { PageHeader } from "../PageHeader";
+
+import { HARMONY_VERSION } from "../../../../../constants/common";
+
 const IconComponent = ({ name }: { name: string }) => {
   const icons: { [key: string]: React.ReactNode } = {
     Zap: <Zap className="w-5 h-5 text-primary" />,
@@ -42,10 +45,10 @@ export default function NavbarPage() {
         title="Navbar"
         description="A responsive, multi-functional navigation bar with theme switching, glassmorphism support, and animated mobile states."
         icon={<Navigation className="w-10 h-10 text-primary" />}
-        version="v1.0.0"
+        version={HARMONY_VERSION}
       />
 
-      {}
+      { }
       <section className="space-y-6">
         <div className="flex items-center justify-between border-b border-neutral-200 pb-2">
           <h2 className="text-2xl font-black text-neutral-900 italic uppercase">
@@ -57,7 +60,7 @@ export default function NavbarPage() {
         </div>
       </section>
 
-      {}
+      { }
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">
           Overview
@@ -78,9 +81,8 @@ export default function NavbarPage() {
                 {card.items.map((item, itemIndex) => (
                   <li key={itemIndex} className="flex items-start gap-2">
                     <div
-                      className={`w-1.5 h-1.5 rounded-full mt-1.5 ${
-                        card.icon === "Zap" ? "bg-primary" : "bg-neutral-400"
-                      }`}
+                      className={`w-1.5 h-1.5 rounded-full mt-1.5 ${card.icon === "Zap" ? "bg-primary" : "bg-neutral-400"
+                        }`}
                     ></div>
                     <span>{item}</span>
                   </li>
@@ -91,7 +93,7 @@ export default function NavbarPage() {
         </div>
       </section>
 
-      {}
+      { }
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">
           Installation & Usage
@@ -110,7 +112,7 @@ export default function NavbarPage() {
         ))}
       </section>
 
-      {}
+      { }
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">
           Styling & Customization
@@ -131,7 +133,7 @@ export default function NavbarPage() {
         </div>
       </section>
 
-      {}
+      { }
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">
           Props Reference

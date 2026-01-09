@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {  SearchBar  } from "harmony-react-ui";
+import { SearchBar } from "harmony-react-ui";
 import { Search } from "lucide-react";
 import CodeBlock from "../CodeBlock";
 import {
@@ -7,6 +7,7 @@ import {
     searchProps,
 } from "../../../../../constants/search.data";
 import { PageHeader } from '../PageHeader';
+import { HARMONY_VERSION } from "../../../../../constants/common";
 
 export default function SearchPage() {
     const [searchValue, setSearchValue] = useState("");
@@ -22,17 +23,17 @@ export default function SearchPage() {
 
     return (
         <div className="space-y-16 max-w-6xl mx-auto p-12 pb-40">
-            {}
+            { }
             <PageHeader
                 category="Navigation"
                 title="Search Bar"
                 description="A premium discovery tool with hardware-accelerated focus states, glassmorphism variants, and integrated keyboard shortcut indicators."
                 icon={<Search className="w-10 h-10 text-primary" />}
-                version="v1.0.0"
+                version={HARMONY_VERSION}
                 badgeVariant="primary"
             />
 
-            {}
+            { }
             <section className="space-y-8">
                 <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Interactive Preview</h2>
 
@@ -67,7 +68,7 @@ export default function SearchPage() {
                 ))}
             </section>
 
-            {}
+            { }
             <section className="space-y-6">
                 <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Props Reference</h2>
 

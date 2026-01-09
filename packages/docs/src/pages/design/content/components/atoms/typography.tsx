@@ -1,15 +1,15 @@
 import { Type } from 'lucide-react';
-import {  Typography  } from "harmony-react-ui";
+import { Typography } from "harmony-react-ui";
 import CodeBlock from "../CodeBlock";
-import { 
-  typographyExamples, 
-  variantsTableData, 
-  codeExamples, 
-  typographyScale,
-  typographyProps 
+import {
+    typographyExamples,
+    variantsTableData,
+    codeExamples,
+    typographyScale,
+    typographyProps
 } from "../../../../../constants/typography.data.ts";
 import { PageHeader } from '../PageHeader.tsx';
-
+import { HARMONY_VERSION } from "../../../../../constants/common";
 
 export default function TypographyPage() {
     return (
@@ -19,10 +19,10 @@ export default function TypographyPage() {
                 title="Typography"
                 description="A flexible typographic system that provides clear hierarchy and professional readability across all interfaces."
                 icon={<Type className="w-10 h-10 text-primary" />}
-                version="v1.0.0"
+                version={HARMONY_VERSION}
             />
 
-            {}
+            { }
             <section className="space-y-6">
                 <div className="flex items-center justify-between border-b border-neutral-200 pb-2">
                     <h2 className="text-2xl font-black text-neutral-900 italic uppercase">Live Preview</h2>
@@ -43,10 +43,10 @@ export default function TypographyPage() {
                 </div>
             </section>
 
-            {}
+            { }
             <section className="space-y-6">
                 <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Overview</h2>
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="p-6 rounded-2xl bg-primary/5 border border-primary/10">
                         <h3 className="text-lg font-bold text-neutral-900 mb-4">Typography System</h3>
@@ -94,10 +94,10 @@ export default function TypographyPage() {
                 </div>
             </section>
 
-            {}
+            { }
             <section className="space-y-6">
                 <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Usage Examples</h2>
-                
+
                 {codeExamples.map((example, index) => (
                     <div key={index} className="space-y-4">
                         <h3 className="text-lg font-bold text-neutral-900">{example.title}</h3>
@@ -110,10 +110,10 @@ export default function TypographyPage() {
                 ))}
             </section>
 
-            {}
+            { }
             <section className="space-y-6">
                 <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Variants Reference</h2>
-                
+
                 <div className="overflow-x-auto rounded-xl border border-neutral-200">
                     <table className="w-full">
                         <thead>
@@ -138,10 +138,10 @@ export default function TypographyPage() {
                 </div>
             </section>
 
-            {}
+            { }
             <section className="space-y-6">
                 <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Type Scale</h2>
-                
+
                 <div className="bg-neutral-50 dark:bg-neutral-50 rounded-2xl p-8 border border-neutral-200">
                     <div className="space-y-8">
                         <div className="grid grid-cols-1 md:grid-cols-5 gap-4 text-center">
@@ -153,7 +153,7 @@ export default function TypographyPage() {
                                 </div>
                             ))}
                         </div>
-                        
+
                         <div className="space-y-4">
                             {typographyScale.map((scale, index) => (
                                 <div key={index} className="flex items-center justify-between py-3 border-b border-neutral-200/50 last:border-0">
@@ -166,10 +166,10 @@ export default function TypographyPage() {
                 </div>
             </section>
 
-            {}
+            { }
             <section className="space-y-6">
                 <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Props Reference</h2>
-                
+
                 <div className="overflow-x-auto rounded-xl border border-neutral-200">
                     <table className="w-full">
                         <thead>

@@ -1,35 +1,36 @@
 import { Tag } from 'lucide-react';
 
 import CodeBlock from "../CodeBlock";
-import { 
-  badgeExamples, 
-  badgeProps, 
+import {
+  badgeExamples,
+  badgeProps,
   sizeDetails,
   shapeDetails,
-  usageExamples 
+  usageExamples
 } from "../../../../../constants/badge.data";
 
 
-import {   Badge as BadgeComponent  } from "harmony-react-ui";
+import { Badge as BadgeComponent } from "harmony-react-ui";
 import { PageHeader } from '../PageHeader';
+import { HARMONY_VERSION } from "../../../../../constants/common";
 
 export default function BadgesPage() {
   return (
     <div className="space-y-16 max-w-6xl mx-auto p-12 pb-40">
-      {}
+      { }
       <PageHeader
         category="Components"
         title="Badge"
         description="Small status indicators used to highlight scores, counts, or semantic states in a concise format."
         icon={<Tag className="w-10 h-10 text-primary" />}
-        version="v1.0.0"
+        version={HARMONY_VERSION}
         badgeVariant="primary"
       />
 
-      {}
+      { }
       <section className="space-y-8">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Interactive Preview</h2>
-        
+
         {badgeExamples.map((example, index) => (
           <div key={index} className="space-y-6">
             <CodeBlock
@@ -43,15 +44,15 @@ export default function BadgesPage() {
         ))}
       </section>
 
-      {}
+      { }
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Size Specifications</h2>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {sizeDetails.map((size, index) => (
             <div key={index} className="p-6 border border-neutral-200 rounded-2xl">
               <div className="flex items-center justify-between mb-4">
-                <BadgeComponent 
+                <BadgeComponent
                   size={size.size as any}
                   variant="primary"
                 >
@@ -78,15 +79,15 @@ export default function BadgesPage() {
         </div>
       </section>
 
-      {}
+      { }
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Shape Variations</h2>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {shapeDetails.map((shape, index) => (
             <div key={index} className="p-6 border border-neutral-200 rounded-2xl">
               <div className="flex items-center justify-between mb-4">
-                <BadgeComponent 
+                <BadgeComponent
                   rounded={shape.shape as any}
                   variant="primary"
                 >
@@ -113,10 +114,10 @@ export default function BadgesPage() {
         </div>
       </section>
 
-      {}
+      { }
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Common Use Cases</h2>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {usageExamples.map((usage, index) => (
             <div key={index} className="p-4 border border-neutral-200 rounded-xl hover:bg-neutral-50 transition-colors">
@@ -128,8 +129,8 @@ export default function BadgesPage() {
               <div className="space-y-2">
                 <div className="flex flex-wrap gap-2">
                   {usage.example.split(' • ').map((item, idx) => (
-                    <BadgeComponent 
-                      key={idx} 
+                    <BadgeComponent
+                      key={idx}
                       variant={usage.variant as any}
                       size="sm"
                       className="whitespace-nowrap"
@@ -145,13 +146,13 @@ export default function BadgesPage() {
         </div>
       </section>
 
-    
 
 
-      {}
+
+      { }
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Real World Examples</h2>
-        
+
         <div className="space-y-4">
           <div className="p-6 border border-neutral-200 rounded-2xl">
             <div className="flex items-center justify-between mb-4">
@@ -224,10 +225,10 @@ export default function BadgesPage() {
         </div>
       </section>
 
-        {}
+      { }
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Props Reference</h2>
-        
+
         <div className="overflow-x-auto rounded-xl border border-neutral-200">
           <table className="w-full">
             <thead>

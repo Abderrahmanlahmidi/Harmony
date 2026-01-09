@@ -1,35 +1,36 @@
 import { MousePointer } from 'lucide-react';
 
 import CodeBlock from '../CodeBlock.tsx';
-import { 
-  buttonExamples, 
-  buttonProps, 
-  variantDetails, 
-  sizeDetails 
+import {
+  buttonExamples,
+  buttonProps,
+  variantDetails,
+  sizeDetails
 } from '../../../../../constants/buttons.data.tsx';
-import {  Badge  } from "harmony-react-ui";
+import { Badge } from "harmony-react-ui";
 
 
-import {  Button as ButtonComponent  } from "harmony-react-ui";
+import { Button as ButtonComponent } from "harmony-react-ui";
 import { PageHeader } from '../PageHeader.tsx';
+import { HARMONY_VERSION } from "../../../../../constants/common";
 
 export default function ButtonsPage() {
   return (
     <div className="space-y-16 max-w-6xl mx-auto p-12 pb-40">
-      {}
+      { }
       <PageHeader
         category="Components"
         title="Button"
         description="Primary interaction component used to trigger actions, submit forms, and navigate through the application."
         icon={<MousePointer className="w-10 h-10 text-primary" />}
-        version="v1.0.0"
+        version={HARMONY_VERSION}
         badgeVariant="primary"
       />
 
-      {}
+      { }
       <section className="space-y-8">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Interactive Preview</h2>
-        
+
         {buttonExamples.map((example, index) => (
           <div key={index} className="space-y-6">
             <CodeBlock
@@ -43,10 +44,10 @@ export default function ButtonsPage() {
         ))}
       </section>
 
-      {}
+      { }
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Size Specifications</h2>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {sizeDetails.map((size, index) => (
             <div key={index} className="p-6 border border-neutral-200 rounded-2xl">
@@ -73,10 +74,10 @@ export default function ButtonsPage() {
         </div>
       </section>
 
-      {}
+      { }
       <section className="space-y-6">
         <h2 className="text-2xl font-black text-neutral-900 italic uppercase border-b border-neutral-200 pb-2">Props Reference</h2>
-        
+
         <div className="overflow-x-auto rounded-xl border border-neutral-200">
           <table className="w-full">
             <thead>

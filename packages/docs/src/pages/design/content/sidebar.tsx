@@ -1,69 +1,16 @@
 import { NavLink, useNavigate } from 'react-router-dom'
 import {
-  Type,
-  Palette,
-  Box,
-  Layout,
-  MousePointer2,
-  FileText,
   Search,
-  Github,
-  PlusCircle,
   ChevronLeft,
   ChevronRight,
   Home,
-  BookOpen,
-  Moon,
-  Sun,
-  TextCursorInput,
-  Tag,
-  AlertTriangle,
-  LayoutDashboard,
-  Navigation,
-  Loader2,
-  Layers,
-  CircleDot,
-  CheckCircle2,
-  Zap,
-  Activity,
 } from 'lucide-react'
-import { useDarkMode } from '../../../hooks/useDarkMode'
+import { SIDEBAR_NAVIGATION } from '../../../constants/sidebar.data';
 import { useState } from 'react'
 
 
 
-const navigation = [
-  { name: 'Introduction', icon: FileText, path: '/system', end: true },
-  { name: 'How to use', icon: BookOpen, path: '/system/usage' },
-  { name: 'Colors', icon: Palette, path: '/system/colors' },
-  {
-    name: 'Components',
-    icon: Box,
-    children: [
-      { name: 'Typography', icon: Type, path: '/system/typography' },
-      { name: 'Buttons', icon: MousePointer2, path: '/system/buttons' },
-      { name: 'ButtonIcon', icon: PlusCircle, path: '/system/button-icon' },
-      { name: 'Inputs', icon: TextCursorInput, path: '/system/inputs' },
-      { name: 'Badges', icon: Tag, path: '/system/badges' },
-      { name: 'Alerts', icon: AlertTriangle, path: '/system/alerts' },
-      { name: 'Cards', icon: Layout, path: '/system/cards' },
-      { name: 'Spinners', icon: Loader2, path: '/system/spinners' },
-      { name: 'Modals', icon: Layers, path: '/system/modals' },
-      { name: 'Radios', icon: CircleDot, path: '/system/radios' },
-      { name: 'Checkboxes', icon: CheckCircle2, path: '/system/checkboxes' },
-      { name: 'Toggles', icon: Zap, path: '/system/toggles' },
-      { name: 'Progress', icon: Activity, path: '/system/progress' },
-      { name: 'Search Bar', icon: Search, path: '/system/search' },
-    ]
-  },
-  {
-    name: 'Layouts',
-    icon: LayoutDashboard,
-    children: [
-      { name: 'Navbar', icon: Navigation, path: '/system/navbar' },
-    ]
-  }
-]
+
 
 interface SidebarProps {
   isCollapsed: boolean;
@@ -72,10 +19,9 @@ interface SidebarProps {
 
 export default function Sidebar({ isCollapsed, onToggle }: SidebarProps) {
   const navigate = useNavigate();
-  const { isDarkMode, toggleTheme } = useDarkMode();
   const [searchQuery, setSearchQuery] = useState('');
 
-  const filteredNavigation = navigation.reduce((acc, item) => {
+  const filteredNavigation = SIDEBAR_NAVIGATION.reduce((acc, item) => {
     const isParentMatch = item.name.toLowerCase().includes(searchQuery.toLowerCase());
 
     if (item.children) {
@@ -94,7 +40,7 @@ export default function Sidebar({ isCollapsed, onToggle }: SidebarProps) {
       }
     }
     return acc;
-  }, [] as typeof navigation);
+  }, [] as typeof SIDEBAR_NAVIGATION);
 
   return (
     <aside className={`
